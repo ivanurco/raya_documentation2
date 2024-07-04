@@ -1,0 +1,48 @@
+.wy-nav-content {
+    max-width: none;
+}
+
+
+/*To give style to button BUILD YOU FIRST APP from Introduction in Getting Started*/
+p:has(> a > button.create_app_button) {
+    max-width: 100%;
+    margin: 0 0 1rem;
+    box-sizing: border-box;
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    unicode-bidi: isolate;
+}
+
+a:has(> button.create_app_button) {
+    background: #DDF7FF;
+    font-weight: bolder;
+    color: #0c14ff;
+    text-decoration: underline;
+}
+
+
+.create_app_button {
+    font-weight: bold;
+    display: inline-block;
+    background-color: #0982AA;
+    color: #fff;
+    text-transform: uppercase;
+    padding: 10px 40px;
+    border-radius: 5px;
+    box-shadow: 0 17px 10px -10px rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+    transition: all ease-in-out 300ms;
+    text-decoration: none;
+}
+
+a:has(> button.create_app_button) :hover {
+    box-shadow: 0 37px 20px -15px rgba(0, 0, 0, 0.2);
+    transform: translate(0px, -10px);
+}
+
+.hidden-block {
+    display: none;
+}
