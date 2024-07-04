@@ -3,23 +3,23 @@
 # When we do some changes in the theme, we need to recompile it and reinstall 
 # it in the project
 
-# Directorio base
+# Base directory
 BASE_DIR="./docs/source/_themes"
 
-# Cambiar al directorio de temas
+# Move into the directory themes (_themes)
 cd "$BASE_DIR" || exit
 
-# Guardar los nombres de las carpetas (temas)
+# Saving themes folder names (themes)
 THEMES=(*)
 
-# Ciclo por cada tema
+# Loop for each theme
 for THEME in "${THEMES[@]}"; do
-    echo "Procesando tema: $THEME"
+    echo "Processing theme: $THEME"
     
-    # Entrar al directorio del tema
+    # Ge into the theme directory
     cd "$THEME" || continue
     
-    # Ejecutar comandos
+    # Execute the next commands
     make clean
     make clean-frontend
     npm install
@@ -33,14 +33,14 @@ for THEME in "${THEMES[@]}"; do
     make lint-minimal
     npm run build
     
-    # Volver al directorio de temas
+    # Go back to the base directory (_themes)
     cd ..
     
-    # Instalar el tema
+    # Install the theme
     python3 -m pip install -e "$THEME"
     
-    echo "Tema $THEME procesado e instalado."
+    echo "Theme $THEME processed and installed."
     echo "--------------------------------"
 done
 
-echo "Todos los temas han sido procesados e instalados."
+echo "All themes have been processed and installed."

@@ -1,18 +1,51 @@
-Pasos para instalar el tema. (Para UR usamos un fork de sphinx_waigtail)
+# To install project locally run the next instructions
 
-Hacer esto dentro del ambiente virtual activado.
+We supposed that you clone the repository in your computer.
 
-1. Recomendable siempre tener separado build y source en el proyecto de Sphinx.
-2. Dentro de source crear una carpeta llamada _themes
-3. Allí clonar el repositorio o ubicar el archivo zip del tema escogido
-4. Correr git submodule update --init y git submodule update --remote si esta 
-en un repo clonado que quizas tenga dependencias.
-5. Entrar a la carpeta del proyecto del tema.
-6. Correr npm install para descargar dependencias (se debe crear la carpeta
-node_modules).
-7. Correr npm build 
-8. Salir a la carpete _themes
-9. Instalar el tema con python3 -m pip install -e nombre_carpeta_tema/.
-10. Correr pip list y mirar que el tema haya quedado instalado. Copie el nombre
-11. En el conf.py del proyecto cambie html_theme = 'nombre_tema_instalado_en_pip'
+1. Place into the root folder project
 
+2. Create a virtual enviroment:
+
+```python
+python -m venv .venv
+```
+
+3. Activte the virtual enviroment:
+
+```python
+source .venv/bin/activate
+```
+
+4. Iniatialize the subdmodules:
+
+```git
+git submodule update --init
+```
+
+5. Update the submodule:
+
+```git
+git submodule update --remote
+```  
+
+6. Install all Python requeriments
+
+```python
+pip install -r requirements.txt
+```
+
+- Proceed to install the theme with the instructions from README_Theme.md
+
+- If the theme was already created and installed just build the project into the root folder.
+
+```bash
+sphinx-build -M html ./docs/source/ ./docs/build/
+```
+
+- And run the project with:
+
+```bash
+sphinx-autobuild ./docs/source/ ./docs/build/html
+```
+
+Alternative run build_first_time.sh script into the root folder

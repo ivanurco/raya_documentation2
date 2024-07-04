@@ -1,123 +1,122 @@
 #!/bin/bash
 
-# Colores
+# Colors
 GREEN='\033[0;32m'
 RED='\033[0;31m'
 BLUE='\033[0;34m'
 NC='\033[0m' # No Color
 
-# Función para imprimir mensajes de información
+# Function to print info messages
 info() {
     echo -e "${GREEN}ℹ️  $1${NC}"
 }
 
-# Función para imprimir mensajes de error
+# Function to print error messages
 error() {
     echo -e "${RED}❌ $1${NC}"
 }
 
-# Función para imprimir mensajes de entrada
+# Function to print input messages
 input() {
     echo -e "${BLUE}🔎 $1${NC}"
 }
 
-#Capturando el CTRL+C
-trap "echo 'Script interrumpido por el usuario'; exit 1" SIGINT
+#Getting the CTRL+C
+trap "echo 'Script interrupted by user'; exit 1" SIGINT
 
-#Verificar si npm esta instalado
+# Check if npm is installed
 if ! command -v npm &> /dev/null; then
-    error "Error: npm no está instalado. Por favor, instale Node.js y npm."
+    error "Error: npm is not installed. Please install Node.js and npm."
     sleep 5
     exit 1
 fi
 
-# Verificar si estamos en un ambiente virtual
+# Check if we are in a virtual environment
 if [ -z "$VIRTUAL_ENV" ]; then
-    error "Error: Este script debe ejecutarse dentro de un ambiente virtual activado."
-    info "Por favor, active su ambiente virtual e intente de nuevo."
+    error "Error: This script must be executed within an activated virtual environment."
+    info "Please activate your virtual environment and try again."
     sleep 5
     exit 1
 fi
 
-info "Usando el ambiente virtual: $VIRTUAL_ENV"
+info "Using the virtual environment: $VIRTUAL_ENV"
 
-# 1. Estar en la raiz del proyecto
-
-cd docs || { error "Error: No se pudo acceder al directorio docs"; sleep 3; exit 1; }
+# 1. Be in the root of the project
+cd docs || { error "Error: The docs directory could not be accessed."; sleep 3; exit 1; }
 
 if [ ! -d "source" ]; then
-    error "No existe carpeta source."
+    error "There is no source folder."
     sleep 5
     exit 1
 fi
 
 
-# 2. Crear carpeta _themes dentro de source
+# 2. Create _themes folder inside source
 cd source
 
 if [ ! -d "_themes" ]; then
-    info "Directorio _themes no existe. Creando..."
+    info "Themes directory does not exist. Creating..."
     mkdir _themes
 else
-    info "Directorio _themes ya existe. Entrando..."
+    info "Directory _themes already exists. Entering..."
 fi
 
 cd _themes
 
-# 3. Preguntar si ya tiene el repo clonado o la carpeta del tema
-# Clonar el repositorio del tema (asume que es un repo de git)
-
-input "¿Su proyecto ya cuenta con el repo clonado o la carpeta del tema? (y/N): " 
+# 3. Ask if you already have the cloned repo or the themes folder
+# Clone the theme repository (assuming it is a git repo) 
+    
+input "Does your project already have the cloned repo or theme folder (y/N): " 
 read has_theme
 
 if [[ $has_theme =~ ^[Yy]$ ]]; then
-    # Si ya tiene el tema, pedir el nombre de la carpeta
-    input "Por favor, ingrese el nombre de la carpeta del tema: " 
+    # If you already have the theme, ask for the folder name
+    input "Please enter the name of the theme folder: " 
     read THEME_NAME
     if [ ! -d "$THEME_NAME" ]; then
-        error "Error: La carpeta $THEME_NAME no existe en docs/source/_themes"
+        error "Error: $THEME_NAME folder does not exist in docs/source/_themes"
         sleep 5
         exit 1
     fi
-else
-    # Si no tiene el tema, pedir la URL del repo
-    input -p "Por favor, ingrese la URL del repositorio del tema: " 
-    readREPO_URL
-    
-    # Extraer el nombre del tema de la URL del repositorio
-    THEME_NAME=$(basename -s .git "$REPO_URL")
+else    
+    # If you don't have the theme, ask for the repo URL
+    input -p "Please enter the URL of the theme repository: " 
+    read REPO_URL
         
-    # Clonar el repositorio del tema
-    info "Clonando el repositorio..."
+    # Extract the theme name from the repo URL.            
+    THEME_NAME=$(basename -s .git "$REPO_URL")
+            
+    # Clone the theme repository
+    info "Cloning the repository..."
     git clone "$REPO_URL"
     if [ $? -ne 0 ]; then
-        echo "Error: No se pudo clonar el repositorio"
+        echo "Error: Could not clone repository"
         exit 1
     fi
 fi
 
 cd $THEME_NAME
 
-# 4. Actualizar submódulos si existen
-info "Actualizando submódulos..."
+# 4. Update submodules if they exist
+info "Updating submodules..."
 git submodule update --init
 git submodule update --remote
 
-# 5. Instalar dependencias de Python
-info "Instalando dependencias de Python..."
+# 5. Install Python dependencies
+info "Installing Python dependencies..."
 python3 -m pip install --upgrade -r requirements.txt
 
-info "Limpiando..."
+info "Cleaning..."
 make clean
 make clean-frontend
 
-# 6. Instalar dependencias de Node.js
-info "Instalando dependencias de Node.js..."
+# 6. Install Node.js dependencies
+info "Installing Node.js dependencies..."
 npm install
 npm ci
 
-# 7. Construir el tema
-info "Construyendo el tema..."
+# 7. Build the theme
+info "Build the theme..."
 make setup
 make frontend
 make install
@@ -127,38 +126,38 @@ make lint
 make lint-minimal
 npm run build
 
-# 8. Volver a la carpeta _themes
+# 8. Return to the _themes folder.
 cd ..
 
-# 9. Instalar el tema en modo editable
-info "Instalando el tema en modo editable..."
+# 9. Install the theme in edit mode 
+info "Install the theme in edit mode..."
 python3 -m pip install -e $THEME_NAME/.
 
-# 10. Listar paquetes instalados y filtrar el tema
+# 10. List installed packages and filter the theme.
 THEME_NAME_INSTALLED=$(pip list | grep "$THEME_NAME" | awk '{print $1}')
 
 if [ -z "$THEME_NAME_INSTALLED" ]; then
-    error "Error: El tema no se instaló correctamente"
+    error "Error: Theme was not installed correctly"
     sleep 5
     exit 1
 fi
 
-info "Tema instalado: $THEME_NAME_INSTALLED"
+info "Installed theme: $THEME_NAME_INSTALLED"
 
-# 11. Actualizar conf.py
-cd ../..  # Volver a la raíz del proyecto
-info "Actualizando conf.py..."
+# 11. Update conf.py
+cd ../..  # Go back to the root of the project
+info "Updating conf.py..."
 cp source/conf.py source/conf.py.bak
 sed -i "s/html_theme = .*/html_theme = '$THEME_NAME_INSTALLED'/" source/conf.py
-info "Se ha creado una copia de seguridad de conf.py como conf.py.bak"
+info "A backup copy of conf.py has been created as conf.py.bak."
 
-info "Proceso completado. Por favor, verifica el archivo source/conf.py"
+info "Process completed. Please verify the source/conf.py file"
 
 
-info "Proceso completado. Se ha creado una copia de seguridad de conf.py como conf.py.bak"
-info "Por favor, verifica el archivo source/conf.py"
+info "Process completed. A backup copy of conf.py has been created as conf.py.bak"
+info "Please check the source/conf.py file." info "Please check the source/conf.py file."
 
-info "Resumen de acciones:"
-info "- Tema instalado: $THEME_NAME_INSTALLED"
-info "- Configuración actualizada en conf.py"
-info "- Copia de seguridad creada: conf.py.bak"
+info "Summary of actions:"
+info "- Installed theme: $THEME_NAME_INSTALLED"
+info "- Configuration updated in conf.py"
+info "- Backup copy created: conf.py.bak"
