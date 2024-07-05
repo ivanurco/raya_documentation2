@@ -3,7 +3,7 @@ Index
 
 .. toctree::
    :caption: Getting Started
-   :maxdepth: 2
+   :maxdepth: 1
 
    Introduction <Getting_Started/introduction>
    Install Ra-Ya SDK <Getting_Started/install_raya_sdk>
@@ -12,7 +12,7 @@ Index
 
 .. toctree::
    :caption: RaYa Python library
-   :maxdepth: 3
+   :maxdepth: 2
    
    Raya_Python_Library/controllers/index
    General Enumerations <Raya_Python_Library/General_Enumerations>
@@ -22,7 +22,7 @@ Index
 
 .. toctree::
    :caption: Robots
-   :maxdepth: 3
+   :maxdepth: 2
    
    Robots/index
 

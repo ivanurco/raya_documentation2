@@ -2,7 +2,7 @@ Synchronous Methods
 =====================
 
 .. toctree::
-   :maxdepth: 3
+   :maxdepth: 1
    
    get_all_sensors_values
    get_sensors_list

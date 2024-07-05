@@ -1,5 +1,9 @@
+========================================
+Create your First App (Simulation)
+========================================
+
 Overview
-========
+==========
 
 This section describes how to create a simple Ra-Ya app.
 

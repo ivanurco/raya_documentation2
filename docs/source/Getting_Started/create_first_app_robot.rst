@@ -1,5 +1,9 @@
+===============================
+Create your First App (Robot)
+===============================
+
 Overview
-========
+===========
 
 This section describes how to create a simple Ra-Ya app.
 
@@ -7,7 +11,7 @@ We are going to create an application that is going to be executed on a real rob
 going to test that everything is installed correctly with a Hello world example.
 
 Connecting to the robot
------------------------
+-------------------------
 
 Let's start verifying that the robot is connected to the network, with the SDK installed open a new
 terminal and run
@@ -53,7 +57,7 @@ a different robot, **In case that the connection failed make sure that the robot
 and is connected to your network.**
 
 Creating the app
-----------------
+-------------------
 
 An Ra-Ya app need a structure in order to execute, The SDK will help you with this, open a terminal
 and execute:
@@ -87,7 +91,7 @@ Now you should see that the folder contains files and directories, open with any
            self.log.warn(f'Hello from finish()')
 
 Run your app
-------------
+--------------
 
 You just wrote your first Ra-Ya app. It’s time to run it!
 

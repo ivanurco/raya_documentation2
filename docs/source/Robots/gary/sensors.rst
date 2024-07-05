@@ -1,5 +1,11 @@
+.. _`Gary_sensors`:
+
+==========
+Sensors
+==========
+
 List of Sensors
-===============
+================
 
 Continuous sensors
 -------------------

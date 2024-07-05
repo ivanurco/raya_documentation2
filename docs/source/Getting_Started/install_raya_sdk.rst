@@ -32,12 +32,19 @@ Python
 You need an installed version of Python 3.8.10.
 
 Docker
+^^^^^^
+
 Install Docker and verify that you can execute commands without sudo:
 
 * `Ubuntu 18.04 (steps 1 + 2) <https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-18-04>`_
 * `Ubuntu 20.04 (steps 1 + 2) <https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-20-04>`_
 * `Other distros <https://docs.docker.com/engine/install/>`_
 * `Windows <https://docs.docker.com/desktop/windows/install/>`_
+
+.. important::
+
+    After you finish the Docker installation steps, please **reboot your computer**
+
 
 Install
 -------

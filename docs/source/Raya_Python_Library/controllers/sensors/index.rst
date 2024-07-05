@@ -30,27 +30,27 @@ Creating the controller in your app:
 
 The controller class includes a set of methods to synchronously access the sensors:
 
-* get_all_sensors_value().
-* get_sensors_list()
-* get_sensor_value()
-* check_sensor_in_range()
+* :doc:`get_all_sensors_value() <synchronous_methods/get_all_sensors_values>`.
+* :doc:`get_sensors_list() <synchronous_methods/get_sensors_list>`.
+* :doc:`get_sensor_value() <synchronous_methods/get_sensor_value>`.
+* :doc:`check_sensor_in_range() <synchronous_methods/check_sensor_in_range>`
 
 It also includes the following methods to create listeners that trigger when different events are detected:
 
-* create_threshold_listener()
-* create_boolean_listener()
+* :doc:`create_threshold_listener() <synchronous_methods/create_threshold_listener>`
+* :doc:`create_boolean_listener() <synchronous_methods/create_boolean_listener>`
 
 Each method page includes standalone examples of how to use them.
 
 3. Full examples
-=================
+===================
 
 The following full examples use this controller:
 
-* sensors_chest_button_listener
-* sensors_listener
-* sensors_list
-* sensors_print
+* `sensors_chest_button_listener <https://github.com/Unlimited-Robotics/pyraya_examples/blob/main/sensors_chest_button_listener/src/app.py>`_
+* `sensors_listener <https://github.com/Unlimited-Robotics/pyraya_examples/blob/main/sensors_listener/src/app.py>`_
+* `sensors_list <https://github.com/Unlimited-Robotics/pyraya_examples/blob/main/sensors_list/src/app.py>`_
+* `sensors_print <https://github.com/Unlimited-Robotics/pyraya_examples/blob/main/sensors_print/src/app.py>`_
 
 
 
@@ -61,12 +61,9 @@ The following full examples use this controller:
 .. toctree::
    :maxdepth: 3
    
-   Synchronous methods <synchronous_methods/index>   
-   Handlers <handlers/index>
+   Synchronous methods <synchronous_methods/index>      
    Exceptions <exceptions>
-   Feedbacks <feedbacks>
-   Enumerations <enumerations>
-
+   
 .. raw:: html
 
    </div>

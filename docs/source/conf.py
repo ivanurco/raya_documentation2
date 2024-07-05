@@ -1,4 +1,6 @@
 # Adding the parent directory to the path so that the theme can be found
+from docutils.parsers.rst import roles
+from docutils import nodes
 import pathlib
 import sys
 import os
