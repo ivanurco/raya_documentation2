@@ -2,6 +2,10 @@
 get_sensors_list()
 ====================
 
+.. raw :: html
+
+   <hr/>
+
 Synchronously get a list of sensors.
 
 Reference

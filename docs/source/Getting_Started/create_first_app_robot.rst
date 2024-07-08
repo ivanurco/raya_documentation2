@@ -2,6 +2,10 @@
 Create your First App (Robot)
 ===============================
 
+.. raw:: html
+
+    <hr />
+    
 Overview
 ===========
 

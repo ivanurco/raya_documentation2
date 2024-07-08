@@ -2,6 +2,10 @@
 create_boolean_listener()
 ===========================
 
+.. raw :: html
+
+   <hr/>
+
 Create a listener triggered when the value of one (or multiple)
 **boolean sensor(s)** go(es) into a specific logic state.
 

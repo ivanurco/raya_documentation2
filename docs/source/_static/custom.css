@@ -63,29 +63,34 @@ a:has(> button.create_app_button) :hover {
     font-size: 15px;
 }
 
-.custom-link {
-    background-color: rgb(221, 247, 255);
-    color: rgb(12, 20, 255);
-    text-decoration-color: rgb(12, 20, 255);
+a.custom-link {
+    background-color: rgb(221, 247, 255) !important;
+    color: rgb(12, 20, 255) !important;
+    text-decoration-color: rgb(12, 20, 255) !important;
     text-decoration-style: solid;
     font-weight: 700;
     text-decoration-line: underline;
     text-decoration-thickness: auto;
     padding: 2px 4px;
     border-radius: 3px;
-    transition: color 0.3s, background-color 0.3s, text-decoration-color 0.3s;
 }
 
-.custom-link:hover {
+a.custom-link:hover {
     background-color: rgb(221, 247, 255) !important;
     color: rgb(106, 117, 255) !important;
     text-decoration-color: rgb(106, 117, 255) !important;
     cursor: pointer;
-    text-decoration-line: underline;
+    text-decoration-line: none;
     font-weight: 700;
 }
 
-.custom-link:visited {
-    color: rgb(151, 158, 255);
-    text-decoration-color: rgb(151, 158, 255);
+
+a.custom-link:visited {
+    color: rgb(151, 158, 255) !important;
+    text-decoration-color: rgb(151, 158, 255) !important;
+}
+
+a.custom-link:visited:hover {
+    color: rgb(106, 117, 255) !important;
+    text-decoration-color: rgb(106, 117, 255) !important;
 }

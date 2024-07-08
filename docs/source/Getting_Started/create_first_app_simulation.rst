@@ -2,6 +2,11 @@
 Create your First App (Simulation)
 ========================================
 
+.. raw:: html
+
+    <hr />
+    
+
 Overview
 ==========
 

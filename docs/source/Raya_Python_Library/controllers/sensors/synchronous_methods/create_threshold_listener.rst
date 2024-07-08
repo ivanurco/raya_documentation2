@@ -2,6 +2,11 @@
 create_threshold_listener()
 ============================
 
+.. raw :: html
+
+   <hr/>
+   
+
 Create a listener triggered when the value of one (or multiple)
 **continuous sensor(s)** go(es) inside/outside a specific numeric range.
 

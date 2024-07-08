@@ -1,6 +1,10 @@
 Install Ra-Ya SDK
 =================
 
+.. raw:: html
+
+    <hr />
+    
 The Ra-Ya SDK is a python package that allows to execute various commands from the CLI, this tool helps you to create apps, debug code and executing it in a real robot
 
 Operating Systems

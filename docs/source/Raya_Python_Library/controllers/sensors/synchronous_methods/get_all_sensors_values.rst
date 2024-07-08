@@ -2,6 +2,10 @@
 get_all_sensors_values()
 ===========================
 
+.. raw :: html
+
+   <hr/>
+
 Synchronously get current state of all the sensors.
 
 Reference

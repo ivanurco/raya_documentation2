@@ -1,8 +1,13 @@
 Controllers
 ================
 
+.. raw :: html
+
+   <hr/>
+   
 .. toctree::
    :maxdepth: 2
+   :titlesonly:
 
    Sensors <sensors/index>
    LiDAR <lidar/index>

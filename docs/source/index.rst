@@ -1,6 +1,10 @@
 Index
 =======
 
+.. raw:: html
+
+   <hr/>
+
 .. toctree::
    :caption: Getting Started
    :maxdepth: 1

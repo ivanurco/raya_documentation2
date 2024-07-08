@@ -2,6 +2,10 @@
 get_sensor_value()
 ====================
 
+.. raw :: html
+
+   <hr/>
+   
 Synchronously get current value of a sensor.
 
 Reference

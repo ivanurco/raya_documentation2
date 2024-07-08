@@ -2,6 +2,10 @@
 check_sensor_in_range()
 ============================
 
+.. raw :: html
+
+   <hr/>
+
 Check if the current value of a **continuous sensor** is inside/outside
 a range.
 

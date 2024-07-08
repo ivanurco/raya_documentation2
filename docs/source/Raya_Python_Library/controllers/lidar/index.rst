@@ -2,6 +2,26 @@
 LiDAR
 ================
 
+.. raw :: html
+
+   <hr/>
+
+.. raw:: html
+
+   <div class="hidden-block">
+
+.. toctree::
+   :maxdepth: 2
+
+   Guide <self>
+   Synchronous methods <synchronous_methods/index>   
+   Exceptions <exceptions>
+   Enumerations <enumerations>
+
+.. raw:: html
+
+   </div>
+
 1. Overview
 =============
 This controller will allow you to access the robot's Lidar. Using the Lidar can be helpful to detect obstacles, and distance from objects.
@@ -56,24 +76,4 @@ See all Lidar examples in the pyraya_examples `Github <https://github.com/Unlimi
       <a href="https://github.com/Unlimited-Robotics/pyraya_examples" class="custom-link">
          Github 
       </a>
-   </div>
-
-
-
-.. raw:: html
-
-   <div class="hidden-block">
-
-.. toctree::
-   :maxdepth: 2
-
-   Asynchronous methods <asynchronous_methods/index>
-   Synchronous methods <synchronous_methods/index>
-   Handlers <handlers/index>
-   Exceptions <exceptions>
-   Feedbacks <feedbacks>
-   Enumerations <enumerations>
-
-.. raw:: html
-
    </div>

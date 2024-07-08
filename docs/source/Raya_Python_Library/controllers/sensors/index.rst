@@ -2,6 +2,28 @@
 Sensors
 ====================
 
+.. raw :: html
+
+   <hr/>
+
+
+.. raw:: html
+
+   <div class="hidden-block">
+
+.. toctree::   
+   :maxdepth: 1
+   :titlesonly:
+   
+   Guide <self>
+   Synchronous methods <synchronous_methods/index>      
+   Exceptions <exceptions>
+   
+.. raw:: html
+
+   </div>
+
+
 1. Overview
 ==============
 
@@ -51,20 +73,4 @@ The following full examples use this controller:
 * `sensors_listener <https://github.com/Unlimited-Robotics/pyraya_examples/blob/main/sensors_listener/src/app.py>`_
 * `sensors_list <https://github.com/Unlimited-Robotics/pyraya_examples/blob/main/sensors_list/src/app.py>`_
 * `sensors_print <https://github.com/Unlimited-Robotics/pyraya_examples/blob/main/sensors_print/src/app.py>`_
-
-
-
-.. raw:: html
-
-   <div class="hidden-block">
-
-.. toctree::
-   :maxdepth: 3
-   
-   Synchronous methods <synchronous_methods/index>      
-   Exceptions <exceptions>
-   
-.. raw:: html
-
-   </div>
 
