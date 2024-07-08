@@ -1,0 +1,66 @@
+<p>Disable and delete a previously created frame listener, see <a
+        href="/v2/docs/controller-cameras-create-frame-listener" rel="noopener noreferrer" target="_blank"
+        translate="no">create_color_frame_listener()</a>.</p>
+
+<h2>Reference</h2>
+
+<h3>Arguments</h3>
+
+<table>
+    <thead>
+        <tr>
+            <th>Arguments</th>
+            <th>Type</th>
+            <th>
+                <br>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>camera_name</td>
+            <td><code data-backticks="1">str</code>
+                <br>
+            </td>
+            <td>Camera name</td>
+        </tr>
+    </tbody>
+</table>
+
+<h3>Return</h3>
+
+<p><code data-backticks="1">None</code></p>
+
+<h3>Exceptions</h3>
+
+<ul>
+    <li><code data-backticks="1">RayaCameraInvalidName</code><code
+            data-backticks="1"><code data-backticks="1"><br></code></code></li>
+</ul>
+
+<h2><span style="font-size: 22px;"></span></h2>
+
+<p>See the <a href="/v2/docs/cameras-exceptions" rel="nofollow noopener noreferrer" target="_blank"
+        translate="no">complete list of cameras exceptions.</a></p>
+
+<h2><span style="font-size: 22px;">Usage Example</span></h2>
+
+<h3>1. Delete listener</h3>
+<section class="html-code-block active" contenteditable="false" id="section-1692984831354" translate="no">
+    <div class="code-language">
+        <div class="span-wrapper"><span class="code-title-element tab-active"
+                data-elementid="section-1692984831354">Python</span><span class="code-title"
+                data-elementid="section-1692984831354" style="display: none;">Python</span></div>
+        <div class="action-items"><span class="edit-code-block"><span class="fal fa-pencil-alt"></span></span><span
+                class="remove-code-block"><span class="fal fa-trash-alt"></span></span></div>
+    </div>
+    <pre><code class="language-python" data-code-id="section-1692984831354" data-language="python"><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+self<span class="token punctuation">.</span>cameras <span class="token operator">=</span> <span class="token keyword">await</span> self<span class="token punctuation">.</span>enable_controller<span class="token punctuation">(</span><span class="token string">&#39;cameras&#39;</span><span class="token punctuation">)</span>
+self<span class="token punctuation">.</span>camera_name <span class="token operator">=</span> <span class="token string">&#39;chest&#39;</span>
+self<span class="token punctuation">.</span>cameras<span class="token punctuation">.</span>enable_camera<span class="token punctuation">(</span>self<span class="token punctuation">.</span>camera_name<span class="token punctuation">)</span>
+self<span class="token punctuation">.</span>cameras<span class="token punctuation">.</span>create_color_frame_listener<span class="token punctuation">(</span>camera_name<span class="token operator">=</span>self<span class="token punctuation">.</span>camera_name<span class="token punctuation">,</span> callback<span class="token operator">=</span>self<span class="token punctuation">.</span>camera_frame_callback<span class="token punctuation">)</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+self<span class="token punctuation">.</span>cameras<span class="token punctuation">.</span>delete_listener<span class="token punctuation">(</span>camera_name<span class="token operator">=</span>self<span class="token punctuation">.</span>camera_name<span class="token punctuation">)</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+</code></pre>
+</section>

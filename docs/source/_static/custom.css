@@ -94,3 +94,7 @@ a.custom-link:visited:hover {
     color: rgb(106, 117, 255) !important;
     text-decoration-color: rgb(106, 117, 255) !important;
 }
+
+.underline {
+    text-decoration: underline;
+}

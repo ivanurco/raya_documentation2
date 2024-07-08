@@ -1,2 +1,10 @@
-<NAME> Exceptions
-===================
+.. _cameras_exceptions:
+
+=====================
+Exceptions
+=====================
+
+
+.. raw:: html
+
+    <hr/>

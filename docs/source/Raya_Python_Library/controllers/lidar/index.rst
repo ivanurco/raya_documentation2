@@ -73,7 +73,10 @@ See all Lidar examples in the pyraya_examples `Github <https://github.com/Unlimi
 .. raw:: html
 
    <div>See all Lidar examples in the pyraya_examples 
-      <a href="https://github.com/Unlimited-Robotics/pyraya_examples" class="custom-link">
+      <a href="https://github.com/Unlimited-Robotics/pyraya_examples" 
+      class="custom-link"
+      target="_blank"
+      >
          Github 
       </a>
    </div>
