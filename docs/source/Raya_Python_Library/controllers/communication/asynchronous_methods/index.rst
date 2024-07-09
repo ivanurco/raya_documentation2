@@ -1,6 +1,13 @@
+====================
 Asynchronous methods
 ====================
 
-.. toctree::
-    :maxdepth: 2
+.. raw:: html
 
+    <hr/>
+
+.. toctree::
+    :maxdepth: 1
+
+    mqtt_create_subscription
+    mqtt_publish_message

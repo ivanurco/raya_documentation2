@@ -101,19 +101,49 @@ a.custom-link:visited:hover {
 
 /*Info box CSS*/
 
-div.info-box{
+div.info-box {
     background-color: rgb(221, 247, 255);
     padding: 12px 20px 12px 20px;
     border-radius: 5px;
     box-sizing: border-box;
 }
 
-p.title.info-box{
+p.title.info-box {
     color: rgb(0, 106, 138);
     font-weight: 600;
 }
 
-p.text.info-box{
+p.text.info-box {
     color: rgb(0, 106, 138);
     font-weight: 400;
+}
+
+
+/*Warning box CSS*/
+
+div.warning-box {
+    background-color: rgb(253, 242, 206);
+    padding: 12px 20px 12px 20px;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+p.title.warning-box {
+    color: rgb(127, 100, 22);
+    font-weight: 600;
+}
+
+p.text.warning-box {
+    color: rgb(127, 100, 22);
+    font-weight: 400;
+}
+
+/* Give style a inline code (replacing ``xxxxx``) to use inside of raw html blocks*/
+
+.custom-code {
+    font-family: monospace;
+    background-color: #f8f8f8;
+    padding: 2px 4px;
+    border-radius: 3px;
+    color: #333;
 }
