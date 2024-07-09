@@ -98,3 +98,22 @@ a.custom-link:visited:hover {
 .underline {
     text-decoration: underline;
 }
+
+/*Info box CSS*/
+
+div.info-box{
+    background-color: rgb(221, 247, 255);
+    padding: 12px 20px 12px 20px;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+p.title.info-box{
+    color: rgb(0, 106, 138);
+    font-weight: 600;
+}
+
+p.text.info-box{
+    color: rgb(0, 106, 138);
+    font-weight: 400;
+}
