@@ -1,17 +1,10 @@
-+-----------------------------------+-----------------------------------+
-| Exception                         | Condition                         |
-+===================================+===================================+
-| ``RayaCamerasException``          | Exception from cameras method.    |
-+-----------------------------------+-----------------------------------+
-| ``RayaCameraInvalidName``         | Camera name given to function is  |
-|                                   | not a valid name.                 |
-+-----------------------------------+-----------------------------------+
-| ``RayaCameraNotEnabled``          | Camera given to function is not   |
-|                                   | enabled.                          |
-+-----------------------------------+-----------------------------------+
-| ``RayaCameraAlreadyEnabled``      | Camera is already enabled.        |
-+-----------------------------------+-----------------------------------+
-| ``RayaCameraNotFrameReceived``    | Image not received after timeout. |
-+-----------------------------------+-----------------------------------+
+Enumerations
+------------
 
-| 
+ANGLE_UNIT
+~~~~~~~~~~
+
+Enumeration to define the unit of measurement of angles.
+
+-  ``ANGLE_UNIT.DEGREES`` : Degrees
+-  ``ANGLE_UNIT.RADIANS`` : Radians

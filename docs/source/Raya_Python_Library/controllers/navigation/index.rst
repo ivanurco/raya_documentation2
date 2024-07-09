@@ -1,8 +1,19 @@
+.. _navigation_controller:
+
+================
 Navigation
 ================
 
+.. raw:: html
+
+   <hr/>
+
+.. raw:: html
+
+   <div class="hidden-block">
+
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
 
    Asynchronous methods <asynchronous_methods/index>
    Synchronous methods <synchronous_methods/index>
@@ -10,3 +21,7 @@ Navigation
    Exceptions <exceptions>
    Feedbacks <feedbacks>
    Enumerations <enumerations>
+
+.. raw:: html
+
+   </div>

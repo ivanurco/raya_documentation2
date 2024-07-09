@@ -1,0 +1,50 @@
+<h2>1. Overview</h2>
+
+<p>This controller allows you to move the robot in any direction that you want.</p>
+
+<p>This controller gives direct movement commands to the robot and it doesn&#39;t include path planning or obstacle
+    avoidance algorithms. Please refer to the <a href="/v2/docs/controller-navigation"
+        rel="nofollow noopener noreferrer" target="_blank" translate="no">Navigation controller</a> if you want to
+    navigate instead of just moving.&nbsp;</p>
+
+<h2>2. Using the controller</h2>
+<section class="html-code-block active" contenteditable="false" id="section-1657516942938" translate="no">
+    <div class="code-language">
+        <div class="span-wrapper"><span class="code-title-element tab-active"
+                data-elementid="section-1657516942938">Python</span><span class="code-title"
+                data-elementid="section-1657516942938" style="display: none;">Python</span></div>
+        <div class="action-items"><span class="edit-code-block"><span class="fal fa-pencil-alt"></span></span><span
+                class="remove-code-block"><span class="fal fa-trash-alt"></span></span></div>
+    </div>
+    <pre><code class="language-python" data-code-id="section-1657516942938" data-language="python"><span class="token keyword">from</span> raya<span class="token punctuation">.</span>application_base <span class="token keyword">import</span> RayaApplicationBase
+
+<span class="token keyword">class</span> <span class="token class-name">RayaApplication</span><span class="token punctuation">(</span>RayaApplicationBase<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">async</span> <span class="token keyword">def</span> <span class="token function">setup</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+        self<span class="token punctuation">.</span>sound <span class="token operator">=</span> <span class="token keyword">await</span> self<span class="token punctuation">.</span>enable_controller<span class="token punctuation">(</span><span class="token string">&#39;motion&#39;</span><span class="token punctuation">)</span>
+        <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+</code></pre>
+</section>
+
+<p>
+    <br>
+</p>
+
+<p>The controller class includes a set of methods to control the motion of the robot:</p>
+
+<ul>
+    <li><a href="/v2/docs/move-linear" rel="nofollow" translate="no">move_linear()</a></li>
+    <li><a href="/v2/docs/rotate" rel="nofollow" translate="no">rotate()</a></li>
+    <li><a href="/v2/docs/controller-motion-set-velocities" rel="nofollow" translate="no">set_velocity()</a></li>
+    <li><a href="/v2/docs/await-until-stop" rel="nofollow" translate="no">await_until_stop()</a></li>
+    <li><a href="/v2/docs/controller-motion-stop-motion" rel="nofollow" translate="no">cancel_motion()</a></li>
+    <li><a href="/v2/docs/controller-motion-is-moving" rel="nofollow" translate="no">is_moving()</a></li>
+    <li><a href="/v2/docs/check-last-motion-exception" rel="nofollow" translate="no">check_last_motion_exceptions()</a>
+    </li>
+    <li><a href="/v2/docs/get-last-motion-result" rel="nofollow" translate="no">get_last_motion_result()</a></li>
+</ul>
+
+<h2>3. Examples</h2>
+
+<p>See all Motion examples in the pyraya_examples <a href="https://github.com/Unlimited-Robotics/pyraya_examples"
+        rel="nofollow noopener noreferrer" target="_blank" translate="no">Github</a>.</p>
