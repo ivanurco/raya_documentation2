@@ -1,42 +1,46 @@
-==========
-Get colors
-==========
+=============
+get_colors()
+=============
 
 Returns a List type string with all the leds colors name.
 
 Reference
-=========
+===========
 
 List of predefined colors
--------------------------
+---------------------------
 
-Refer to :doc:`this <../../../../Robots/gary/leds_colors>` page for a complete list of colors.
+Refer to :ref:`this <gary_list_led_colors>` page for a complete list of colors.
 
 Arguments
----------
+-----------
 
 ========= ========== ============= ===================================
 Arguments Type       Default value Explanation
 ========= ========== ============= ===================================
-group     ``string`` ``None``      name of the predefined LED's group.
+group     ``string`` ``None``      name of the predefined led's group.
 ========= ========== ============= ===================================
 
 Return
-------
+--------
 
-``list`` a list type string that containes all the available colors for the LED's.
+``list`` 
+
+A list type string that containes all the available colors for the LED's.
 
 Exceptions
-----------
+------------
 
 -  ``RayaLedsWrongGroup``
 
-See the :doc:`complete exceptions <../exceptions>`.
+See the :ref:`complete exceptions <leds_exceptions>`.
 
 Usage example
-=============
+================
 
-Print the list of possible colors for the selected group. Code:
+Print the list of possible colors for the selected group. 
+
+Code:
 
 .. code:: python
 

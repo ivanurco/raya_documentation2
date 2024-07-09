@@ -1,26 +1,28 @@
-==========
-Get groups
-==========
+=============
+get_groups()
+=============
 
 Returns a List type string with all the leds groups name.
 
 Reference
-=========
+===========
 
-Check the :doc:`LED's groups list <../../../../Robots/gary/leds_colors>`.
+Check the :ref:`LED's groups list <gary_list_led_colors>`.
 
 Return
-------
+--------
 
-``List`` a list types string that containes all the avilable groups.
+``List`` 
+
+A list types string that containes all the available groups.
 
 Exceptions
-----------
+------------
 
-See the :doc:`complete exceptions <../exceptions>`.
+See the :ref:`complete exceptions <leds_exceptions>`.
 
 Usage example
-=============
+===============
 
 Get all the groups of all led's:
 

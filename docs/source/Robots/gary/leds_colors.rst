@@ -1,3 +1,5 @@
+.. _gary_list_led_colors:
+
 ==============
 List of Colors
 ==============

@@ -1,29 +1,29 @@
-============
-Turn off all
-============
+=================
+turn_off_all()
+=================
 
 This function turns off all of the groups.
 
 Reference
-=========
+===========
 
 Arguments
----------
+-----------
 
 ``None``
 
 Return
-------
+---------
 
 ``None``
 
 Exceptions
-----------
+------------
 
-See the :doc:`complete exceptions <../exceptions>`.
+See the :ref:`complete led's exceptions <leds_exceptions>`.
 
 Usage example
-=============
+================
 
 Turn off all of the leds.
 

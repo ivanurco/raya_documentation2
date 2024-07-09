@@ -1,8 +1,8 @@
-==============
-Turn off group
-==============
+==================
+turn_off_group()
+==================
 
-This function sets a particular group to a color (see list of colors with get_colors).
+This function turns off an led’s group.
 
 Reference
 =========
@@ -13,8 +13,7 @@ Arguments
 ========= ========== ===================================
 Arguments Type       Explanation
 ========= ========== ===================================
-group     ``string`` Name of the predefined LED's group.
-color     ``string`` Name of the predefined LED's color.
+group     ``string`` Name of the predefined led's group
 ========= ========== ===================================
 
 Return
@@ -22,19 +21,21 @@ Return
 
 ``None``
 
+
 Exceptions
 ----------
 
 -  ``RayaLedsWrongGroup``
--  ``RayaLedsWrongColor``
 
-See the :doc:`complete exceptions <../exceptions>`.
+See the :ref:`complete led´s exceptions <leds_exceptions>`.
 
 Usage example
 =============
 
-Sets the ``head`` group of leds off. Code:
+Turn off the 'chest' group of leds.
+
+Code:
 
 .. code:: python
 
-   self.leds.turn_off_group(group = 'head')
+   self.leds.turn_off_group(group = 'chest')

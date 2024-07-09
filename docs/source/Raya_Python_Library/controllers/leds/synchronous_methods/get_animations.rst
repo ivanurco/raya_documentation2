@@ -1,14 +1,14 @@
-==============
-Get animations
-==============
+==================
+get_animations()
+==================
 
 Returns a list with all the available animations for a specified group.
 
 Reference
-=========
+===========
 
 Arguments
----------
+-----------
 
 ========= ========== ============= ===================================
 Arguments Type       Default value Explanation
@@ -17,21 +17,25 @@ group     ``string`` ``None``      Name of the predefined LED's group.
 ========= ========== ============= ===================================
 
 Return
-------
+--------
 
-``list`` A list with all the available animations for a specified group.
+``list`` 
+
+A list with all the available animations for a specified group.
 
 Exceptions
-----------
+------------
 
 -  ``RayaLedsWrongGroup``
 
-See the :doc:`complete exceptions <../exceptions>`.
+See the :ref:`complete list LEDs exceptions <leds_exceptions>`.
 
 Usage example
-=============
+================
 
-Print a list of all available animations for the chest leds. Code:
+Print a list of all available animations for the chest leds. 
+
+Code:
 
 .. code:: python
 

@@ -1,8 +1,16 @@
+=======================
 Asynchronous methods
-====================
+=======================
+
+.. raw:: html
+
+    <hr/>
+
 
 .. toctree::
-    :maxdepth: 2
-    :glob:
-
-    *
+    :maxdepth: 1
+    
+    animation
+    set_color
+    turn_off_group
+    turn_off_all
