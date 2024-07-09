@@ -1,15 +1,23 @@
-Get predefined sounds
-=====================
+=============================
+get_predefined_sounds()
+=============================
+
+.. raw:: html
+
+    <hr/>
 
 Returns a list with all the prederfined sounds that can be played.
 
+Reference
+===========
+
 Arguments
----------
+----------
 
 ``None``
 
 Return
-------
+-------
 
 ======== ================================
 Type     Description
@@ -18,7 +26,7 @@ Type     Description
 ======== ================================
 
 Usage example
--------------
+===============
 
 Code:
 

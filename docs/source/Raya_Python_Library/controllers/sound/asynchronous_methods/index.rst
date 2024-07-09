@@ -1,8 +1,14 @@
+=======================
 Asynchronous methods
-====================
+=======================
+
+.. raw:: html
+
+    <hr/>
 
 .. toctree::
-    :maxdepth: 2
-    :glob:
+    :maxdepth: 1
 
-    *
+    cancel_sound
+    record_sound
+    play_sound

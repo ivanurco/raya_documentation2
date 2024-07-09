@@ -1,8 +1,14 @@
+=====================
 Synchronous methods
-===================
+=====================
+
+.. raw:: html
+
+    <hr/>
 
 .. toctree::
-    :maxdepth: 2
-    :glob:
+    :maxdepth: 1
 
-    *
+    get_predefined_sounds
+    is_playing
+    is_recording

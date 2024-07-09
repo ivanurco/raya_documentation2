@@ -1,14 +1,21 @@
-============
-Is Recording
-============
+================
+is_recording()
+================
+
+.. raw:: html
+
+   <hr/>
+
+Reference
+===========
 
 Arguments
-=========
+-----------
 
 ``None``
 
 Return
-======
+--------
 
 ======== ==================================================================================
 Type     Description
@@ -21,4 +28,4 @@ Usage example
 
 .. code:: python
 
-   recording= self.sound.is_recording()
+   recording = self.sound.is_recording()
