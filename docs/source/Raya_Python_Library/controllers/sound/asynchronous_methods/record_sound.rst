@@ -1,10 +1,19 @@
-Record sound
-============
+===============
+record_sound()
+===============
+
+.. raw:: html
+
+    <hr/>
+
 
 This function records a sound to a path based on the duration given.
 
+Reference
+============
+
 Arguments
----------
+-----------
 
 +------------------------+------------------------+------------------------+------------------------+
 | Arguments              | Type                   | Default Value          | Description            |
@@ -27,24 +36,27 @@ Arguments
 +------------------------+------------------------+------------------------+------------------------+
 
 Return
-------
+---------
 
 ============= ==================================================================
 Type          Description
 ============= ==================================================================
-``SoundData`` Recorded data as `SoundData </v2/docs/sounddata-object>`__ object.
+``SoundData`` Recorded data as :ref:`SoundData <sound_data_object>` object.
 ============= ==================================================================
 
 Exceptions
-----------
+------------
 
 -  ``RayaSoundErrorRecording``
 -  ``RayaNeedCallback``
 
-See the :doc:`complete exceptions <../exceptions>`.
+See the :ref:`complete exceptions <sound_exceptions>`.
+
+See the :ref:`general exceptions <general_exceptions>`.
+
 
 Usage example
--------------
+===============
 
 .. code:: python
 

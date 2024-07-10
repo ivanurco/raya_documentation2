@@ -1,15 +1,18 @@
-Play Sound
-==========
+=============
+play_sound()
+=============
 
 This function plays a sound from the data given in its arguments. This function is recommended to
 play sound.
 
-These 3 parameters are mutually exclusive `Name = Play a predefined sound by his name`,  `Path = Play a
-file by his path`, `Data = Play an audio reading as a raw data`, an object of the
-:doc:`SoundData <../handlers/sound_data_object>` type imported from SoundController must be created.
+Reference
+===========
+
+These 3 parameters are mutually exclusive ``Name``, ``Path``, ``Data``, and an object of the
+:ref:`SoundData <sound_data_object>` type imported from SoundController must be created.
 
 Arguments
----------
+-----------
 
 +------------------------+------------------------+------------------------+------------------------+
 | Arguments              | Type                   | Default Value          | Description            |
@@ -43,12 +46,12 @@ Arguments
 +------------------------+------------------------+------------------------+------------------------+
 
 Return
-------
+--------
 
 ``None``
 
 Exceptions
-----------
+-------------
 
 -  ``RayaSoundWrongName``
 -  ``RayaSoundWrongPath``
@@ -56,10 +59,10 @@ Exceptions
 -  ``RayaSoundErrorPlayingAudio``
 -  ``RayaSoundBufferNotFound``
 
-See the :doc:`complete exceptions <../exceptions>`.
+See the :ref:`complete sound exceptions <sound_exceptions>`.
 
 Usage example
--------------
+===============
 
 .. code:: python
 
@@ -78,7 +81,7 @@ Usage example
                )
 
 Load file (WAV, MP3, OGG, AAC, etc) and play it
------------------------------------------------
+--------------------------------------------------
 
 .. code:: python
 
@@ -106,7 +109,7 @@ Load file (WAV, MP3, OGG, AAC, etc) and play it
            self.log.info(f'Hello from finish()')
 
 Create 5 seconds 1KHz tone and play it
---------------------------------------
+-----------------------------------------
 
 .. code:: python
 

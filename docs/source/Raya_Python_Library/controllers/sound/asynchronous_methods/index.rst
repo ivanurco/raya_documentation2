@@ -7,7 +7,7 @@ Asynchronous methods
     <hr/>
 
 .. toctree::
-    :maxdepth: 1
+    :maxdepth: 1    
 
     cancel_sound
     record_sound

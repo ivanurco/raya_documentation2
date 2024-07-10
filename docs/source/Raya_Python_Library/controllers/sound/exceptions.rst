@@ -1,7 +1,7 @@
 .. _sound_exceptions:
 
 ===================
-Sound exceptions
+Exceptions
 ===================
 
 .. raw :: html
