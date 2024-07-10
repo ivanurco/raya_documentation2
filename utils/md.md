@@ -1,66 +1,74 @@
-SoundData is a class that allows provide more information about the audio data that you want to play or that is recorded from the robot.
+## Enumerations
 
-## Attributes
+### STATUS_BATTERY
 
-* Data: Unsigned char array (0-255) containing the audio information.
-* Channels: number of data channels.
-* Sample rate: the number of samples taken per second.
-* Sample format: for raw, information about bytes configuration (see Constants).
-* Coding format: data format (MP3,WAV,PCM). PCM is used for raw.
+Enumeration to indicate the status of the battery.
 
-### Constants
+* `STATUS_BATTERY.UNKNOWN` : Unknown status
+* `STATUS_BATTERY.CHARGING` : Charging battery
+* `STATUS_BATTERY.DISCHARGING` : Discharging battery
+* `STATUS_BATTERY.NOT_CHARGING` : Battery not charging
+* `STATUS_BATTERY.FULL` : Battery full
+* `STATUS_BATTERY.NO_BATTERY` : No battery
+* `STATUS_BATTERY.LOW_BATTERY` : Low battery
+* `STATUS_BATTERY.CRITICAL_BATTERY` : Critical battery
 
-Raw format (PCM) allowed:
+### STATUS_BATTERY_HEALTH
 
-SAMPLE_ALAW
-SAMPLE_F32BE
-SAMPLE_F32LE
-SAMPLE_F64BE
-SAMPLE_F64LE
-SAMPLE_MULAW
-SAMPLE_S16BE
-SAMPLE_S16LE
-SAMPLE_S24BE
-SAMPLE_S24LE
-SAMPLE_S32BE
-SAMPLE_S32LE
-SAMPLE_S8
-SAMPLE_U16BE
-SAMPLE_U16LE
-SAMPLE_U24BE
-SAMPLE_U24LE
-SAMPLE_U32BE
-SAMPLE_U32LE
-SAMPLE_U8
-SAMPLE_VIDC
+ Enumeration to indicate the health of the battery.
 
-### Sample format by width (Used for PCM format)
+* `STATUS_BATTERY_HEALTH.UNKNOWN` : Unknown status
+* `STATUS_BATTERY_HEALTH.GOOD` : Good battery
+* `STATUS_BATTERY_HEALTH.OVERHEAT` : Overheat battery
+* `STATUS_BATTERY_HEALTH.DEAD` : Dead battery
+* `STATUS_BATTERY_HEALTH.OVERVOLTAGE` : Overvoltage battery
+* `STATUS_BATTERY_HEALTH.UNSPEC_FAILURE` : Unspecified failure battery
+* `STATUS_BATTERY_HEALTH.COLD` : Cold battery
+* `STATUS_BATTERY_HEALTH.WATCHDOG_TIMER_EXPIRE` : Watchdog timer expire battery
+* `STATUS_BATTERY_HEALTH.SAFETY_TIMER_EXPIRE` : Safety timer expire battery
 
-With the number of bytes used to represent a sample, it's possible obtain the data format among the most common (SAMPLE_U8, SAMPLE_S16LE, SAMPLE_S24LE, SAMPLE_S32LE)
+### STATUS_BATTERY_TECHNOLOGY
 
-#### Example
+Enumeration to indicate the technology of the battery.
 
-``` python
-sample_format = SAMPLE_FORMAT_BY_WIDTH[2] # ( 2 bytes means 16 bits Signed little endian format )
-```
+* `STATUS_BATTERY_TECHNOLOGY.UNKNOWN` : Unknown technology
+* `STATUS_BATTERY_TECHNOLOGY.NIMH` : Nickel Metal Hydride technology
+* `STATUS_BATTERY_TECHNOLOGY.LION` : Lithium Ion technology
+* `STATUS_BATTERY_TECHNOLOGY.LIPO` : Lithium Polymer technology
+* `STATUS_BATTERY_TECHNOLOGY.LIFE` : Lithium Iron Phosphate technology
+* `STATUS_BATTERY_TECHNOLOGY.NICD` : Nickel Cadmium technology
+* `STATUS_BATTERY_TECHNOLOGY.LIMN` : Lithium Manganese technology
 
-### Sample width by format (Used for PCM format)
+### STATUS_SERVER
 
-With the format, it is possible to obtain the number of bits used to represent a sample
+Enumeration to indicate the server status.
 
-#### Example
+* `STATUS_SERVER.NOT_AVAILABLE` : Server not available
+* `STATUS_SERVER.STOPPED` : Server stopped
+* `STATUS_SERVER.STARTING` : Server starting
+* `STATUS_SERVER.RUNNING` : Server running
+* `STATUS_SERVER.FAILED` : Server failed
 
-``` python
-sample_width = SAMPLE_WIDTH_BY_FORMAT[SAMPLE_S32LE] # ( return 4 )
-```
+### STATUS_ENGINE
 
-## Class functions
+Enumeration to indicate the engine status.
 
-### clearData()
+* `STATUS_ENGINE.NOT_AVAILABLE` : Engine not available
+* `STATUS_ENGINE.STOPPED` : Engine stopped
+* `STATUS_ENGINE.STARTING` : Engine starting
+* `STATUS_ENGINE.RUNNING` : Engine running
+* `STATUS_ENGINE.FAILED` : Engine failed
 
-Clear stored values.
+### STATUS_SERVER_ERROR
 
-### getSampleWidth()
+Enumeration to indicate the error code, when the server is not available.
 
-`int`
-Returns the sample width based on the format.
+* `STATUS_SERVER_ERROR.OK` : No error
+* `STATUS_SERVER_ERROR.ERROR_UNKNOWN` : Unknown error
+
+### STATUS_ENGINE_ERROR
+
+Enumeration to indicate the error code, when the engine is not available.
+
+* `STATUS_ENGINE_ERROR.OK` : No error
+* `STATUS_ENGINE_ERROR.ERROR_UNKNOWN` : Unknown error
