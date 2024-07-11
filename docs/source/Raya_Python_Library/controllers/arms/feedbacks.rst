@@ -1,2 +1,5 @@
-<NAME> Feedbacks
+.. _arms_feedbacks:
+
+===================
+Feedbacks
 ===================

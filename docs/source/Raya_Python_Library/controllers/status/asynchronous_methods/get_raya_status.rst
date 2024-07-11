@@ -40,7 +40,7 @@ Usage example
 
 Output:
 
-.. code:: json
+.. code:: python
 
    {
       "all_running":false,

@@ -1,10 +1,18 @@
+=========================================
+get_predefined_poses_list()
+=========================================
+
+.. raw:: html
+
+    <hr/>
+
 Retrieve all the predefined poses that the arm can be set to.
 
 Reference
----------
+===========
 
 Arguments
-~~~~~~~~~
+-----------
 
 +----------+---------+----------------------------------------------------------+
 | Argument | Type    | Description                                              |
@@ -13,7 +21,7 @@ Arguments
 +----------+---------+----------------------------------------------------------+
 
 Return
-~~~~~~
+---------
 
 ======== =======================================================
 Type     Description
@@ -22,17 +30,17 @@ Type     Description
 ======== =======================================================
 
 Exceptions
-~~~~~~~~~~
+------------
 
 -  ``RayaArmsException``
 -  ``RayaArmsInvalidArmOrGroupName``
 
-See the `complete list of arms exceptions </v2/docs/arms-exceptions>`__
+See the :ref:`complete list of arms exceptions <arms_exceptions>`
 
-Examples
---------
+Usage Example
+===============
 
-.. code:: python
+.. code-block:: python
 
    ...
    self.arms = self.enable_controller('arms')
@@ -43,6 +51,6 @@ Examples
 
 Output:
 
-.. code:: python
+.. code-block:: bash
 
    ['right_arm_home', 'pre_step_1', 'pre_step_2', 'pre_step_3', 'nav_with_object0', 'nav_with_object', 'nav_with_object1', 'nav_with_object2']

@@ -1,2 +1,5 @@
-<NAME> Exceptions
+.. _arms_exceptions:
+
+======================
+Exceptions
 ======================
