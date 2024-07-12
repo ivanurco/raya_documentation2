@@ -24,7 +24,7 @@ y                          ``float``                                 Y-coordinat
 z                          ``float``                                 Z-coordinate of the pose.                                                                 
 roll                       ``float``                                 Roll angle of the pose.                                                                   
 pitch                      ``float``                                 Pitch angle of the pose.                                                                  
-yaw                        ``float ``                                Yaw angle of the pose.                                                                    
+yaw                        ``float``                                 Yaw angle of the pose.                                                                    
 pose_dict                  ``dict``         ``None``                 Dict with the pose to execute {'position': [x, y, z], 'orientation': [roll, pitch, yaw]}  
 units                      ``ANGLE_UNIT``   ``ANGLE_UNIT.DEGREES``   Unit for angles (DEGREES or RADIANS).                                                     
 cartesian_path             ``bool``         ``False``                Whether to follow a cartesian path.                                                       
