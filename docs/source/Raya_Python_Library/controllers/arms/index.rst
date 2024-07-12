@@ -138,7 +138,7 @@ You can find all the methods divided into these groups:
 -  :doc:`set_pose_q() <./execute_arm_movements/set_pose_q>`
 -  :doc:`execute_predefined_trajectory() <./execute_arm_movements/execute_predefined_trajectory>`
 -  :doc:`execute_predefined_poses_array() <./execute_arm_movements/execute_predefined_poses_array>`
--  :doc:`execute_joint_positions_array() <./execute_arm_movements/execute_joint_positions_array>`
+-  :doc:`execute_joints_positions_array() <./execute_arm_movements/execute_joints_positions_array>`
 -  :doc:`execute_poses_array() <./execute_arm_movements/execute_poses_array>`
 -  :doc:`execute_poses_array_q() <./execute_arm_movements/execute_poses_array_q>`
 -  :doc:`set_multi_arm_pose() <./execute_arm_movements/set_multi_arm_pose>`

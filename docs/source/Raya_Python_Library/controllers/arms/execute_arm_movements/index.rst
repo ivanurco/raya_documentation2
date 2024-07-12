@@ -17,7 +17,7 @@ Execute Arm Movements
    set_pose_q
    execute_predefined_trajectory
    execute_predefined_poses_array
-   execute_joint_positions_array
+   execute_joints_positions_array
    execute_poses_array
    execute_poses_array_q
    set_multi_arm_pose

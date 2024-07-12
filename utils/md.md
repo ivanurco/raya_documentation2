@@ -1,39 +1,74 @@
-Retrieve all the predefined poses that the arm can be set to.
+ the end effector of multiple arms to the goal poses at the same time.
 
 ## Reference
 
 ### Arguments
 
-| Argument | Type  | Description|
-| --- | --- | --- |
-| arm | `str` | Name of the arm whose predefined poses will be returned. |
+| Arguments | Type | Default value |Description |
+| --- | --- | --- | --- |
+| group                       |`str`        |  | The group of arms to set the pose for.|
+| arms                        | `list`      |    | List of arms to set the pose for.                        |
+| goal_poses                  | `list`|   | List of goal poses for each arm.                                  |
+| cartesian_path              |`bool`| `False` | Whether to follow a cartesian path.                                 |
+| tilt_constraint             | `bool`| `False`| Whether to apply a tilt constraint.                           |
+| use_obstacles               | `bool`| `False`| Whether to use obstacles during execution.|
+| cameras                     | `list` | `[]`| List of cameras.|
+| update_obstacles            | `bool`| `False`| Whether to update obstacles.                                  |
+| min_bbox_clear_obstacles    | `list`| `[]`| List of minimum bounding boxes for clearing obstacles.          |
+| max_bbox_clear_obstacles    | `list`|`[]`| List of maximum bounding boxes for clearing obstacles.             |
+| save_trajectory             | `bool`|`False`| Whether to save the trajectory.                                     |
+| name_trajectory             | `str`| `''`| Name of the trajectory.                         |
+| velocity_scaling            | `float`| `0.0`| Scaling factor for velocity.                                        |
+| acceleration_scaling        |`float`|`0.0`| Scaling factor for acceleration.                                    |
+| units | `ANGLE_UNIT`| `ANGLE_UNIT.DEGREES`| Units for angles (DEGREES or RADIANS) |
+| callback_feedback           | `Callable` | `None` | Callable function for feedback .                          |
+| callback_feedback_async      |`Callable` |`None`| Callable function for feedback.                            |
+| callback_finish             |`Callable` |`None` | Callable function for finish.                            |
+| callback_finish_async      | `Callable` | `None`| Callable function for finish.                            |
+| wait                        | `bool`| `False`| Whether to wait for user response.     |
 
 ### Return
 
-| Type  | Description|
-| --- | --- |
-|`List` |  The name of each predefined pose for the specified arm.|
+ | Type |Description |
+ | --- | --- |
+| float | Fraction of the trajectory realized|
 
 ### Exceptions
 
+* `RayaInvalidCallback`
 * `RayaArmsException`
 * `RayaArmsInvalidArmOrGroupName`
+* `RayaArmsExternalException`
 
- See the [complete list of arms exceptions](/v2/docs/arms-exceptions){target="_blank"}
+See the [complete list of arms exceptions](/v2/docs/arms-exceptions){target="_blank"}
 
-## Examples
+### Feedbacks
 
-```python
-...
-self.arms = self.enable_controller('arms')
-...
-right_arm_predefined_poses = await self.arms.get_predefined_poses_list('right_arm')
-self.log.info(right_arm_predefined_poses)
-...
-```
-  
-Output:
+* [1] The arm is in execution of the command
+* [3] Planning of the trajectory in progress
+* [4] Updating obstacles in progress
 
-```python
-['right_arm_home', 'pre_step_1', 'pre_step_2', 'pre_step_3', 'nav_with_object0', 'nav_with_object', 'nav_with_object1', 'nav_with_object2']
-```
+ See the [complete list of arms feedbacks](/v2/docs/arms-feedbacks){target="_blank"}
+
+### Callback Arguments
+
+#### callback_feedback
+
+| Argument | Type | Description|
+| --- | --- | --- |
+|feedback_code|`int`|Code for the type of feedback.|
+|feedback_msg|`str`| Details regarding the feedback code (empty if no error).|
+| arm | `str` | Name of the arm. |
+| percentage | `float` | Percent of movement completed until target pose is reached. |
+
+#### callback_finish
+
+| Argument | Type | |
+| --- | --- | --- |
+| error | `int`| Code for the type of error encountered (0 if no error). |
+| error_msg | `str`| Details regarding the error (empty if no error). |
+|fraction| `float` | Fraction of the trajectory realized.|
+
+## Usage Example
+
+See the  [Arms Multi Pose Example](/v2/docs/arms-set-multi-arms-pose)  to check some valid uses.
