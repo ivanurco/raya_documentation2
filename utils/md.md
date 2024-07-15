@@ -1,49 +1,83 @@
-### SHAPE_TYPE
+This function displays a modal component.
 
-Enumeration to define the type of shape for obstacles.
+Modals are a variant of dialog used to present critical information or request user input needed to complete a user’s workflow. Modals interrupt a user’s workflow by design. When active, a user is blocked from the on-page content and cannot return to their previous workflow until the modal task is completed or the user dismisses the modal.
 
-* `SHAPE_TYPE.BOX`  :  Box.
-* `SHAPE_TYPE.SPHERE`  :  Sphere.
-* `SHAPE_TYPE.CYLINDER`  :  Cylinder.
-* `SHAPE_TYPE.CONE`  :  Cone.
+## Reference
 
-### SHAPE_DIMENSION
+![Group 974 \(1\).png](https://cdn.document360.io/6129992e-c4ec-4e12-9225-4d2877a6cbe7/Images/Documentation/Group%20974%20%281%29.png){height="" width=""}
 
-Enumeration to define the array position to define the shape obstacles dimensions.
+[Explore more about this component here](https://ur-ui-kit.web.app/?path=/docs/example-modal--modal){target="_blank"}.
 
----
+### Arguments
 
-* `SHAPE_DIMENSION.BOX_X` : Box width.
-* `SHAPE_DIMENSION.BOX_Y` : Box large.
-* `SHAPE_DIMENSION.BOX_Z` : Box height.
+| Arguments | Type | Default Value |  |
+| --- | --- | --- | --- |
+| title | string | None |Title of the modal (mandatory)  |
+| title_size | enum | `UI_TITLE_SIZE.MEDIUM` | Size of the title
+| subtitle | string| |Subtitle of the modal (optional)  |
+| content | string| None |Context text of the modal (optional)  |
+| modal_type | enum | `UI_MODAL_TYPE.INFO` | enum to define the type of the modal, check `UI_MODAL_TYPE` |
+| modal_size       | enum                   | `UI_MODAL_SIZE.NORMAL`     | enum representing the size of the modal, check `UI_MODAL_SIZE`          |
+| submit_text | string| "Yes"|Submit text button |
+| cancel_text | string| "No"|Cancel text button|
+| show_icon        | bool                   | True                  | Show icon in the modal  |
+| button_size | int | 1 | Button size (1 = SMALL, 2 = MEDIUM, 3 = LARGE)
+| theme            | enum                   | ` UI_THEME_TYPE.DARK ` | enum representing the theme of the modal, check `UI_THEME_TYPE.` enum |
+| custom_style     | dict                   | None                  | dictionary containing custom styles for the modal (optional)
+| wait             | bool                   | True                  | boolean indicating whether to wait for a user response                      |
+| callback         | callable               | None                  | callable object to handle the response (optional)                           |
 
----
+See the [complete list of general enumerations](/v2/docs/ui-enumerations){target="_blank"}.
 
-* `SHAPE_DIMENSION.SPHERE_RADIUS` : Sphere radius.
+### Return
 
----
+Dictionary that contains the action performed by the user.
+The action can be: canceled/confirmed/closed.
+Example: ```{'action': 'confirmed', 'app_id': 'APP_ID'}```
 
-* `SHAPE_DIMENSION.CYLINDER_HEIGHT` : Cylinder height.
-* `SHAPE_DIMENSION.CYLINDER_RADIUS` : Cylinder radius.
+### Exceptions
 
----
+* `RayaUIMissingValue`
+* `RayaNeedCallback`
 
-* `SHAPE_DIMENSION.CONE_HEIGHT` : Cone height.
-* `SHAPE_DIMENSION.CONE_RADIUS` : Cone radius.
+See the [complete list of ui exceptions](/v2/docs/ui-exceptions){target="_blank"} and the [complete list of general exceptions](/v2/docs/raya-exceptions){target="_blank"}.
 
-### ARMS_JOINT_TYPE
+### Callback Arguments
 
-Enumeration to define the type of arm joint.
+#### callback
 
-* `ARMS_JOINT_TYPE.ROTATIONAL` :  Rotational joint.
-* `ARMS_JOINT_TYPE.LINEAR` : Linear joint.
+| Argument | Type |Description |
+| --- | --- | --- |
+| data | dict | Dict containing the result of the action |
 
-### ARMS_MANAGE_ACTIONS
+## Example
 
-Enumeration to set the action to take when the user wants to manage predefined data.
+``` python
+r...
 
-* `ARMS_MANAGE_ACTIONS.GET` :  Getting the predefined data.
-* `ARMS_MANAGE_ACTIONS.EDIT`:  Editing the predefined data.
-* `ARMS_MANAGE_ACTIONS.REMOVE`: Removing the predefined data.
-* `ARMS_MANAGE_ACTIONS.GET_INFORMATION`: Getting informartion related to the predefined data.
-* `ARMS_MANAGE_ACTIONS.CREATE`: Creating a new predefined data.
+class RayaApplication(RayaApplicationBase):
+
+    async def setup(self):
+        self.ui = await self.enable_controller('ui')
+        ....
+        
+    async def loop(self):
+     ....
+        response = await self.ui.display_modal(
+            title="Oh no!", 
+            subtitle="Retry this action?", 
+            modal_type=MODAL_TYPE.ERROR
+        )
+
+        self.log.info(response)
+      ...
+      
+    async def finish(self):
+      ...
+
+...
+'''
+{'action': 'canceled', 'app_id': 'doctest'}
+(when modal button 'No' is clicked)
+'''
+```

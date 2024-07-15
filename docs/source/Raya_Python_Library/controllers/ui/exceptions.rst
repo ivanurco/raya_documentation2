@@ -1,2 +1,9 @@
-<NAME> Exceptions
+.. _ui_exceptions:
+
 =====================
+Exceptions
+=====================
+
+.. raw:: html
+
+    <hr/>

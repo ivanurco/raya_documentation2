@@ -1,215 +1,94 @@
 <h2>1. Overview</h2>
 
-<p>The controller for this specific robotic device offers a versatile range of methods to effectively manipulate its
-    arms. It enables access to essential information, including groups of arms, individual arms, and the respective
-    joints of each arm. Details such as joint types, limits, current joint states, and the present pose of the end
-    effector for each arm are readily available. This functionality facilitates seamless verification and trajectory
-    planning by specifying desired positions for joints or end effector poses.</p>
+<p>In order for the user to communicate with the robotic device, most of them will include an interactive screen or even
+    a remote mobile App.&nbsp;</p>
 
-<p>Additionally, the controller empowers users to manage various aspects, including creating, removing, editing,
-    retrieving, and gathering information on predefined poses and trajectories. It encompasses a comprehensive set of
-    commands to precisely position the joints or set the end effector to specific poses detecting obstacles from cameras
-    if it&#39;s desired. Furthermore, the controller supports the incorporation of constraints into trajectories and
-    allows &nbsp;the inclusion of obstacles or attaching them to the end effector.</p>
+<p>For example, Gary robot has a touch screen located in Gary&rsquo;s upper body.</p>
 
-<p>For example, Gary&#39;s arms are identified by the following names:</p>
+<p><img src="https://cdn.document360.io/6129992e-c4ec-4e12-9225-4d2877a6cbe7/Images/Documentation/01White%201.png"
+        alt="01White 1" class="fr-fic fr-dii" style="width: 272px;"></p>
 
-<table style="width: 18%; margin-right: calc(82%);">
-    <tbody>
-        <tr>
-            <td style="width: 50%; background-color: rgb(239, 239, 239); text-align: center;"><strong>Group</strong>
-            </td>
-            <td style="width: 50%; background-color: rgb(239, 239, 239); text-align: center;"><strong>Arms</strong></td>
-        </tr>
-        <tr>
-            <td rowspan="2" style="width: 49.8316%; text-align: center;">both</td>
-            <td style="width: 50%; text-align: center;">left_arm</td>
-        </tr>
-        <tr>
-            <td style="width: 50%; text-align: center;">right_arm</td>
-        </tr>
-    </tbody>
-</table>
+<p>There are two ways to develop the UI:</p>
 
-<p>
-    <br>
-</p>
+<ol>
+    <li>
 
-<p>in order to get the list of available joints, please run &nbsp;<code data-backticks="1">get_joints_list()</code>.</p>
+        <p>Develop your own web application (using React.js for example), and use the communication controller for
+            connecting the frontend design to the robotic device (or develop your own server).</p>
+    </li>
+    <li>
 
-<h2>2. Using the Controller</h2>
+        <p>Using the UI controller: Our UI controller provides ready-to-use screens that allow any Python developer to
+            display an amazing UI, by just calling a single method! Also the communication to handle user&#39;s
+            feedbacks is included in this controller.</p>
+    </li>
+</ol>
+
+<p>Let&rsquo;s take a look at the following diagram:<img
+        src="https://cdn.document360.io/6129992e-c4ec-4e12-9225-4d2877a6cbe7/Images/Documentation/Untitled%20Diagram-Page-2.drawio.png"
+        class="fr-fil fr-dib" style="width: 595px;"></p>
+
+<ol>
+    <li>On our python code, we are calling <code data-backticks="1">display_modal()</code> function, passing relevant
+        data like the title of the modal and confirmation button text. The application will wait for a response from the
+        user.</li>
+    <li>The modal UI component is displayed on the chest system.</li>
+    <li>Once the user performs some action (closing the modal or pressing any of the buttons), the information is sent
+        back to the python code.</li>
+    <li>We can read the action performed by the user and continue with the business logic.</li>
+</ol>
+
+<h2>2. Using the controller</h2>
 
 <p>Creating the controller in your app:</p>
-<section class="html-code-block active" contenteditable="false" id="section-1657433181215" translate="no">
+<section class="html-code-block active" contenteditable="false" id="section-1657433561398" translate="no">
     <div class="code-language">
         <div class="span-wrapper"><span class="code-title-element tab-active"
-                data-elementid="section-1657433181215">Python</span><span class="code-title"
-                data-elementid="section-1657433181215" style="display: none;">Python</span></div>
+                data-elementid="section-1657433561398">Python</span><span class="code-title"
+                data-elementid="section-1657433561398" style="display: none;">Python</span></div>
         <div class="action-items"><span class="edit-code-block"><span class="fal fa-pencil-alt"></span></span><span
                 class="remove-code-block"><span class="fal fa-trash-alt"></span></span></div>
     </div>
-    <pre><code class="lang-python" data-code-id="section-1657433181215" data-language="python"><span class="token keyword">from</span> raya<span class="token punctuation">.</span>application_base <span class="token keyword">import</span> RayaApplicationBase
+    <pre><code class="lang-python" data-code-id="section-1657433561398" data-language="python"><span class="token keyword">from</span> raya<span class="token punctuation">.</span>application_base <span class="token keyword">import</span> RayaApplicationBase
 
 <span class="token keyword">class</span> <span class="token class-name">RayaApplication</span><span class="token punctuation">(</span>RayaApplicationBase<span class="token punctuation">)</span><span class="token punctuation">:</span>
     <span class="token keyword">async</span> <span class="token keyword">def</span> <span class="token function">setup</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
         <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
-        self<span class="token punctuation">.</span>arms <span class="token operator">=</span> self<span class="token punctuation">.</span>enable_controller<span class="token punctuation">(</span><span class="token string">&#39;arms&#39;</span><span class="token punctuation">)</span>
+        self<span class="token punctuation">.</span>UI <span class="token operator">=</span> self<span class="token punctuation">.</span>enable_controller<span class="token punctuation">(</span><span class="token string">&#39;ui&#39;</span><span class="token punctuation">)</span>
         <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
 </code></pre>
 </section>
-
-<p>The controller class includes a large set of methods to allow you to interact or get state of the arms or joints.</p>
-
-<p>You can find all the methods divided into these groups:</p>
-
-<h3>2.1 Get Arm/Joint Information</h3>
-
-<p>
-    <br>
-</p>
-
-<ul>
-    <li><a href="/v2/docs/get-arms-list" rel="nofollow" translate="no">get_arms_list()</a></li>
-    <li><a href="/v2/docs/get-group-list" rel="nofollow" translate="no">get_groups_list()</a></li>
-    <li><a href="/v2/docs/controller-arms-get-joints-list" rel="nofollow" translate="no">get_joints_list()</a></li>
-    <li><a href="/v2/docs/get-joints-limits" rel="nofollow" translate="no">get_joints_limits()</a></li>
-    <li><a href="/v2/docs/get-joint-type" rel="nofollow" translate="no">get_joint_type()</a></li>
-    <li><a href="/v2/docs/get-arm-state" rel="nofollow" translate="no">get_arm_state()</a></li>
-    <li><a href="/v2/docs/get-list-predefined-poses" rel="nofollow" translate="no">get_predefined_poses_list()</a></li>
-    <li><a href="/v2/docs/get-predefined-trajectories-list" rel="nofollow"
-            translate="no">get_predefined_trajectories_list()</a></li>
-    <li><a href="/v2/docs/get-current-joints-position-1" translate="no">get_current_joints_position()</a></li>
-    <li><a href="/v2/docs/get-current-pose" rel="nofollow" translate="no">get_current_pose()</a></li>
-    <li><a href="/v2/docs/get-current-joint-position" translate="no">get_current_joint_position()</a></li>
-</ul>
-
-<h3>2.2 &nbsp;Arm/Joint checking methods</h3>
+<section class="warningBox">
+    <div class="remove-callout" contenteditable="false"><span class="fal fa-trash-alt"></span></div>
+    <div class="title fr-deletable">Important note!!</div>
+    <div class="content fr-inner">In order to visualize the UI controller components, you need to open a
+        browser<strong><u>&nbsp;before you run the app</u></strong> with the following address; <a data-fr-linked="true"
+            href="https://chest-web.web.app/app/" rel="noopener noreferrer"
+            target="_blank">https://chest-web.web.app/app/</a>.</div>
+</section>
 
 <p>
     <br>
 </p>
 
-<ul>
-    <li><a href="/v2/docs/is-linear-joint" rel="nofollow" translate="no">is_linear_joint()</a></li>
-    <li><a href="/v2/docs/is-rotational-joint" rel="nofollow" translate="no">is_rotational_joint()</a></li>
-    <li><a href="/v2/docs/is-pose-valid" rel="nofollow" translate="no">is_pose_valid()</a></li>
-    <li><a href="/v2/docs/is-pose-valid-q" rel="nofollow" translate="no">is_pose_valid_q()</a></li>
-    <li><a href="/v2/docs/is-joints-position-valid" rel="nofollow" translate="no">is_joints_position_valid()</a></li>
-    <li><a href="/v2/docs/is-any-arm-in-execution" rel="nofollow" translate="no">is_any_arm_in_execution()</a></li>
-    <li><a href="/v2/docs/are-checkings-in-progress" translate="no">are_checkings_in_progress()</a></li>
-</ul>
-
-<h3>2.3 Manage predefined data</h3>
-
-<p>
-    <br>
-</p>
+<h2>3. Examples &amp; More info</h2>
 
 <ul>
-    <li><a href="/v2/docs/manage-predefined-pose" rel="nofollow" translate="no">manage_predefined_pose()</a></li>
-    <li><a href="/v2/docs/manage-predefined-trajectory" rel="nofollow" translate="no">manage_predefined_trajectory()</a>
+    <li>
+        <a href="https://github.com/Unlimited-Robotics/raya_python_examples/tree/main/ex_arms_joints"
+            rel="noopener noreferrer" target="_blank"></a><a
+            href="https://github.com/Unlimited-Robotics/pyraya_examples/tree/main/ui_controller"
+            rel="noopener noreferrer" target="_blank" translate="no">UI Controller general example</a>
     </li>
+    <li><a href="https://github.com/Unlimited-Robotics/pyraya_examples/tree/main/ui_controller_with_animation"
+            rel="nofollow noopener noreferrer" target="_blank" translate="no">UI Controller animation example</a></li>
 </ul>
 
-<h3>2.4 Execute arm movements</h3>
+<p>We extremely encourage you to visit our UI-KIT website. There you will find all the relevant information for all the
+    components and a lot of examples.</p>
 
 <p>
-    <br>
-</p>
-
-<ul>
-    <li><a href="/v2/docs/set-predefined-pose" rel="nofollow" translate="no">set_predefined_pose()</a></li>
-    <li><a href="/v2/docs/controller-arms-set-joints-position" rel="nofollow" translate="no">set_joints_position()</a>
-    </li>
-    <li><a href="/v2/docs/set-joint-position" rel="nofollow" translate="no">set_joint_position()</a></li>
-    <li><a href="/v2/docs/set-pose" rel="nofollow" translate="no">set_pose()</a></li>
-    <li><a href="/v2/docs/set-pose-q" rel="nofollow" translate="no">set_pose_q()</a></li>
-    <li><a href="/v2/docs/execute-predefined-trajectory" rel="nofollow"
-            translate="no">execute_predefined_trajectory()</a></li>
-    <li><a href="/v2/docs/execute-predefined-poses-array" rel="nofollow"
-            translate="no">execute_predefined_poses_array()</a></li>
-    <li><a href="/v2/docs/execute-joints-position-array" translate="no">execute_joint_positions_array()</a></li>
-    <li><a href="/v2/docs/execute-pose-array" rel="nofollow" translate="no">execute_poses_array()</a></li>
-    <li><a href="/v2/docs/execute-pose-array-q" rel="nofollow" translate="no">execute_poses_array_q()</a></li>
-    <li><a href="/v2/docs/set-multi-arms-pose" rel="nofollow" translate="no">set_multi_arm_pose()</a></li>
-</ul>
-
-<h3>2.5 Gripper</h3>
-
-<p>
-    <br>
-</p>
-
-<ul>
-    <li><a href="/v2/docs/gripper-cmd-1" translate="no">gripper_cmd()</a></li>
-</ul>
-
-<h3>2.6 Cancel execution</h3>
-
-<p>
-    <br>
-</p>
-
-<ul>
-    <li><a href="/v2/docs/controller-arms-cancel-execution" rel="nofollow" translate="no">cancel_execution()</a></li>
-</ul>
-
-<h3>2.7 Objects</h3>
-
-<p>
-    <br>
-</p>
-
-<ul>
-    <li><a href="/v2/docs/add-attached-object" rel="nofollow" translate="no">add_attached_object()</a></li>
-    <li><a href="/v2/docs/remove-attached-object" rel="nofollow" translate="no">remove_attached_object()</a></li>
-    <li><a href="/v2/docs/add-collision-object" rel="nofollow" translate="no">add_collision_object()</a></li>
-    <li><a href="/v2/docs/remove-collision-object" rel="nofollow" translate="no">remove_collision_object()</a></li>
-</ul>
-
-<h3>2.8 Constraints</h3>
-
-<p>
-    <br>
-</p>
-
-<ul>
-    <li><a href="/v2/docs/add-constraints" rel="nofollow" translate="no">add_constraints()</a></li>
-    <li><a href="/v2/docs/remove-constraints" rel="nofollow" translate="no">remove_constraints()</a></li>
-</ul>
-
-<h3>2.9 Tools</h3>
-
-<p>
-    <br>
-</p>
-
-<ul>
-    <li><a href="/v2/docs/convert-orientation" rel="nofollow" translate="no">convert_orientation()</a></li>
-</ul>
-
-<h2>3. Examples</h2>
-
-<ul>
-    <li><a href="/v2/docs/arms-check-pose" rel="nofollow" translate="no">Arms: Check Pose</a></li>
-    <li><a href="/v2/docs/arms-check-pose-obstacles" rel="nofollow" translate="no">Arms: Check Pose Obstacles</a></li>
-    <li><a href="/v2/docs/arms-check-position-joints" rel="nofollow" translate="no">Arms: Check Position Joints</a></li>
-    <li><a href="/v2/docs/arms-manage-predefined-poses" rel="nofollow" translate="no">Arms: Manage Predefined Poses</a>
-    </li>
-    <li><a href="/v2/docs/arms-set-predefined-pose" rel="nofollow" translate="no">Arms: Set Predefined Pose</a></li>
-    <li><a href="/v2/docs/arms-set-joints-position" rel="nofollow" translate="no">Arms: set joints position</a></li>
-    <li><a href="/v2/docs/arms-set-pose" rel="nofollow" translate="no">Arms: set pose</a></li>
-    <li><a href="/v2/docs/arms-set-pose-obstacles" rel="nofollow" translate="no">Arms Set Pose Obstacles</a></li>
-    <li><a href="/v2/docs/arms-execute-predefined-pose-array" rel="nofollow" translate="no">Arms: Execute Predefined
-            Pose Array</a></li>
-    <li><a href="/v2/docs/arms-execute-pose-array" rel="nofollow" translate="no">Arms: execute pose array</a></li>
-    <li><a href="/v2/docs/arms-set-multi-arms-pose" rel="nofollow" translate="no">Arms: Set Multi Arms Pose</a></li>
-    <li><a href="/v2/docs/arms-set-gripper" rel="nofollow" translate="no">Arms: Set Gripper</a></li>
-    <li><a href="/v2/docs/arms-add-constraints" rel="nofollow" translate="no">Arms: add constraints</a></li>
-</ul>
-
-<p>
-    <br>
+    <button class="button tablinks" onclick="window.open('https://ur-ui-kit.web.app/')">Visit UI Kit center</button>
 </p>
 
 <p>
