@@ -68,8 +68,8 @@ Exceptions
 -  ``RayaUIMissingValue``
 -  ``RayaNeedCallback``
 
-See the `complete list of ui exceptions </v2/docs/ui-exceptions>`__ and
-the `complete list of general exceptions </v2/docs/raya-exceptions>`__.
+See the :ref:`complete list of ui exceptions <ui_exceptions>` and
+the :ref:`complete list of general exceptions <general_exceptions>`.
 
 Callback Arguments
 ---------------------
