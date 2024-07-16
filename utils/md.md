@@ -1,3 +1,0 @@
-| Number |Message |Description|
-| --- | --- |---|
-| 1  | Custom command feedback | Indicates that the feedback from a custom command is being received |
