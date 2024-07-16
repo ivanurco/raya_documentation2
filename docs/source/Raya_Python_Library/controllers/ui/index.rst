@@ -12,7 +12,6 @@ UI
    :maxdepth: 2
 
    Asynchronous methods <asynchronous_methods/index>   
-   Methods <methods/index>
    Exceptions <exceptions>   
    Enumerations <enumerations>
 
