@@ -1,2 +1,9 @@
-<NAME> Exceptions
+.. _cv_exceptions:
+
 ===================
+Exceptions
+===================
+
+.. raw:: html
+
+    <hr/>
