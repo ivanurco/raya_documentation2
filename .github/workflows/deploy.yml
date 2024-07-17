@@ -40,6 +40,8 @@ jobs:
     - name: Setup theme
       run: |
         cd docs/source/_themes/sphinx-wagtail-theme
+        touch README.md  # Crea un README.md vacío
+        python3 -m pip install --upgrade pip setuptools wheel
         python3 -m pip install --upgrade -r requirements.txt
         make clean
         make clean-frontend
