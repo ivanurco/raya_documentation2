@@ -49,8 +49,6 @@ jobs:
         make setup
         make frontend
         make install
-        make install-for-development
-        make docs
         npm run build
         cd ../../../..
         python3 -m pip install -e docs/source/_themes/sphinx-wagtail-theme/.
