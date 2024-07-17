@@ -1,29 +1,64 @@
-name: Deploy Sphinx Documentation to GitHub Pages
-
+name: Deploy Sphinx docs to GitHub Pages
 on:
   push:
-    branches:
-      - main
+    branches: [main]
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
-
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
+    - uses: actions/checkout@v2
+      with:
+        submodules: 'recursive'  # Esto clonará automáticamente los submódulos, incluyendo el tema
 
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
-        python-version: '3.x'  # usa la versión de Python que necesites
+        python-version: '3.10.12'
 
-    - name: Install dependencies
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '20.13.1'
+
+    - name: Cache Python dependencies
+      uses: actions/cache@v2
+      with:
+        path: ~/.cache/pip
+        key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
+        restore-keys: |
+          ${{ runner.os }}-pip-
+
+    - name: Cache Node.js dependencies
+      uses: actions/cache@v2
+      with:
+        path: ~/.npm
+        key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+        restore-keys: |
+          ${{ runner.os }}-node-
+
+    - name: Setup theme
+      run: |
+        cd docs/source/_themes/sphinx-wagtail-theme
+        python3 -m pip install --upgrade -r requirements.txt
+        make clean
+        make clean-frontend
+        npm ci
+        make setup
+        make frontend
+        make install
+        make install-for-development
+        make docs
+        npm run build
+        cd ../../../..
+        python3 -m pip install -e docs/source/_themes/sphinx-wagtail-theme/.
+
+    - name: Install project dependencies
       run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt
 
-    - name: Build documentation
+    - name: Build docs
       run: |
         cd docs
         make html
@@ -32,4 +67,4 @@ jobs:
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: docs/build/html
+        publish_dir: ./docs/build/html
