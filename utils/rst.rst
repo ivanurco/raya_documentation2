@@ -1,73 +1,60 @@
 +-----------------------------------+-----------------------------------+
 | Exception                         | Condition                         |
 +===================================+===================================+
-| ``RayaCVException``               | Exception from cv method.         |
+| ``RayaNavAlreadyNavigating``      | Robot is already navigating.      |
 +-----------------------------------+-----------------------------------+
-| ``RayaCVUnkownError``             | Cv unknown error                  |
+| ``RayaNavNotMapping``             | Robot is not in mapping mode.     |
 +-----------------------------------+-----------------------------------+
-| ``RayaCVInvalidType``             | Inavlid type of model             |
+| ``RayaNavLocationAlreadyExist``   | The requested location already    |
+|                                   | exists.                           |
 +-----------------------------------+-----------------------------------+
-| ``RayaCVInvalidModel``\ ````      | invalid model.                    |
+| ``RayaNavErrorReadingYaml``       | An error occurred reading a yaml  |
+|                                   | file.                             |
 +-----------------------------------+-----------------------------------+
-| ``RayaCVNotEnabledType``          | Model type not enabled.           |
+| ``RayaNavErrorWritingYaml``       | An error occurred writting a yaml |
+|                                   | file.                             |
 +-----------------------------------+-----------------------------------+
-| ``RayaCVModelNotEnabled``         | Model not enabled.                |
+| ``RayaNavLocationNotFound``       | The requested location does not   |
+|                                   | exist.                            |
 +-----------------------------------+-----------------------------------+
-| ``RayaCVModelNotDisabled``        | Model not disabled.               |
+| ``RayaNavLocationsNotFound``      | No location found.                |
 +-----------------------------------+-----------------------------------+
-| ``RayaCVNotActiveModel``          | Model is not activated.           |
+| ``RayaNavAlreadyNavigating``      | The robot is already browsing.    |
 +-----------------------------------+-----------------------------------+
-| ``RayaCVNotValidLabel``           | Label not valid for model.        |
+| ``RayaNavNoMapLoaded``            | No map is loaded.                 |
 +-----------------------------------+-----------------------------------+
-| ``RayaCVWrongModelName``          | Wrong model name.                 |
+| ``RayaNavSortedPointsEmpty``      | The list of sorted points is      |
+|                                   | empty.                            |
 +-----------------------------------+-----------------------------------+
-| ``RayaCVNeedCallback``            | Method needs a callback to work   |
-|                                   | properly.                         |
+| ``RayaNavZoneAlreadyExist``       | The zone name already exists.     |
 +-----------------------------------+-----------------------------------+
-| ``RayaCVNeedController``          | Cv need cameras controller to     |
-|                                   | work.                             |
+| ``RayaNavErrorSavingZone``        | Error saving zone.                |
 +-----------------------------------+-----------------------------------+
-| ``RayaCVAlreadyEnabled``          | Model is already enabled..        |
+| ``RayaNavZoneIsNotPolygon``       | The requested area is not a       |
+|                                   | polygon.                          |
 +-----------------------------------+-----------------------------------+
-| ``RayaCVNotCameraInterface``      | Not cameras in interface.         |
+| ``RayaNavNotValidPointFound``     | There are no valid points to      |
+|                                   | navigate to.                      |
 +-----------------------------------+-----------------------------------+
-| ``RayaCVNotCameraEnabled``        | Camera is not enabled.            |
+| ``RayaUnableToFollowPath``        | An obstacle found, the path       |
+|                                   | cannot be followed.               |
 +-----------------------------------+-----------------------------------+
-| ``RayaCVTopicNotPublishig``       | Topic not publishing.             |
+| ``RayaUnableToComputePath``       | No path to goal found.            |
 +-----------------------------------+-----------------------------------+
-| ``RayaCVGPUNotAvailable``         | Gpu is not avaialble              |
+| ``RayaNavNoDataFromMapTopic``     | Map information is not received.  |
 +-----------------------------------+-----------------------------------+
-| ``RayaCVModelNotRunning``         | Model is not running              |
+| ``RayaNavUnableToChangeMap``      | Error changing map.               |
 +-----------------------------------+-----------------------------------+
-| ``RayaCVModelLimitReached``       | Model limit reached.              |
+| ``RayaNavInvalidGoal``            | Invalid goal coordinate.          |
 +-----------------------------------+-----------------------------------+
-| ``RayaCVNotTrain``                | Model doesn't have train.         |
+| ``RayaNavBadImageSize``           | The size of the new image is      |
+|                                   | different from the original.      |
 +-----------------------------------+-----------------------------------+
-| ``RayaCVWrongAppInfo``            | Invalid app info.                 |
+| ``RayaNavMappingDisabled``        | Mapping mode is disabled.         |
 +-----------------------------------+-----------------------------------+
-| ``RayaCVWrongModelMode``          | Wrong model mode.                 |
+| ``RayaNavUnableToEnableCamera``   | Error enabling camera.            |
 +-----------------------------------+-----------------------------------+
-| ``RayaCVNotModelMode``            | Model doen't have that mode       |
+| ``RayaNavFileNotFound``           | The requested file was not found. |
 +-----------------------------------+-----------------------------------+
-| ``RayaCVCameraStatusFail``        | Camera status error.              |
+| ``RayaNavWrongFileFormat``        | File with invalid format.         |
 +-----------------------------------+-----------------------------------+
-| ``RayaCVWrongCamera``             | Wrong camera.                     |
-+-----------------------------------+-----------------------------------+
-| ``RayaCVWrongCameraDepth``        | Wrong depth camera.               |
-+-----------------------------------+-----------------------------------+
-| ``RayaCVRunningOtherCamera``      | Model running with other camera.  |
-+-----------------------------------+-----------------------------------+
-| ``RayaCVRunningOtherTagSize``     | Model running with other tag      |
-|                                   | size.                             |
-+-----------------------------------+-----------------------------------+
-| ``RayaCVModelNotPublishing``      | Model is not publishing.          |
-+-----------------------------------+-----------------------------------+
-| ``RayaCVDiffImageNamesSize``      | Error in names and images sizes   |
-|                                   | to train.                         |
-+-----------------------------------+-----------------------------------+
-| ``RayaCVInvalidImageFormat``      | Invalid image format.             |
-+-----------------------------------+-----------------------------------+
-| ``RayaCVInvalidModelReturn``      | Invalid model return.             |
-+-----------------------------------+-----------------------------------+
-
-| 
