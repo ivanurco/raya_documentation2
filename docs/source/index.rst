@@ -18,11 +18,7 @@ Index
    :caption: RaYa Python library
    :maxdepth: 2
    
-   Raya_Python_Library/controllers/index
-   General Enumerations <Raya_Python_Library/General_Enumerations>
-   General Exceptions <Raya_Python_Library/General_Exceptions>
-   Raya_Python_Library/Tools/Finite_States_Machine_Module/index
-   
+   Raya_Python_Library/index
 
 .. toctree::
    :caption: Robots
