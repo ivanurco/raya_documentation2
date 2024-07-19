@@ -4,6 +4,10 @@
 List of Colors
 ==============
 
+.. raw:: html
+
+   <hr/>
+
 X11 colors list accepted by gary
 ================================
 
@@ -20,10 +24,17 @@ List of LEDs groups in Gary
 | skirt      |
 +------------+
 
-.. container:: (Info)
+.. raw:: html
 
-   Gary accepts a color as a string hex value beginning with # (ex. #FFFFFF) rather than a color
-   name.
+
+   <div class="info-box">
+      <p class="text info-box">
+      Gary accepts a color as a string hex value beginning with # (ex. #FFFFFF) rather than a color
+      name.
+      </p>
+   </div>
+
+|
 
 =================== =======
 Color               Hex

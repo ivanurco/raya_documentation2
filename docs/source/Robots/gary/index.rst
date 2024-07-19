@@ -2,7 +2,13 @@
 Gary
 ====
 
-.. toctree::
+.. raw :: html
 
-   Sensors <sensors>
+   <hr/>
+
+.. toctree::
+   :maxdepth: 1
+
+
    LEDs colors <leds_colors>
+   Sensors <sensors>

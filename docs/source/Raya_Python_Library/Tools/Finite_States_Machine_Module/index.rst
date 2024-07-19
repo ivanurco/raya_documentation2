@@ -1,5 +1,10 @@
+=======================
 Finite States Machines
 =======================
+
+.. raw:: html
+
+    <hr/>
 
 .. toctree::
     :maxdepth: 1

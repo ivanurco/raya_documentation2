@@ -34,5 +34,5 @@ Index
    :caption: Unlimited Robotics SDK
    :maxdepth: 2
 
-   Unlimited_Robotics_SDK/Commands/index
+   Unlimited_Robotics_SDK/index
    
