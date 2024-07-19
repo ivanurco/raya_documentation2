@@ -1,49 +1,58 @@
-<h3>1. Overview</h3>
-
-<p>Allows the robot to navigate to the desired goal destination in an autonomous way.</p>
-
-<p>This controller will take care of planning the optimal path, avoiding obstacles, and verifying that the robot has
-    arrived at the target destination.</p>
-
-<h3>2. Using the Controller</h3>
-
-<p>Creating the controller in your app:</p>
-<section class="html-code-block active" contenteditable="false" id="section-1657429624940" translate="no">
-    <div class="code-language">
-        <div class="span-wrapper"><span class="code-title-element tab-active"
-                data-elementid="section-1657429624940">Python</span><span class="code-title"
-                data-elementid="section-1657429624940" style="display: none;">Python</span></div>
-        <div class="action-items"><span class="edit-code-block"><span class="fal fa-pencil-alt"></span></span><span
-                class="remove-code-block"><span class="fal fa-trash-alt"></span></span></div>
-    </div>
-    <pre><code class="language-python" data-code-id="section-1657429624940" data-language="python"><span class="token keyword">from</span> raya<span class="token punctuation">.</span>application_base <span class="token keyword">import</span> RayaApplicationBase
-
-<span class="token keyword">class</span> <span class="token class-name">RayaApplication</span><span class="token punctuation">(</span>RayaApplicationBase<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">async</span> <span class="token keyword">def</span> <span class="token function">setup</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
-     self<span class="token punctuation">.</span>navigation <span class="token operator">=</span> <span class="token keyword">await</span> self<span class="token punctuation">.</span>enable_controller<span class="token punctuation">(</span><span class="token string">&#39;navigation&#39;</span><span class="token punctuation">)</span> 
-        <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
-</code></pre>
-</section>
-
-<p>The controller class includes a large set of methods to allow you to navigate easily and flexibly.</p>
-
-<p>You can find all the methods divided into three groups:</p>
-
-<h4>2.1. maps &amp; position</h4>
-
-<p><span
-        style="color: rgb(34, 34, 34); font-family: Inter, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;">All
-        the methods related to the robot&#39;s position and manipulating the maps.</span></p>
-
-<ul>
-    <li>navigation - All the navigation methods available to order the robot to navigate.</li>
-    <li>zones &amp; locations - Helper methods to save predefined places and make the entire process smoother.&nbsp;
-    </li>
-</ul>
-
-<h3>3. Examples</h3>
-
-<p>See all examples starting with &#39;nav&#39; in the pyraya_examples <a
-        href="https://github.com/Unlimited-Robotics/pyraya_examples" rel="nofollow noopener noreferrer" target="_blank"
-        translate="no">Github</a>.</p>
+<table class="has-line-data" data-line-end="9" data-line-start="2">
+    <thead>
+        <tr class="has-line-data" data-line-end="3" data-line-start="2">
+            <th>Number code
+                <br>
+            </th>
+            <th>Message</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr class="has-line-data" data-line-end="5" data-line-start="4">
+            <td>1</td>
+            <td>Recording
+                <br>
+            </td>
+            <td>Indicates that the system is recording the microphone.
+                <br>
+            </td>
+        </tr>
+        <tr class="has-line-data" data-line-end="6" data-line-start="5">
+            <td>2</td>
+            <td>Recording finished
+                <br>
+            </td>
+            <td>Indicates that the recording process is finished
+                <br>
+            </td>
+        </tr>
+        <tr class="has-line-data" data-line-end="7" data-line-start="6">
+            <td>3</td>
+            <td>Processing recording
+                <br>
+            </td>
+            <td>Indicates that is processing the recording.
+                <br>
+            </td>
+        </tr>
+        <tr class="has-line-data" data-line-end="8" data-line-start="7">
+            <td>4</td>
+            <td>Processing recording finished
+                <br>
+            </td>
+            <td>Indicates that the processing is finished.
+                <br>
+            </td>
+        </tr>
+        <tr class="has-line-data" data-line-end="9" data-line-start="8">
+            <td>5</td>
+            <td>Disabling microphone
+                <br>
+            </td>
+            <td>Indicates that the microphone was disbled.
+                <br>
+            </td>
+        </tr>
+    </tbody>
+</table>

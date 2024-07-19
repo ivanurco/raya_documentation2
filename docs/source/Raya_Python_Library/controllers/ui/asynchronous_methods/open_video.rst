@@ -50,7 +50,7 @@ See the :ref:`complete list of enumerations <ui_enumerations>`.
 
 
 Return
-~~~~~~
+----------
 
 Dictionary that contains the action performed by the component or the
 user.
@@ -60,7 +60,7 @@ Example:
 ``{'action': 'video_ended', 'app_id': 'doctest'}``
 
 Exception
-~~~~~~~~~
+----------
 
 -  ``RayaUIMissingValue``
 -  ``RayaNeedCallback``
