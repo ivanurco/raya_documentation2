@@ -1,17 +1,15 @@
-## 1. Overview
+### FLEET_FINISH_STATUS
 
-Natural Language Processing controller allows playing speech from text and convert speech to text.
+Enumeration to set indicate whether the app finished successfully or not.
 
-## 2. Using the controller
+* `FLEET_FINISH_STATUS.SUCCESS` : The app finished successfully.
+* `FLEET_FINISH_STATUS.FAILED` : The app finished with errors or did not finish as expected.
 
-Creating the controller in your app:
+### FLEET_UPDATE_STATUS
 
-``` python
-from raya.application_base import RayaApplicationBase
+Enumeration indicate how is the progress of the application.
 
-class RayaApplication(RayaApplicationBase):
-    async def setup(self):
-        ...
-        self.nlp = await self.enable_controller('nlp')
-        ...
-```
+* `FLEET_UPDATE_STATUS.INFO` : General information to the user.
+* `FLEET_UPDATE_STATUS.WARNING` : Warning message to the user.
+* `FLEET_UPDATE_STATUS.SUCCESS` : Success message to the user.
+* `FLEET_UPDATE_STATUS.ERROR` : Error message to the user.

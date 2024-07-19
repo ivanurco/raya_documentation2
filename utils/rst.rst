@@ -1,23 +1,19 @@
-+-----------------------+-----------------------+-----------------------+
-| Number code           | Message               | Description           |
-+=======================+=======================+=======================+
-| 1                     | Recording             | Indicates that the    |
-|                       |                       | system is recording   |
-|                       |                       | the microphone.       |
-+-----------------------+-----------------------+-----------------------+
-| 2                     | Recording finished    | Indicates that the    |
-|                       |                       | recording process is  |
-|                       |                       | finished              |
-+-----------------------+-----------------------+-----------------------+
-| 3                     | Processing recording  | Indicates that is     |
-|                       |                       | processing the        |
-|                       |                       | recording.            |
-+-----------------------+-----------------------+-----------------------+
-| 4                     | Processing recording  | Indicates that the    |
-|                       | finished              | processing is         |
-|                       |                       | finished.             |
-+-----------------------+-----------------------+-----------------------+
-| 5                     | Disabling microphone  | Indicates that the    |
-|                       |                       | microphone was        |
-|                       |                       | disbled.              |
-+-----------------------+-----------------------+-----------------------+
+FLEET_FINISH_STATUS
+~~~~~~~~~~~~~~~~~~~
+
+Enumeration to set indicate whether the app finished successfully or
+not.
+
+-  ``FLEET_FINISH_STATUS.SUCCESS`` : The app finished successfully.
+-  ``FLEET_FINISH_STATUS.FAILED`` : The app finished with errors or did
+   not finish as expected.
+
+FLEET_UPDATE_STATUS
+~~~~~~~~~~~~~~~~~~~
+
+Enumeration indicate how is the progress of the application.
+
+-  ``FLEET_UPDATE_STATUS.INFO`` : General information to the user.
+-  ``FLEET_UPDATE_STATUS.WARNING`` : Warning message to the user.
+-  ``FLEET_UPDATE_STATUS.SUCCESS`` : Success message to the user.
+-  ``FLEET_UPDATE_STATUS.ERROR`` : Error message to the user.

@@ -1,13 +1,29 @@
-<NAME> Enumerations
+.. _fleet_enumerations:
+
+========================
+Enumerations
 ========================
 
-============================== =====================================================
-Exception                      Condition
-============================== =====================================================
-``RayaLedsException``          Command was not accepted properly.
-``RayaLedsWrongGroup``         Invalid group name (the group name doesn’t exist).
-``RayaLedsWrongColor``         Invalid color name (the color name doesn’t exist).
-``RayaLedsWrongAnimationName`` Invalid animation name (the animation doesn’t exist).
-``RayaLedsWrongRepetitions``   Invalid repetitions (incorrect repetitions number).
-``RayaLedsWrongSpeed``         Invalid speed number (incorrect speed number).
-============================== =====================================================
+.. raw:: html
+
+    <hr/>
+
+FLEET_FINISH_STATUS
+========================
+
+Enumeration to set indicate whether the app finished successfully or
+not.
+
+-  ``FLEET_FINISH_STATUS.SUCCESS`` : The app finished successfully.
+-  ``FLEET_FINISH_STATUS.FAILED`` : The app finished with errors or did
+   not finish as expected.
+
+FLEET_UPDATE_STATUS
+=========================
+
+Enumeration indicate how is the progress of the application.
+
+-  ``FLEET_UPDATE_STATUS.INFO`` : General information to the user.
+-  ``FLEET_UPDATE_STATUS.WARNING`` : Warning message to the user.
+-  ``FLEET_UPDATE_STATUS.SUCCESS`` : Success message to the user.
+-  ``FLEET_UPDATE_STATUS.ERROR`` : Error message to the user.
