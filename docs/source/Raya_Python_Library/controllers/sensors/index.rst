@@ -14,8 +14,7 @@ Sensors
 .. toctree::   
    :maxdepth: 1
    :titlesonly:
-   
-   Guide <self>
+      
    Synchronous methods <synchronous_methods/index>      
    Exceptions <exceptions>
    

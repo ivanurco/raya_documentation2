@@ -12,8 +12,7 @@ LiDAR
 
 .. toctree::
    :maxdepth: 2
-
-   Guide <self>
+   
    Synchronous methods <synchronous_methods/index>   
    Exceptions <exceptions>
    Enumerations <enumerations>
