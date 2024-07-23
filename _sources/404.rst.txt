@@ -1,0 +1,5 @@
+.. _404:
+
+:orphan:
+
+Page not found

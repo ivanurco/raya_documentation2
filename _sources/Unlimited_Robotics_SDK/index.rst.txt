@@ -1,0 +1,31 @@
+=============================
+Unlimited Robotics SDK
+=============================
+
+.. raw:: html
+
+    <hr/>
+
+    <div class="hidden-block">
+
+.. toctree::
+   :maxdepth: 1
+    
+   Commands <Commands/index>
+
+.. raw:: html
+
+    </div>
+
+Gary Software Development Kit (SDK) is a set of tools that will helo you
+create Gary Applications from you computer.
+
+Gary SDK allows:
+
+-  Create gary projects and application files system.
+-  Connect to Gary robots in Developer Mode
+-  Upload applications to Gary App Store
+-  more.
+
+Pending.
+
