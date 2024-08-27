@@ -31,7 +31,7 @@ extensions = [
     "sphinx.ext.intersphinx",
     "sphinx.ext.todo",
     "myst_parser",
-    "sphinxcontrib.youtube", 
+    "sphinxcontrib.youtube",
     "sphinx_copybutton",
     "sphinx_prompt"
 ]
@@ -62,7 +62,7 @@ exclude_patterns = [
     '.DS_Store',
     '_themes',
     '_themes/*',
-    'Raya_Python_Library/controllers/folder_example_structure/*',    
+    'Raya_Python_Library/controllers/folder_example_structure/*',
 ]
 
 
@@ -74,13 +74,13 @@ static_dir = os.path.abspath('_static')
 
 # To use the sphinx_wagtail_theme theme from Unlimited Robotics.
 
-#html_theme = 'furo'
+# html_theme = 'furo'
 html_theme = 'sphinx_wagtail_theme'
 html_static_path = ['_static']
 
 
 # To include css in the docs
-html_css_files = [    
+html_css_files = [
     'custom.css',
 ]
 
@@ -108,7 +108,7 @@ html_favicon = '_static/favicon.png'
 
 html_show_sourcelink = False
 
-#These are options specifically for the Wagtail Theme.
+# These are options specifically for the Wagtail Theme.
 html_theme_options = dict(
     project_name="Raya Documentation",
     header_links="Top 1|http://example.com/one, Top 2|http://example.com/two",
@@ -119,13 +119,13 @@ html_theme_options = dict(
     logo_height=720,
     logo_width=153,
     favicon="favicon2.png",
-    github_url="https://github.com/Unlimited-Robotics/raya_documentation/tree/main/src/",
+    github_url="https://github.com/ivanurco/raya_documentation2/tree/main/docs/source/",
     footer_links=",".join([
         "About Us|http://example.com/",
         "Contact|http://example.com/contact",
         "Legal|http://example.com/dev/null",
     ]),
     discord_url='https://discord.com/invite/Db7hrrePhn',
-    github_url_project='https://github.com/Unlimited-Robotics',
+    github_url_project='https://github.com/ivanurco/raya_documentation2',
     developers_url='https://developers.unlimited-robotics.com/',
 )
