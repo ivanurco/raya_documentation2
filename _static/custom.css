@@ -1,0 +1,149 @@
+.wy-nav-content {
+    max-width: none;
+}
+
+
+/*To give style to button BUILD YOU FIRST APP from Introduction in Getting Started*/
+p:has(> a > button.create_app_button) {
+    max-width: 100%;
+    margin: 0 0 1rem;
+    box-sizing: border-box;
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    unicode-bidi: isolate;
+}
+
+a:has(> button.create_app_button) {
+    background: #DDF7FF;
+    font-weight: bolder;
+    color: #0c14ff;
+    text-decoration: underline;
+}
+
+
+.create_app_button {
+    font-weight: bold;
+    display: inline-block;
+    background-color: #0982AA;
+    color: #fff;
+    text-transform: uppercase;
+    padding: 10px 40px;
+    border-radius: 5px;
+    box-shadow: 0 17px 10px -10px rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+    transition: all ease-in-out 300ms;
+    text-decoration: none;
+}
+
+a:has(> button.create_app_button) :hover {
+    box-shadow: 0 37px 20px -15px rgba(0, 0, 0, 0.2);
+    transform: translate(0px, -10px);
+}
+
+.hidden-block {
+    display: none;
+}
+
+.gray-background {
+    background-color: rgb(228, 228, 231);
+    border-radius: 4px;
+    color: rgb(24, 24, 27);
+    font-weight: 400;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-left: 8px;
+    padding-right: 8px;
+    box-sizing: border-box;
+    border-spacing: 0px 0px;
+    border-collapse: collapse;
+    letter-spacing: 1px;
+    font-size: 15px;
+}
+
+a.custom-link {
+    background-color: rgb(221, 247, 255) !important;
+    color: rgb(12, 20, 255) !important;
+    text-decoration-color: rgb(12, 20, 255) !important;
+    text-decoration-style: solid;
+    font-weight: 700;
+    text-decoration-line: underline;
+    text-decoration-thickness: auto;
+    padding: 2px 4px;
+    border-radius: 3px;
+}
+
+a.custom-link:hover {
+    background-color: rgb(221, 247, 255) !important;
+    color: rgb(106, 117, 255) !important;
+    text-decoration-color: rgb(106, 117, 255) !important;
+    cursor: pointer;
+    text-decoration-line: none;
+    font-weight: 700;
+}
+
+
+a.custom-link:visited {
+    color: rgb(151, 158, 255) !important;
+    text-decoration-color: rgb(151, 158, 255) !important;
+}
+
+a.custom-link:visited:hover {
+    color: rgb(106, 117, 255) !important;
+    text-decoration-color: rgb(106, 117, 255) !important;
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+/*Info box CSS*/
+
+div.info-box {
+    background-color: rgb(221, 247, 255);
+    padding: 12px 20px 12px 20px;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+p.title.info-box {
+    color: rgb(0, 106, 138);
+    font-weight: 600;
+}
+
+p.text.info-box {
+    color: rgb(0, 106, 138);
+    font-weight: 400;
+}
+
+
+/*Warning box CSS*/
+
+div.warning-box {
+    background-color: rgb(253, 242, 206);
+    padding: 12px 20px 12px 20px;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+p.title.warning-box {
+    color: rgb(127, 100, 22);
+    font-weight: 600;
+}
+
+p.text.warning-box {
+    color: rgb(127, 100, 22);
+    font-weight: 400;
+}
+
+/* Give style a inline code (replacing ``xxxxx``) to use inside of raw html blocks*/
+
+.custom-code {
+    font-family: monospace;
+    background-color: #f8f8f8;
+    padding: 2px 4px;
+    border-radius: 3px;
+    color: #333;
+}

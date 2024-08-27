@@ -1,0 +1,70 @@
+/* Reglas de prueba */
+/* Estilos para enlaces externos */
+a.reference.external {
+    color: #0077be;
+    /* Color del enlace, ajusta según tu preferencia */
+    text-decoration: none;
+    border-bottom: 1px dotted #0077be;
+}
+
+a.reference.external:hover,
+a.reference.external:focus {
+    color: #005580;
+    border-bottom: 1px solid #005580;
+}
+
+a.reference.external:active {
+    color: #003354;
+    border-bottom: 1px solid #003354;
+}
+
+/* Opcional: Añadir un icono para indicar enlace externo */
+a.reference.external::after {
+    content: "\f08e";
+    /* Asegúrate de tener FontAwesome o un set de iconos similar */
+    font-family: "FontAwesome";
+    font-size: 0.8em;
+    margin-left: 0.3em;
+}
+
+/* Estilos para elementos de código en línea */
+code.docutils.literal {
+    background-color: #f5f5f5;
+    color: #d14;
+    padding: 2px 4px;
+    border-radius: 3px;
+    font-family: 'Consolas', 'Courier New', monospace;
+    font-size: 0.9em;
+    border: 1px solid #e1e1e8;
+}
+
+code.docutils.literal span.pre {
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+}
+
+/* Estilos para modo oscuro (si tu tema lo soporta) */
+@media (prefers-color-scheme: dark) {
+    a.reference.external {
+        color: #4da6ff;
+        border-bottom-color: #4da6ff;
+    }
+
+    a.reference.external:hover,
+    a.reference.external:focus {
+        color: #80bfff;
+        border-bottom-color: #80bfff;
+    }
+
+    a.reference.external:active {
+        color: #b3d9ff;
+        border-bottom-color: #b3d9ff;
+    }
+
+    code.docutils.literal {
+        background-color: #2d2d2d;
+        color: #f1a9a0;
+        border-color: #444;
+    }
+}

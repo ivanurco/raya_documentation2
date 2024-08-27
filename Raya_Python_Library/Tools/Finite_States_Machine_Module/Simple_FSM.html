@@ -1,0 +1,1214 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+    <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+        <title>Simple FSM &mdash; RaYa Documentation 0.1 documentation</title>
+    
+        <link rel="shortcut icon" href="../../../_static/favicon2.png" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/dist/fontawesome.css" />
+        <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=80d5e7a1" />
+        <link rel="stylesheet" type="text/css" href="../../../_static/dist/theme.css?v=a61c05c7" />
+        <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+        <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=7a34560d" />
+            <link rel="index" title="Index" href="../../../genindex.html" />
+            <link rel="search" title="Search" href="../../../search.html" />
+            <link rel="top" title="RaYa Documentation 0.1 documentation" href="#" />
+            <link rel="up" title="Finite States Machines" href="index.html" />
+            <link rel="next" title="Multiple FSM" href="Multiple_FSM.html" />
+            <link rel="prev" title="Finite States Machines" href="index.html" />
+    </head>
+<body>
+    <script type="text/javascript" src="../../../_static/dist/blocking.js"></script>
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'0.1',
+            LANGUAGE:'en',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+    <div style="min-height: 100vh;">
+    <header class="px-xl-7 px-lg-5 px-md-5 px-3 container-fluid bg-white">
+        <div class="container-fluid">
+            <div class="navbar navbar-expand-lg navbar-dark font-weight-bold justify-content-between">
+                    <a href="https://www.unlimited-robotics.com/"
+                        title="Raya Documentation"
+                        class="logo navbar-brand flex-shrink-0 light-only"
+                    >
+                        <img src="../../../_static/logo.png" width="153" height="720" alt="Raya Documentation"
+                            class="logo-img"
+                        />
+                    </a>
+                
+                    <a href="https://www.unlimited-robotics.com/"
+                        title="Raya Documentation"
+                        class="logo navbar-brand flex-shrink-0 dark-only"
+                    >
+                        <img src="../../../_static/logo_white.png" width="153" height="720" alt="Raya Documentation"
+                            class="logo-img"
+                        />
+                    </a>
+                
+                <div class="justify-content-end" id="header1_sidebar">
+                    <ul class="navbar-nav d-flex flex-row"> 
+                    
+                        <li class="nav-item">
+                        <a class="btn btn-sm btn-light text-decoration-none m-1" href="https://discord.com/invite/Db7hrrePhn" rel="nofollow">
+                            <span class="btn-icon"><span class="fab fa-discord"></span></span>
+                            <span class="btn-text">Discord</span>
+                        </a>
+                        </li>
+                    
+                    
+                        <li class="nav-item">
+                        <a class="btn btn-sm btn-light text-decoration-none m-1" href="https://github.com/ivanurco/raya_documentation2" rel="nofollow">
+                            <span class="btn-icon"><span class="fab fa-github"></span></span>
+                            <span class="btn-text">Github</span>
+                        </a>
+                        </li>
+                    
+                    
+                        <li class="nav-item">
+                        <a class="btn btn-sm btn-primary text-decoration-none m-1" href="https://developers.unlimited-robotics.com/" rel="nofollow">
+                            <span class="btn-icon"></span>
+                            <span class="btn-text font-weight-bold">Developers Center</span>
+                        </a>
+                        </li>
+                    
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+    <header class="px-xl-7 px-md-5 px-3 container-fluid bg-primary">
+        <div class="container-fluid text-white">
+            <div class="navbar navbar-expand-lg navbar-dark font-weight-bold py-4">
+                <a href="../../../index.html" class="text-white homebutton">
+                    <i class="fas fa-home pl-3 pr-3"></i>
+                </a>
+                Raya Documentation
+                <button class="navbar-toggler btn btn-primary d-lg-none" type="button" data-toggle="collapse" data-target="#collapseSidebar" aria-expanded="false" aria-controls="collapseExample">
+                    <span class="navbar-toggler-icon"></span>
+                    <span class="sr-only">menu</span>
+                </button>
+            </div>
+        </div>
+    </header>
+    <div class="px-xl-7 px-md-5 px-3 container-fluid">
+        <div class="row">
+            <aside class="col-12 col-lg-3 sidebar-container">
+                <div id="collapseSidebar" class="collapse sticky-top d-lg-block pt-5 pr-lg-4">
+<div id="searchbox" class="searchbox mb-3 px-1" role="search">
+    <form id="search-form" action="../../../search.html" autocomplete="off" method="get" role="search">
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <div class="input-group-text border-right-0 bg-white py-3 pl-3 pr-2"><span class="fas fa-search"></span></div>
+            </div>
+            <input class="form-control py-3 pr-3 pl-1 h-100 border-left-0" type="search" name="q" placeholder="Search documentation" aria-label="Search documentation" id="searchinput" />
+        </div>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div><div class="site-toc">
+    <nav class="toc mt-3" aria-label="Main menu">
+        <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../Getting_Started/introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Getting_Started/install_raya_sdk.html">Install Ra-Ya SDK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Getting_Started/create_first_app_robot.html">Create your first app (Robot)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Getting_Started/create_first_app_simulation.html">Create your first app (Simulation)</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">RaYa Python library</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Raya Python Library</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../controllers/index.html">Controllers</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../controllers/sensors/index.html">Sensors</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../controllers/sensors/synchronous_methods/index.html">Synchronous methods</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../controllers/sensors/synchronous_methods/get_all_sensors_values.html">get_all_sensors_values()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../controllers/sensors/synchronous_methods/get_sensors_list.html">get_sensors_list()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../controllers/sensors/synchronous_methods/get_sensor_value.html">get_sensor_value()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../controllers/sensors/synchronous_methods/check_sensor_in_range.html">check_sensor_in_range()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../controllers/sensors/synchronous_methods/create_threshold_listener.html">create_threshold_listener()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../controllers/sensors/synchronous_methods/create_boolean_listener.html">create_boolean_listener()</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../controllers/sensors/exceptions.html">Exceptions</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../controllers/lidar/index.html">LiDAR</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../controllers/lidar/synchronous_methods/index.html">Synchronous methods</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../controllers/lidar/synchronous_methods/get_laser_info.html">get_laser_info()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../controllers/lidar/synchronous_methods/check_obstacle.html">check_obstacle()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../controllers/lidar/synchronous_methods/create_obstacle_listener.html">create_obstacle_listener()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../controllers/lidar/synchronous_methods/get_raw_data.html">get_raw_data()</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../controllers/lidar/exceptions.html">Exceptions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../controllers/lidar/enumerations.html">Enumerations</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../controllers/cameras/index.html">Cameras</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../controllers/cameras/synchronous_methods/index.html">Synchronous methods</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../controllers/cameras/synchronous_methods/create_color_frame_listener.html">create_color_frame_listener()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../controllers/cameras/synchronous_methods/is_camera_enabled.html">is_camera_enabled()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../controllers/cameras/synchronous_methods/available_color_cameras.html">available_color_cameras()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../controllers/cameras/synchronous_methods/delete_listener.html">delete_listener()</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../controllers/cameras/asynchronous_methods/index.html">Asynchronous methods</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../controllers/cameras/asynchronous_methods/enable_color_camera.html">enable_color_camera()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../controllers/cameras/asynchronous_methods/disable_color_camera.html">disable_color_camera()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../controllers/cameras/asynchronous_methods/get_next_frame.html">get_next_frame()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../controllers/cameras/asynchronous_methods/enable_streaming.html">enable_streaming()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../controllers/cameras/asynchronous_methods/disable_streaming.html">disable_streaming()</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../controllers/cameras/exceptions.html">Exceptions</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../controllers/leds/index.html">Leds</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../controllers/leds/synchronous_methods/index.html">Synchronous methods</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../controllers/leds/synchronous_methods/get_groups.html">get_groups()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../controllers/leds/synchronous_methods/get_colors.html">get_colors()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../controllers/leds/synchronous_methods/get_animations.html">get_animations()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../controllers/leds/synchronous_methods/get_max_speed.html">get_max_speed()</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../controllers/leds/asynchronous_methods/index.html">Asynchronous methods</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../controllers/leds/asynchronous_methods/animation.html">animation()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../controllers/leds/asynchronous_methods/set_color.html">set_color()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../controllers/leds/asynchronous_methods/turn_off_group.html">turn_off_group()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../controllers/leds/asynchronous_methods/turn_off_all.html">turn_off_all()</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../controllers/leds/exceptions.html">Exceptions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../controllers/leds/feedbacks.html">Feedbacks</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../controllers/leds/enumerations.html">Enumerations</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../controllers/motion/index.html">Motion</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../controllers/motion/synchronous_methods/index.html">Synchronous methods</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../controllers/motion/synchronous_methods/is_moving.html">is_moving()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../controllers/motion/synchronous_methods/check_last_exception.html">check_last_exception()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../controllers/motion/synchronous_methods/get_last_result.html">get_last_result()</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../controllers/motion/asynchronous_methods/index.html">Asynchronous methods</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../controllers/motion/asynchronous_methods/move_linear.html">move_linear()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../controllers/motion/asynchronous_methods/rotate.html">rotate()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../controllers/motion/asynchronous_methods/await_until_stop.html">await_until_stop()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../controllers/motion/asynchronous_methods/set_velocity.html">set_velocity()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../controllers/motion/asynchronous_methods/cancel_motion.html">cancel_motion()</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../controllers/motion/exceptions.html">Exceptions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../controllers/motion/feedbacks.html">Feedbacks</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../controllers/motion/enumerations.html">Enumerations</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../controllers/communication/index.html">Comunication</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../controllers/communication/synchronous_methods/index.html">Synchronous methods</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../controllers/communication/synchronous_methods/mqtt_remove_subscription.html">mqtt_remove_subscription()</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../controllers/communication/asynchronous_methods/index.html">Asynchronous methods</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../controllers/communication/asynchronous_methods/mqtt_create_subscription.html">mqtt_create_subscription()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../controllers/communication/asynchronous_methods/mqtt_publish_message.html">mqtt_publish_message()</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../controllers/communication/exceptions.html">Exceptions</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../controllers/sound/index.html">Sounds</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../controllers/sound/synchronous_methods/index.html">Synchronous methods</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../controllers/sound/synchronous_methods/get_predefined_sounds.html">get_predefined_sounds()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../controllers/sound/synchronous_methods/is_playing.html">is_playing()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../controllers/sound/synchronous_methods/is_recording.html">is_recording()</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../controllers/sound/asynchronous_methods/index.html">Asynchronous methods</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../controllers/sound/asynchronous_methods/cancel_sound.html">cancel_sound()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../controllers/sound/asynchronous_methods/record_sound.html">record_sound()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../controllers/sound/asynchronous_methods/play_sound.html">play_sound()</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../controllers/sound/handlers/index.html">Handlers</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../controllers/sound/handlers/sound_data_object.html">SoundData Object</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../controllers/sound/exceptions.html">Exceptions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../controllers/sound/feedbacks.html">Feedbacks</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../controllers/status/index.html">Status</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../controllers/status/asynchronous_methods/index.html">Asynchronous methods</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../controllers/status/asynchronous_methods/get_raya_status.html">get_raya_status()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../controllers/status/asynchronous_methods/get_available_arms.html">get_available_arms()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../controllers/status/asynchronous_methods/get_localization_status.html">get_localization_status()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../controllers/status/asynchronous_methods/get_manipulation_status.html">get_manipulation_status()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../controllers/status/asynchronous_methods/get_battery_status.html">get_battery_status()</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../controllers/status/exceptions.html">Exceptions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../controllers/status/enumerations.html">Enumerations</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../controllers/arms/index.html">Arms</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../controllers/arms/general_methods/index.html">General Methods</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../controllers/arms/general_methods/asynchronous_methods/index.html">Asynchronous Methods</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="../../controllers/arms/general_methods/asynchronous_methods/get_last_result.html">get_last_result()</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../controllers/arms/general_methods/asynchronous_methods/check_last_exception.html">check_last_exception()</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../controllers/arms/get_arm_joint_information/index.html">Get Arm/Joint Information</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../controllers/arms/get_arm_joint_information/synchronous_methods/index.html">Synchronous Methods</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="../../controllers/arms/get_arm_joint_information/synchronous_methods/get_arms_list.html">get_arms_list()</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../controllers/arms/get_arm_joint_information/synchronous_methods/get_groups_list.html">get_groups_list()</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../controllers/arms/get_arm_joint_information/synchronous_methods/get_joints_list.html">get_joints_list()</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../controllers/arms/get_arm_joint_information/synchronous_methods/get_joints_limits.html">get_joints_limits()</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../controllers/arms/get_arm_joint_information/synchronous_methods/get_joint_type.html">get_joint_type()</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../controllers/arms/get_arm_joint_information/synchronous_methods/get_arm_state.html">get_arm_state()</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="../../controllers/arms/get_arm_joint_information/asynchronous_methods/index.html">Asynchronous Methods</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="../../controllers/arms/get_arm_joint_information/asynchronous_methods/get_predefined_poses_list.html">get_predefined_poses_list()</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../controllers/arms/get_arm_joint_information/asynchronous_methods/get_predefined_trajectories_list.html">get_predefined_trajectories_list()</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../controllers/arms/get_arm_joint_information/asynchronous_methods/get_current_joints_position.html">get_current_joints_position()</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../controllers/arms/get_arm_joint_information/asynchronous_methods/get_current_pose.html">get_current_pose()</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../controllers/arms/get_arm_joint_information/asynchronous_methods/get_current_joint_position.html">get_current_joint_position()</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../controllers/arms/arm_joint_checking_methods/index.html">Arm/Joint Checking Methods</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../controllers/arms/arm_joint_checking_methods/synchronous_methods/index.html">Synchronous Methods</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="../../controllers/arms/arm_joint_checking_methods/synchronous_methods/is_linear_joint.html">is_linear_joint()</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../controllers/arms/arm_joint_checking_methods/synchronous_methods/is_rotational_joint.html">is_rotational_joint()</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="../../controllers/arms/arm_joint_checking_methods/asynchronous_methods/index.html">Asynchronous Methods</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="../../controllers/arms/arm_joint_checking_methods/asynchronous_methods/is_pose_valid.html">is_pose_valid()</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../controllers/arms/arm_joint_checking_methods/asynchronous_methods/is_pose_valid_q.html">is_pose_valid_q()</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../controllers/arms/arm_joint_checking_methods/asynchronous_methods/is_joints_position_valid.html">is_joints_position_valid()</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../controllers/arms/arm_joint_checking_methods/asynchronous_methods/is_any_arm_in_execution.html">is_any_arm_in_execution()</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../controllers/arms/arm_joint_checking_methods/asynchronous_methods/are_checkings_in_progress.html">are_checkings_in_progress()</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../controllers/arms/manage_predefined_data/index.html">Manage Predefined Data</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../controllers/arms/manage_predefined_data/manage_predefined_trajectory.html">manage_predefined_trajectory()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../controllers/arms/manage_predefined_data/manage_predefined_pose.html">manage_predefined_pose()</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../controllers/arms/execute_arm_movements/index.html">Execute Arm Movements</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../controllers/arms/execute_arm_movements/set_predefined_pose.html">set_predefined_pose()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../controllers/arms/execute_arm_movements/set_joints_position.html">set_joints_position()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../controllers/arms/execute_arm_movements/set_joint_position.html">set_joint_position()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../controllers/arms/execute_arm_movements/set_pose.html">set_pose()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../controllers/arms/execute_arm_movements/set_pose_q.html">set_pose_q()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../controllers/arms/execute_arm_movements/execute_predefined_trajectory.html">execute_predefined_trajectory()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../controllers/arms/execute_arm_movements/execute_predefined_poses_array.html">execute_predefined_poses_array()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../controllers/arms/execute_arm_movements/execute_joints_positions_array.html">execute_joints_positions_array()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../controllers/arms/execute_arm_movements/execute_poses_array.html">execute_poses_array()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../controllers/arms/execute_arm_movements/execute_poses_array_q.html">execute_poses_array_q()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../controllers/arms/execute_arm_movements/set_multi_arm_pose.html">set_multi_arm_pose()</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../controllers/arms/gripper/index.html">Gripper</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../controllers/arms/gripper/gripper_cmd.html">gripper_cmd()</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../controllers/arms/cancel_execution/index.html">Cancel Execution</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../controllers/arms/cancel_execution/cancel_execution.html">cancel_execution()</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../controllers/arms/objects/index.html">Objects</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../controllers/arms/objects/add_attached_object.html">add_attached_object()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../controllers/arms/objects/remove_attached_object.html">remove_attached_object()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../controllers/arms/objects/add_collision_object.html">add_collision_object()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../controllers/arms/objects/remove_collision_object.html">remove_collision_object()</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../controllers/arms/constraints/index.html">Constraints</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../controllers/arms/constraints/add_constraints.html">add_constraints()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../controllers/arms/constraints/remove_constraints.html">remove_constraints()</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../controllers/arms/tools/index.html">Tools</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../controllers/arms/tools/convert_orientation.html">convert_orientation()</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../controllers/arms/exceptions.html">Exceptions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../controllers/arms/feedbacks.html">Feedbacks</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../controllers/arms/enumerations.html">Enumerations</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../controllers/ui/index.html">UI</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../controllers/ui/asynchronous_methods/index.html">Asynchronous methods</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../controllers/ui/asynchronous_methods/display_split_screen.html">display_split_screen()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../controllers/ui/asynchronous_methods/display_modal.html">display_modal()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../controllers/ui/asynchronous_methods/display_input_modal.html">display_input_modal()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../controllers/ui/asynchronous_methods/display_screen.html">display_screen()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../controllers/ui/asynchronous_methods/display_interactive_map.html">display_interactive_map()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../controllers/ui/asynchronous_methods/display_action_screen.html">display_action_screen()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../controllers/ui/asynchronous_methods/display_choice_selector.html">display_choice_selector()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../controllers/ui/asynchronous_methods/display_animation.html">display_animation()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../controllers/ui/asynchronous_methods/show_animation.html">show_animation()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../controllers/ui/asynchronous_methods/open_link.html">open_link()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../controllers/ui/asynchronous_methods/open_video.html">open_video()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../controllers/ui/asynchronous_methods/open_conference.html">open_conference()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../controllers/ui/asynchronous_methods/open_interacty.html">open_interacty()</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../controllers/ui/exceptions.html">Exceptions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../controllers/ui/enumerations.html">Enumerations</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../controllers/interactions/index.html">Interactions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../controllers/interactions/synchronous_methods/index.html">Synchronous methods</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../controllers/interactions/synchronous_methods/get_interactions.html">get_interactions()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../controllers/interactions/synchronous_methods/interaction_running.html">interaction_running()</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../controllers/interactions/asynchronous_methods/index.html">Asynchronous methods</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../controllers/interactions/asynchronous_methods/wait_interaction_finished.html">wait_interaction_finished()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../controllers/interactions/asynchronous_methods/play_interaction.html">play_interaction()</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../controllers/interactions/exceptions.html">Exceptions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../controllers/interactions/feedbacks.html">Feedbacks</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../controllers/manipulation/index.html">Manipulation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../controllers/manipulation/synchronous_methods/index.html">Synchronous methods</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../controllers/manipulation/synchronous_methods/is_manipulation.html">is_manipulation()</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../controllers/manipulation/asynchronous_methods/index.html">Asynchronous methods</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../controllers/manipulation/asynchronous_methods/cancel_manipulation.html">cancel_manipulation()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../controllers/manipulation/asynchronous_methods/wait_manipulation_finished.html">wait_manipulation_finished()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../controllers/manipulation/asynchronous_methods/place_object_with_reference.html">place_object_with_reference()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../controllers/manipulation/asynchronous_methods/place_object_with_tag.html">place_object_with_tag()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../controllers/manipulation/asynchronous_methods/clean_arms_status.html">clean_arms_status()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../controllers/manipulation/asynchronous_methods/pick_object_point.html">pick_object_point()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../controllers/manipulation/asynchronous_methods/pick_object.html">pick_object()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../controllers/manipulation/asynchronous_methods/place_object_with_point.html">place_object_with_point()</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../controllers/manipulation/exceptions.html">Exceptions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../controllers/manipulation/feedbacks.html">Feedbacks</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../controllers/cv/index.html">CV</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../controllers/cv/asynchronous_methods/index.html">Asynchronous methods</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../controllers/cv/asynchronous_methods/get_available_models.html">get_available_models()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../controllers/cv/asynchronous_methods/enable_model.html">enable_model()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../controllers/cv/asynchronous_methods/disable_model.html">disable_model()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../controllers/cv/asynchronous_methods/disable_all_models.html">disable_all_models()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../controllers/cv/asynchronous_methods/train_model_folder_path.html">train_model_folder_path()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../controllers/cv/asynchronous_methods/train_model.html">train_model()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../controllers/cv/asynchronous_methods/delete_face.html">delete_face()</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../controllers/cv/handlers/index.html">Handlers</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../controllers/cv/handlers/find_tags.html">find_tags()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../controllers/cv/handlers/get_current_predictions.html">get_current_predictions()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../controllers/cv/handlers/get_predictions_once.html">get_predictions_once()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../controllers/cv/handlers/set_predictions_callback.html">set_predictions_callback()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../controllers/cv/handlers/set_img_predictions_callback.html">set_img_predictions_callback()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../controllers/cv/handlers/find_objects.html">find_objects()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../controllers/cv/handlers/cancel_find_objects.html">cancel_find_objects()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../controllers/cv/handlers/get_objects_names.html">get_objects_names()</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../controllers/cv/exceptions.html">Exceptions</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../controllers/navigation/index.html">Navigation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../controllers/navigation/zones_and_locations/index.html">zones &amp; locations</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../controllers/navigation/zones_and_locations/asynchronous_methods/index.html">asynchronous_methods</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="../../controllers/navigation/zones_and_locations/asynchronous_methods/save_zone.html">save_zone()</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../controllers/navigation/zones_and_locations/asynchronous_methods/order_zone_points.html">order_zone_points()</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../controllers/navigation/zones_and_locations/asynchronous_methods/get_sorted_zone_point.html">get_sorted_zone_point()</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../controllers/navigation/zones_and_locations/asynchronous_methods/delete_zone.html">delete_zone()</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../controllers/navigation/zones_and_locations/asynchronous_methods/get_zone_center.html">get_zone_center()</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../controllers/navigation/zones_and_locations/asynchronous_methods/get_zones_list.html">get_zones_list()</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../controllers/navigation/zones_and_locations/asynchronous_methods/get_zones.html">get_zones()</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../controllers/navigation/zones_and_locations/asynchronous_methods/get_locations.html">get_locations()</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../controllers/navigation/zones_and_locations/asynchronous_methods/get_locations_list.html">get_locations_list()</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../controllers/navigation/zones_and_locations/asynchronous_methods/save_location.html">save_location()</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../controllers/navigation/zones_and_locations/asynchronous_methods/delete_location.html">delete_location()</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../controllers/navigation/zones_and_locations/asynchronous_methods/get_location.html">get_location()</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../controllers/navigation/navigation/index.html">navigation</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../controllers/navigation/navigation/asynchronous_methods/index.html">asynchronous_methods</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="../../controllers/navigation/navigation/asynchronous_methods/enable_speed_zones.html">enable_speed_zones()</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../controllers/navigation/navigation/asynchronous_methods/disable_speed_zones.html">disable_speed_zones()</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../controllers/navigation/navigation/asynchronous_methods/update_robotic_footprint.html">update_robotic_footprint()</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../controllers/navigation/navigation/asynchronous_methods/cancel_navigation.html">cancel_navigation()</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../controllers/navigation/navigation/asynchronous_methods/navigate_close_to_position.html">navigate_close_to_position()</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../controllers/navigation/navigation/asynchronous_methods/go_to_angle.html">go_to_angle()</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../controllers/navigation/navigation/asynchronous_methods/navigate_to_zone.html">navigate_to_zone()</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../controllers/navigation/navigation/asynchronous_methods/navigate_to_location.html">navigate_to_location()</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../controllers/navigation/navigation/asynchronous_methods/navigate_to_position.html">navigate_to_position()</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../controllers/navigation/navigation/asynchronous_methods/get_position.html">get_position()</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../controllers/navigation/navigation/asynchronous_methods/is_in_zone.html">is_in_zone()</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../controllers/navigation/navigation/asynchronous_methods/update_current_nav_goal.html">update_current_nav_goal()</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../controllers/navigation/navigation/asynchronous_methods/get_costmap.html">get_costmap()</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../controllers/navigation/navigation/asynchronous_methods/check_path_to_goal.html">check_path_to_goal()</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../controllers/navigation/navigation/asynchronous_methods/get_status.html">get_status()</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../controllers/navigation/navigation/asynchronous_methods/await_until_stop.html">await_until_stop()</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="../../controllers/navigation/navigation/synchronous_methods/index.html">synchronous_methods</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="../../controllers/navigation/navigation/synchronous_methods/get_last_result.html">get_last_result()</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../controllers/navigation/navigation/synchronous_methods/check_last_exception.html">check_last_exception()</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../controllers/navigation/maps_and_position/index.html">maps &amp; position</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../controllers/navigation/maps_and_position/asynchronous_methods/index.html">asynchronous_methods</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="../../controllers/navigation/maps_and_position/asynchronous_methods/update_map.html">update_map()</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../controllers/navigation/maps_and_position/asynchronous_methods/download_map.html">download_map()</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../controllers/navigation/maps_and_position/asynchronous_methods/set_map.html">set_map()</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../controllers/navigation/maps_and_position/asynchronous_methods/is_mapping.html">is_mapping()</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../controllers/navigation/maps_and_position/asynchronous_methods/is_localized.html">is_localized()</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../controllers/navigation/maps_and_position/asynchronous_methods/get_map.html">get_map()</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../controllers/navigation/maps_and_position/asynchronous_methods/get_list_of_maps.html">get_list_of_maps()</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../controllers/navigation/maps_and_position/asynchronous_methods/start_mapping.html">start_mapping()</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../controllers/navigation/maps_and_position/asynchronous_methods/continue_mapping.html">continue_mapping()</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../controllers/navigation/maps_and_position/asynchronous_methods/stop_mapping.html">stop_mapping()</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../controllers/navigation/maps_and_position/asynchronous_methods/generate_speed_zones_files.html">generate_speed_zones_files()</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../controllers/navigation/maps_and_position/asynchronous_methods/get_current_map.html">get_current_map()</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../controllers/navigation/feedbacks.html">Feedbacks</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../controllers/navigation/exceptions.html">Exceptions</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../controllers/nlp/index.html">NLP</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../controllers/nlp/asynchronous_methods/index.html">Asynchronous methods</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../controllers/nlp/asynchronous_methods/tts_play_text.html">tts_play_text()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../controllers/nlp/asynchronous_methods/stt_transcribe_from_mic.html">stt_transcribe_from_mic()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../controllers/nlp/asynchronous_methods/stt_transcribe_from_file.html">stt_transcribe_from_file()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../controllers/nlp/asynchronous_methods/tts_set_provider.html">tts_set_provider()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../controllers/nlp/asynchronous_methods/stt_set_provider.html">stt_set_provider()</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../controllers/nlp/exceptions.html">Exceptions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../controllers/nlp/feedbacks.html">Feedbacks</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../controllers/fleet/index.html">Fleet</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../controllers/fleet/synchronous_methods/index.html">Synchronous methods</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../controllers/fleet/synchronous_methods/set_msgs_from_fleet_callback.html">set_msgs_from_fleet_callback()</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../controllers/fleet/asynchronous_methods/index.html">Asynchronous methods</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../controllers/fleet/asynchronous_methods/request_action.html">request_action()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../controllers/fleet/asynchronous_methods/finish_task.html">finish_task()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../controllers/fleet/asynchronous_methods/update_app_status.html">update_app_status()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../controllers/fleet/asynchronous_methods/open_camera_stream.html">open_camera_stream()</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../controllers/fleet/exceptions.html">Exceptions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../controllers/fleet/enumerations.html">Enumerations</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../General_Enumerations.html">General Enumerations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../General_Exceptions.html">General Exceptions</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">Tools</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="index.html">Finite States Machine Module</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Simple FSM</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Multiple_FSM.html">Multiple FSM</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Robots</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../Robots/index.html">Robots Availables</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../Robots/gary/index.html">Gary</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../Robots/gary/leds_colors.html">LEDs colors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../Robots/gary/sensors.html">Sensors</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Unlimited Robotics SDK</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../Unlimited_Robotics_SDK/index.html">Unlimited Robotics SDK</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../Unlimited_Robotics_SDK/Commands/index.html">Commands</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../Unlimited_Robotics_SDK/Commands/Simulator.html">Simulator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../Unlimited_Robotics_SDK/Commands/Init.html">Init</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../Unlimited_Robotics_SDK/Commands/Scan.html">Scan</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../Unlimited_Robotics_SDK/Commands/Connect.html">Connect</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../Unlimited_Robotics_SDK/Commands/Run.html">Run</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../Unlimited_Robotics_SDK/Commands/Update.html">Update</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../Unlimited_Robotics_SDK/Commands/Kill.html">Kill</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../Unlimited_Robotics_SDK/Commands/Command.html">Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../Unlimited_Robotics_SDK/Commands/Tools.html">Tools</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../Unlimited_Robotics_SDK/Commands/Skills/index.html">Skills</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../Unlimited_Robotics_SDK/Commands/Skills/Install.html">Install</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Unlimited_Robotics_SDK/Commands/Skills/Install_deps.html">Install_deps</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+    </nav>
+    <template data-toggle-item-template>
+        <button class="btn btn-sm btn-link toctree-expand" type="button">
+            <span class="sr-only">Toggle menu contents</span>
+        </button>
+    </template>
+</div>
+                    <div class="d-lg-none border-bottom">
+                        
+                    </div>
+                </div>
+            </aside>
+            <div class="col-12 col-lg-7 col-xl-9 pt-5">
+                <header class="row align-items-baseline">
+                    <div class="col">
+                        <nav aria-label="breadcrumb">
+    <ol class="breadcrumb m-0 p-0 bg-transparent">
+        <li class="breadcrumb-item"><a href="../../../index.html">Docs</a></li>
+            <li class="breadcrumb-item"><a href="../../index.html">Raya Python Library</a></li>
+            <li class="breadcrumb-item"><a href="../index.html">Tools</a></li>
+            <li class="breadcrumb-item"><a href="index.html">Finite States Machines</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Simple FSM</li>
+    </ol>
+</nav>
+                    </div>
+                    <div class="col-sm-12 col-lg-auto mt-3 mt-lg-3">
+                        <noscript>
+                            <p>JavaScript is required to toggle light/dark mode..</p>
+                        </noscript>
+                        <button id="wagtail-theme" class="btn btn-sm btn-light text-decoration-none" type="button">
+                            <span class="dark-only"><i class="fas fa-sun"></i> Light mode</span>
+                            <span class="light-only"><i class="fas fa-moon"></i> Dark mode</span>
+                        </button>
+    <a class="btn btn-sm btn-light text-decoration-none" href="https://github.com/ivanurco/raya_documentation2/tree/main/docs/source/Raya_Python_Library/Tools/Finite_States_Machine_Module/Simple_FSM.rst" rel="nofollow">
+        <span class="btn-icon"><span class="fab fa-github"></span></span>
+        <span class="btn-text">Edit on GitHub</span>
+    </a>
+                        
+                    </div>
+                </header>
+                <div class="row" >
+                    <div class="col-12">
+                        <hr class="w-100 my-4">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-lg-9 order-last order-lg-first rst-content">
+                        <main role="main" id="main">
+    <section id="simple-fsm">
+<h1>Simple FSM<a class="headerlink" href="#simple-fsm" title="Link to this heading">¶</a></h1>
+<hr/><section id="overview">
+<h2>1. Overview<a class="headerlink" href="#overview" title="Link to this heading">¶</a></h2>
+<p>Finite States Machines (FSM from now on) allow you to easily control the
+flow of an application. Ra-Ya Python library includes a module to easily
+create FSMs.</p>
+<p>The module embeds everything inside the <code class="docutils literal notranslate"><span class="pre">FSM</span></code> class, that can be
+imported as:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">raya.tools.fsm</span> <span class="kn">import</span> <span class="n">FSM</span>
+</pre></div>
+</div>
+<p>This document will use the pyRa-Ya example called <code class="docutils literal notranslate"><span class="pre">fsm_simple</span></code> to
+explain the working of the module (example available
+<a class="reference external" href="https://github.com/Unlimited-Robotics/pyraya_examples/tree/devel/fsm_simple">here</a>).</p>
+</section>
+<section id="fsm-to-implement">
+<h2>2. FSM to implement<a class="headerlink" href="#fsm-to-implement" title="Link to this heading">¶</a></h2>
+<p>Consider the FSM below</p>
+<figure class="align-center">
+<img alt="FSM Example.drawio" src="../../../_images/Simple_FSM.svg" />
+</figure>
+<p>We want the application to start its logic from a specific location on
+the map, so we create a state to get localized (<code class="docutils literal notranslate"><span class="pre">LOCALIZING</span></code>) and
+another one to navigate to the desired starting point in the map
+(<code class="docutils literal notranslate"><span class="pre">NAV_TO_HOME</span></code>). After that, the robot gets aware of receiving new
+commands in the state <code class="docutils literal notranslate"><span class="pre">IDLE</span></code>.</p>
+<p>When the robot gets the <code class="docutils literal notranslate"><span class="pre">IDLE</span></code> state, shows a menu on the screen and
+waits for commands from the user. There are four behaviors to perform
+from this state:</p>
+<section id="high-temperature-alarm">
+<h3>2.1. High-temperature alarm<a class="headerlink" href="#high-temperature-alarm" title="Link to this heading">¶</a></h3>
+<p>If during the <code class="docutils literal notranslate"><span class="pre">IDLE</span></code> state, the environment temperature increases
+above a defined value, an alarm is shown on the screen and it’s not
+possible to perform other actions (<code class="docutils literal notranslate"><span class="pre">HOT</span></code> state).</p>
+<p>When the temperature comes back to the normal range, a message is shown
+on the screen for a while (<code class="docutils literal notranslate"><span class="pre">FRESH</span></code> state), and then the robot gets the
+<code class="docutils literal notranslate"><span class="pre">IDLE</span></code> state again.</p>
+</section>
+<section id="take-a-photograph-in-the-kitchen">
+<h3>2.2. Take a photograph in the kitchen<a class="headerlink" href="#take-a-photograph-in-the-kitchen" title="Link to this heading">¶</a></h3>
+<p>If during the <code class="docutils literal notranslate"><span class="pre">IDLE</span></code> state, the <strong>KITCHEN</strong>
+option is selected on the screen, the robot will navigate to the kitchen
+(<code class="docutils literal notranslate"><span class="pre">NAV_TO_KITCHEN</span></code>), take a photograph and show it on the robot’s
+screen for a while (<code class="docutils literal notranslate"><span class="pre">TAKE_PHOTO</span></code>, and navigate to the home location
+again (<code class="docutils literal notranslate"><span class="pre">NAV_TO_HOME</span></code>).</p>
+</section>
+<section id="wave-in-the-bedroom">
+<h3>2.3. Wave in the bedroom<a class="headerlink" href="#wave-in-the-bedroom" title="Link to this heading">¶</a></h3>
+<p>If during the <code class="docutils literal notranslate"><span class="pre">IDLE</span></code> state, the <strong>BEDROOM</strong> option is selected on the
+screen, the robot will navigate to the bedroom (<code class="docutils literal notranslate"><span class="pre">NAV_TO_BEDROOM</span></code>),
+wave with one of its arms (<code class="docutils literal notranslate"><span class="pre">WAVE</span></code>), and navigate to the home location
+again (<code class="docutils literal notranslate"><span class="pre">NAV_TO_HOME</span></code>).</p>
+</section>
+<section id="look-for-some-clothes">
+<h3>2.4. Look for some clothes<a class="headerlink" href="#look-for-some-clothes" title="Link to this heading">¶</a></h3>
+<p>If during the <code class="docutils literal notranslate"><span class="pre">IDLE</span></code> state, the <strong>LAUNDRY</strong> option is selected on the
+screen, the robot will navigate to the laundry (<code class="docutils literal notranslate"><span class="pre">NAV_TO_LAUNDRY</span></code>),
+“think about what to wear” (wait for a while) (<code class="docutils literal notranslate"><span class="pre">LOOK_FOR_PANTS</span></code>), and
+navigate to the home location again (<code class="docutils literal notranslate"><span class="pre">NAV_TO_HOME</span></code>).</p>
+</section>
+</section>
+<section id="implementation-of-the-fsm">
+<h2>3. Implementation of the FSM<a class="headerlink" href="#implementation-of-the-fsm" title="Link to this heading">¶</a></h2>
+<section id="files-organization">
+<h3>3.1. Files organization<a class="headerlink" href="#files-organization" title="Link to this heading">¶</a></h3>
+<p>For the use of the FSM module, it’s mandatory to follow the following
+folders structure inside the application:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&lt;app_id&gt;
+├──<span class="w"> </span>...
+├──<span class="w"> </span>src
+│<span class="w">   </span>├──<span class="w"> </span>...
+│<span class="w">   </span>├──<span class="w"> </span>FMSs
+│<span class="w">   </span>│<span class="w">   </span>├──<span class="w"> </span>&lt;fsm1_name&gt;
+│<span class="w">   </span>│<span class="w">   </span>│<span class="w">   </span>├──<span class="w"> </span>__init__.py
+│<span class="w">   </span>│<span class="w">   </span>│<span class="w">   </span>├──<span class="w"> </span>actions.py
+│<span class="w">   </span>│<span class="w">   </span>│<span class="w">   </span>├──<span class="w"> </span>helpers.py
+│<span class="w">   </span>│<span class="w">   </span>│<span class="w">   </span>├──<span class="w"> </span>states.py
+│<span class="w">   </span>│<span class="w">   </span>│<span class="w">   </span>└──<span class="w"> </span>trantitions.py
+│<span class="w">   </span>│<span class="w">   </span>├──<span class="w"> </span>&lt;fsm2_name&gt;
+│<span class="w">   </span>│<span class="w">   </span>│<span class="w">   </span>├──<span class="w"> </span>__init__.py
+│<span class="w">   </span>│<span class="w">   </span>│<span class="w">   </span>├──<span class="w"> </span>actions.py
+│<span class="w">   </span>│<span class="w">   </span>│<span class="w">   </span>├──<span class="w"> </span>helpers.py
+│<span class="w">   </span>│<span class="w">   </span>│<span class="w">   </span>├──<span class="w"> </span>states.py
+│<span class="w">   </span>│<span class="w">   </span>│<span class="w">   </span>└──<span class="w"> </span>trantitions.py
+│<span class="w">   </span>│<span class="w">   </span>└──<span class="w"> </span>...
+│<span class="w">   </span>├──<span class="w"> </span>...
+│<span class="w">   </span>├──<span class="w"> </span>app.py
+│<span class="w">   </span>└──<span class="w"> </span>...
+├──<span class="w"> </span>__main__.py
+└──<span class="w"> </span>...
+</pre></div>
+</div>
+<p>There must be a folder called <code class="docutils literal notranslate"><span class="pre">FSMs</span></code> inside <code class="docutils literal notranslate"><span class="pre">src</span></code>, and one folder
+inside it for each FSM to implement in our application. The name of that
+folder is the identifier of that FSM from the application.</p>
+<p>Each FSM folder contains the files that describe the desired behavior:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">__init__.py</span></code> needed to recognize the folder as a Python module.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">states.py</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">actions.py</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">trantitions.py</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">helpers.py</span></code> (optional)</p></li>
+</ul>
+<p>For our example, we’re only going to implement one FSM called <code class="docutils literal notranslate"><span class="pre">task1</span></code>,
+so the folder would look like this:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&lt;app_id&gt;
+├──<span class="w"> </span>...
+├──<span class="w"> </span>src
+│<span class="w">   </span>├──<span class="w"> </span>...
+│<span class="w">   </span>├──<span class="w"> </span>FMSs
+│<span class="w">   </span>│<span class="w">   </span>└──<span class="w"> </span>task1
+│<span class="w">   </span>│<span class="w">       </span>├──<span class="w"> </span>__init__.py
+│<span class="w">   </span>│<span class="w">       </span>├──<span class="w"> </span>actions.py
+│<span class="w">   </span>│<span class="w">       </span>├──<span class="w"> </span>helpers.py
+│<span class="w">   </span>│<span class="w">       </span>├──<span class="w"> </span>states.py
+│<span class="w">   </span>│<span class="w">       </span>└──<span class="w"> </span>trantitions.py
+│<span class="w">   </span>├──<span class="w"> </span>...
+│<span class="w">   </span>├──<span class="w"> </span>app.py
+│<span class="w">   </span>└──<span class="w"> </span>...
+├──<span class="w"> </span>__main__.py
+└──<span class="w"> </span>...
+</pre></div>
+</div>
+</section>
+<section id="states">
+<h3>3.2. States<a class="headerlink" href="#states" title="Link to this heading">¶</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">states.py</span></code> file includes the description of the states that make
+up the FSM. First, create the list <code class="docutils literal notranslate"><span class="pre">STATES</span></code> that includes the list of
+states (represented as strings):</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">STATES</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="s1">&#39;LOCALIZING&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;NAV_TO_HOME&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;IDLE&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;HOT&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;FRESH&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;NAV_TO_KITCHEN&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;TAKE_PHOTO&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;NAV_TO_BEDROOM&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;WAVE&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;NAV_TO_LAUNDRY&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;LOOK_FOR_PANTS&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;END&#39;</span><span class="p">,</span>
+    <span class="p">]</span>
+</pre></div>
+</div>
+<p>Now, define the initial state:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">INITIAL_STATE</span> <span class="o">=</span> <span class="s1">&#39;LOCALIZING&#39;</span>
+</pre></div>
+</div>
+<p>If you don’t define the <code class="docutils literal notranslate"><span class="pre">INITIAL_STATE</span></code> variable, the initial state
+will be the first element in the <code class="docutils literal notranslate"><span class="pre">STATES</span></code> list.</p>
+<p>An FSM can have multiple end states, so you must define the
+<code class="docutils literal notranslate"><span class="pre">END_STATES</span></code> list as:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">END_STATES</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;END&#39;</span><span class="p">,</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<p>In addition, you can set timeout to states. That implies that if the FSM
+keeps for more than a specific period of time in the same state, it’ll
+finish with a specific error.</p>
+<p>In this case, we’lll define a timeout of 10 seconds for the
+<code class="docutils literal notranslate"><span class="pre">LOCALIZING</span></code> state. If it takes more than 10 seconds to localize, the
+FSM will finish with error. To define states timeouts, add this to the
+<code class="docutils literal notranslate"><span class="pre">states.py</span></code> file:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">STATES_TIMEOUTS</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;LOCALIZING&#39;</span> <span class="p">:</span> <span class="p">(</span><span class="mf">10.0</span><span class="p">,</span> <span class="n">APPERR_COULD_NOT_LOCALIZE</span><span class="p">),</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>It’s not mandatory to define the variable <code class="docutils literal notranslate"><span class="pre">STATES_TIMEOUTS</span></code>.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">APPERR_COULD_NOT_LOCALIZE</span></code> is a constant defined in the file
+<code class="docutils literal notranslate"><span class="pre">src/static/app_errors.py</span></code> like:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">APPERR_COULD_NOT_LOCALIZE</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;Robot could not get localized&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="actions">
+<h3>3.3. Actions<a class="headerlink" href="#actions" title="Link to this heading">¶</a></h3>
+<p>The actions are the commands or tasks to perform during the different
+stages of the FSM.</p>
+<p>The file <code class="docutils literal notranslate"><span class="pre">actions.py</span></code> must have at least the following content:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">raya.tools.fsm</span> <span class="kn">import</span> <span class="n">BaseActions</span>
+
+<span class="kn">from</span> <span class="nn">src.app</span> <span class="kn">import</span> <span class="n">RayaApplication</span>
+
+<span class="k">class</span> <span class="nc">Actions</span><span class="p">(</span><span class="n">BaseActions</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">app</span><span class="p">:</span> <span class="n">RayaApplication</span><span class="p">,</span> <span class="n">helpers</span><span class="p">:</span> <span class="n">Helpers</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">app</span> <span class="o">=</span> <span class="n">app</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">helpers</span> <span class="o">=</span> <span class="n">helpers</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">Actions</span></code> class includes all the actions as methods. There are
+three types of actions:</p>
+<ul class="simple">
+<li><p><strong>Transition from STATE:</strong>
+It’s executed when the FSM leaves a state, regardless of which state
+it goes to. Method name format: <code class="docutils literal notranslate"><span class="pre">leave_STATE(self):</span></code></p></li>
+<li><p><strong>Transition to STATE:</strong>
+It’s executed when the FSM gets a specific state, regardless of which
+state it comes from. Method name format: <code class="docutils literal notranslate"><span class="pre">enter_STATE(self):</span></code></p></li>
+<li><p><strong>Transition from STATE1 to STATE2:</strong>
+It’s executed when the FSM leaves a specific state 1 to go to another
+specific state 2. Method name format: <code class="docutils literal notranslate"><span class="pre">SATE1_to_STATE2(self):</span></code></p></li>
+</ul>
+<p>Each transition must be implemented as an ASYNC method in the <code class="docutils literal notranslate"><span class="pre">Action</span></code>
+class.</p>
+<p>For example, consider that getting into the state <code class="docutils literal notranslate"><span class="pre">LOCALIZING</span></code> implies
+showing a message on the screen that indicates the robot is localizing,
+and setting the map to start the localization process. So that action
+can be implemented by adding the method below to the <code class="docutils literal notranslate"><span class="pre">Actions</span></code> class:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">async</span> <span class="k">def</span> <span class="nf">enter_LOCALIZING</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+       <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">app</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">display_screen</span><span class="p">(</span><span class="o">**</span><span class="n">UI_SCREEN_LOCALIZING</span><span class="p">)</span>
+       <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">app</span><span class="o">.</span><span class="n">nav</span><span class="o">.</span><span class="n">set_map</span><span class="p">(</span><span class="n">NAV_MAP_NAME</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>As you can see, you can directly access the app using the <code class="docutils literal notranslate"><span class="pre">self.app</span></code>
+variable.</p>
+<p>It’s important to remark that the methods and functions called inside
+the actions must be <strong>NOT BLOCKING</strong>. The FSM must always keep free to
+continue executing.</p>
+<p>You can see other action implementations in the file
+<code class="docutils literal notranslate"><span class="pre">src/FSMs/task1/actions.py</span></code> file in the <code class="docutils literal notranslate"><span class="pre">fsm_simple</span></code> pyRa-Ya
+example.</p>
+</section>
+<section id="transitions">
+<h3>3.4. Transitions<a class="headerlink" href="#transitions" title="Link to this heading">¶</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">transitions.py</span></code> describes the flow of the FSM, and how to move
+through the states.</p>
+<p>This file must have at least the following content:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">raya.tools.fsm</span> <span class="kn">import</span> <span class="n">BaseTransitions</span>
+
+<span class="kn">from</span> <span class="nn">src.app</span> <span class="kn">import</span> <span class="n">RayaApplication</span>
+
+<span class="k">class</span> <span class="nc">Transitions</span><span class="p">(</span><span class="n">BaseTransitions</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">app</span><span class="p">:</span> <span class="n">RayaApplication</span><span class="p">,</span> <span class="n">helpers</span><span class="p">:</span> <span class="n">Helpers</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">app</span> <span class="o">=</span> <span class="n">app</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">helpers</span> <span class="o">=</span> <span class="n">helpers</span>
+</pre></div>
+</div>
+<p>All the states MUST have their transition ASYNC method in the
+<code class="docutils literal notranslate"><span class="pre">Transition</span></code> class. The name of the method is the same name as the
+state.</p>
+<p>The transition methods are basically if…else statements that control
+which state to go to depending on the conditions. For example, when the
+FSM is in the state <code class="docutils literal notranslate"><span class="pre">LOCALIZING</span></code>, we know that we previously stated
+the localization process (in the <code class="docutils literal notranslate"><span class="pre">enter_LOCALIZING</span></code> action), so now we
+can evaluate if it’s already localized. If yes, just change the state
+using the <code class="docutils literal notranslate"><span class="pre">self.set_state</span></code> method.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">async</span> <span class="k">def</span> <span class="nf">LOCALIZING</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">if</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">app</span><span class="o">.</span><span class="n">nav</span><span class="o">.</span><span class="n">is_localized</span><span class="p">():</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">set_state</span><span class="p">(</span><span class="s1">&#39;NAV_TO_HOME&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>As you can see, you can directly access the app using the <code class="docutils literal notranslate"><span class="pre">self.app</span></code>
+variable.</p>
+<p>You can see other transition implementations in the file
+<code class="docutils literal notranslate"><span class="pre">src/FSMs/task1/transitions.py</span></code> file in the <code class="docutils literal notranslate"><span class="pre">fsm_simple</span></code> pyRa-Ya
+example.</p>
+<p>If the FSM keeps in a specific state, its transition method will be
+periodically called each time the FSM is ticked (discussed later).</p>
+</section>
+<section id="helpers">
+<h3>3.5. Helpers<a class="headerlink" href="#helpers" title="Link to this heading">¶</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">actions.py</span></code> and <code class="docutils literal notranslate"><span class="pre">transitions.py</span></code> must be as clean as possible,
+to make them clear, readable, and easy to compare with the FSM graph.
+The <code class="docutils literal notranslate"><span class="pre">helpers.py</span></code> file includes the functions, methods or other stuff
+that can be called from an action or transition, and can take too much
+lines of code.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">helper.py</span></code> file must have at least the following content:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">raya.exceptions</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="kn">from</span> <span class="nn">src.app</span> <span class="kn">import</span> <span class="n">RayaApplication</span>
+
+<span class="k">class</span> <span class="nc">Helpers</span><span class="p">:</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">app</span><span class="p">:</span> <span class="n">RayaApplication</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">app</span> <span class="o">=</span> <span class="n">app</span>
+</pre></div>
+</div>
+<p>Consider the waving with the arm when entering the state <code class="docutils literal notranslate"><span class="pre">WAVE</span></code>. It
+implies two movements, so instead of creating two states, we can just
+put both commands in a helper method like:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Helpers class</span>
+
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">arm_wave</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">app</span><span class="o">.</span><span class="n">arms</span><span class="o">.</span><span class="n">execute_joint_values_array</span><span class="p">(</span>
+                <span class="o">**</span><span class="n">ARMS_WAVE_SEQUENCE</span><span class="p">,</span>
+                <span class="n">wait</span><span class="o">=</span><span class="kc">True</span>
+            <span class="p">)</span>
+        <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">app</span><span class="o">.</span><span class="n">arms</span><span class="o">.</span><span class="n">set_predefined_pose</span><span class="p">(</span>
+                <span class="n">arm</span><span class="o">=</span><span class="n">ARMS_WAVE_ARM</span><span class="p">,</span>
+                <span class="n">predefined_pose</span><span class="o">=</span><span class="s1">&#39;home&#39;</span><span class="p">,</span>
+                <span class="n">wait</span><span class="o">=</span><span class="kc">True</span>
+            <span class="p">)</span>
+</pre></div>
+</div>
+<p>As you can see, you can directly access the app using the <code class="docutils literal notranslate"><span class="pre">self.app</span></code>
+variable.</p>
+<p>Then, in the <code class="docutils literal notranslate"><span class="pre">enter_WAVE</span></code> action, just create a task:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Actions class</span>
+
+ <span class="k">async</span> <span class="k">def</span> <span class="nf">enter_WAVE</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">app</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">display_screen</span><span class="p">(</span><span class="o">**</span><span class="n">UI_SCREEN_WAVING</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">app</span><span class="o">.</span><span class="n">create_task</span><span class="p">(</span>
+                <span class="n">name</span><span class="o">=</span><span class="s1">&#39;WAVE&#39;</span><span class="p">,</span>
+                <span class="n">afunc</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">helpers</span><span class="o">.</span><span class="n">arm_wave</span><span class="p">,</span>
+            <span class="p">)</span>
+</pre></div>
+</div>
+<p>And in the <code class="docutils literal notranslate"><span class="pre">WAVE</span></code> transition, just evaluate if the task finished:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Transitions class</span>
+
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">WAVE</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">app</span><span class="o">.</span><span class="n">is_task_done</span><span class="p">(</span><span class="s1">&#39;WAVE&#39;</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">set_state</span><span class="p">(</span><span class="s1">&#39;NAV_TO_HOME&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="errors">
+<h3>3.6. Errors<a class="headerlink" href="#errors" title="Link to this heading">¶</a></h3>
+<p>In any of the <code class="docutils literal notranslate"><span class="pre">Transitions</span></code>’ methods (<code class="docutils literal notranslate"><span class="pre">transitions.py</span></code> file), you
+can call the <code class="docutils literal notranslate"><span class="pre">self.abort(code,</span> <span class="pre">msg)</span></code> method. That method stops the FSM
+execution and set a tuple of error code and error message to be notified
+to the FSM caller.</p>
+<p>Consider the transition method of the state <code class="docutils literal notranslate"><span class="pre">NAV_TO_BEDROOM</span></code> in the
+example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># File transitions.py</span>
+<span class="c1"># Class Transitions</span>
+
+ <span class="k">async</span> <span class="k">def</span> <span class="nf">NAV_TO_BEDROOM</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+      <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">app</span><span class="o">.</span><span class="n">nav</span><span class="o">.</span><span class="n">is_navigating</span><span class="p">():</span>
+          <span class="n">nav_error</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">app</span><span class="o">.</span><span class="n">nav</span><span class="o">.</span><span class="n">get_last_navigation_error</span><span class="p">()</span>
+          <span class="k">if</span> <span class="n">nav_error</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+              <span class="bp">self</span><span class="o">.</span><span class="n">set_state</span><span class="p">(</span><span class="s1">&#39;WAVE&#39;</span><span class="p">)</span>
+          <span class="k">else</span><span class="p">:</span>
+              <span class="bp">self</span><span class="o">.</span><span class="n">abort</span><span class="p">(</span><span class="o">*</span><span class="n">APPERR_COULD_NOT_NAV_TO_HOME</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>If the navigation goes wrong, the FSM is aborted and the error code and
+message contained in <code class="docutils literal notranslate"><span class="pre">APPERR_COULD_NOT_NAV_TO_HOME</span></code> is set.</p>
+<p>In the <code class="docutils literal notranslate"><span class="pre">Actions</span></code> class (<code class="docutils literal notranslate"><span class="pre">actions.py</span></code> file) you can define the async
+method <code class="docutils literal notranslate"><span class="pre">aborted</span></code> to execute a specific task when the FSM is aborted.
+In our example, the error is shown in the robot’s screen and the error
+sound is played:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># File actions.py</span>
+<span class="c1"># Class Actions</span>
+
+  <span class="k">async</span> <span class="k">def</span> <span class="nf">aborted</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">error</span><span class="p">,</span> <span class="n">msg</span><span class="p">):</span>
+        <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">app</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">display_screen</span><span class="p">(</span>
+                <span class="o">**</span><span class="n">UI_SCREEN_FAILED</span><span class="p">,</span>
+                <span class="n">subtitle</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;ERROR </span><span class="si">{</span><span class="n">error</span><span class="si">}</span><span class="s1">: </span><span class="si">{</span><span class="n">msg</span><span class="si">}</span><span class="s1">&#39;</span>
+            <span class="p">)</span>
+        <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">app</span><span class="o">.</span><span class="n">sound</span><span class="o">.</span><span class="n">play_sound</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;error&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="fsm-class">
+<h2>4. FSM Class<a class="headerlink" href="#fsm-class" title="Link to this heading">¶</a></h2>
+<p>In your application, you can create the FSM object like:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="bp">self</span><span class="o">.</span><span class="n">fsm_task1</span> <span class="o">=</span> <span class="n">FSM</span><span class="p">(</span><span class="n">app</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;task1&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>It’ll take the name <code class="docutils literal notranslate"><span class="pre">task1</span></code> as the identifier, and it’ll look inside
+the <code class="docutils literal notranslate"><span class="pre">src/FSMs/task1</span></code> folder to create the FSM.</p>
+<p>You can create the FSM objects in any section of the <code class="docutils literal notranslate"><span class="pre">app.py</span></code> file,
+and even in other modules of the application.</p>
+<section id="tick">
+<h3>4.1. Tick<a class="headerlink" href="#tick" title="Link to this heading">¶</a></h3>
+<p>Each time the FSM is ticked, these steps are internally performed:</p>
+<ul class="simple">
+<li><p>Check if the current status reached timeout</p></li>
+<li><p>Execute the current status transition method</p></li>
+<li><p>Execute the corresponding actions, based on the previous and new
+state</p></li>
+</ul>
+<p>The faster the FSM is ticked, the faster the states will change, but the
+more resources you use. A good tick period is 100ms (10 times a second).</p>
+</section>
+<section id="execution-fsm">
+<h3>4.2. Execution FSM<a class="headerlink" href="#execution-fsm" title="Link to this heading">¶</a></h3>
+<p>You can manually tick the FSM like:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">while</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">fsm_task1</span><span class="o">.</span><span class="n">tick</span><span class="p">():</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)</span> <span class="c1"># Async sleep</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">FSM.tick()</span></code> method will return <code class="docutils literal notranslate"><span class="pre">False</span></code> when the FSM execution
+finishes.</p>
+<p>However, manually ticking is not recommended, instead, you should use
+one of the async methods <code class="docutils literal notranslate"><span class="pre">run_and_await</span></code> (awaits until the execution
+finishes) or <code class="docutils literal notranslate"><span class="pre">run_in_background</span></code> (runs the FSM in an async task in the
+background).</p>
+<p>You can then create the FSM and immediately execute in the background,
+wait for its execution, and then check it final status:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">RayaApplication</span><span class="p">(</span><span class="n">RayaApplicationBase</span><span class="p">):</span>
+
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">setup</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="o">...</span>
+        <span class="c1"># FSMs</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">fsm_task1</span> <span class="o">=</span> <span class="n">FSM</span><span class="p">(</span><span class="n">app</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;task1&#39;</span><span class="p">,</span> <span class="n">log_transitions</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">fsm_task1</span><span class="o">.</span><span class="n">run_in_background</span><span class="p">()</span>
+
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">loop</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># Do other non blocking stuff...</span>
+        <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">1.0</span><span class="p">)</span>
+        <span class="c1"># Check if the FSM has finished</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">fsm_task1</span><span class="o">.</span><span class="n">has_finished</span><span class="p">():</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">finish_app</span><span class="p">()</span>
+
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">finish</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># Has the FSM finished without error?</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">fsm_task1</span><span class="o">.</span><span class="n">was_successfull</span><span class="p">():</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;App correctly finished&#39;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="c1"># fsm_error[0]: error code, fsm_error[1]: error message</span>
+            <span class="n">fsm_error_code</span><span class="p">,</span> <span class="n">fsm_error_msg</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">fsm_task1</span><span class="o">.</span><span class="n">get_error</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">log</span><span class="o">.</span><span class="n">error</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s1">&#39;App finished with error [</span><span class="si">{</span><span class="n">fsm_error_code</span><span class="si">}</span><span class="s1">]: </span><span class="si">{</span><span class="n">fsm_error_msg</span><span class="si">}</span><span class="s1">&#39;</span>
+            <span class="p">)</span>
+</pre></div>
+</div>
+<p>Check the example <code class="docutils literal notranslate"><span class="pre">fsm_simple</span></code> for full implementation.</p>
+</section>
+</section>
+<section id="others">
+<h2>5. Others<a class="headerlink" href="#others" title="Link to this heading">¶</a></h2>
+<section id="sending-arguments-to-the-fsm-execution">
+<h3>5.1. Sending arguments to the FSM execution<a class="headerlink" href="#sending-arguments-to-the-fsm-execution" title="Link to this heading">¶</a></h3>
+<p>If you’re using <code class="docutils literal notranslate"><span class="pre">run_and_await</span></code> or <code class="docutils literal notranslate"><span class="pre">run_in_background</span></code>, you can send
+the arguments you want, like:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="bp">self</span><span class="o">.</span><span class="n">fsm_important_task</span><span class="o">.</span><span class="n">run_in_background</span><span class="p">(</span><span class="n">temperature</span><span class="o">=</span><span class="mf">34.2</span><span class="p">,</span> <span class="n">person_id</span><span class="o">=</span><span class="s1">&#39;martin&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>If you’re manually ticking the FSM (not recommended), you can set the
+arguments just before start ticking:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="bp">self</span><span class="o">.</span><span class="n">fsm_important_task</span><span class="o">.</span><span class="n">set_args</span><span class="p">(</span><span class="n">temperature</span><span class="o">=</span><span class="mf">34.2</span><span class="p">,</span> <span class="n">person_id</span><span class="o">=</span><span class="s1">&#39;martin&#39;</span><span class="p">)</span>
+<span class="k">while</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">fsm_important_task</span><span class="o">.</span><span class="n">tick</span><span class="p">():</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)</span> <span class="c1"># Async sleepg</span>
+</pre></div>
+</div>
+<p>Inside the <code class="docutils literal notranslate"><span class="pre">Actions</span></code>, <code class="docutils literal notranslate"><span class="pre">Transitions</span></code> or <code class="docutils literal notranslate"><span class="pre">Helper</span></code> classes, you can
+get those arguments just using the <code class="docutils literal notranslate"><span class="pre">args</span></code> attribute:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Actions, Transitions or Helpers class</span>
+
+    <span class="k">def</span> <span class="nf">any_method</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">temperature</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">person_id</span>
+</pre></div>
+</div>
+<p>Optionally, you can add a <code class="docutils literal notranslate"><span class="pre">arguments.py</span></code> file inside the FSM folder
+with the following structure:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">OPTIONAL_ARGS</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">&#39;temperature&#39;</span><span class="p">:</span> <span class="mf">34.2</span><span class="p">,</span>
+        <span class="s1">&#39;person_id&#39;</span><span class="p">:</span> <span class="s1">&#39;martin&#39;</span><span class="p">,</span>
+    <span class="p">}</span>
+
+<span class="n">REQUIRED_ARGS</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="s1">&#39;predictor&#39;</span>
+    <span class="p">]</span>
+</pre></div>
+</div>
+<p>pyRa-Ya automatically detects that file and sets the arguments in
+<code class="docutils literal notranslate"><span class="pre">OPTIONAL_ARGS</span></code> with their default values if they’re not defined when
+running the FSM.</p>
+<p>In addition, it throws the exception <code class="docutils literal notranslate"><span class="pre">RayaFSMMissingRequiredArgument</span></code>
+if one of the arguments in <code class="docutils literal notranslate"><span class="pre">REQUIRED_ARGS</span></code> is not defined when running
+the FSM.</p>
+</section>
+</section>
+</section>
+
+</main>
+                        <nav aria-label="Page navigation" class="py-4 my-5 clearfix font-weight-bold border-top">
+    <a class="float-left" href="index.html" title="Previous">
+        <span aria-hidden="true">←&nbsp;</span>Finite States Machines
+    </a>
+    <a class="float-right" href="Multiple_FSM.html" title="Next">
+        Multiple FSM <span aria-hidden="true">&nbsp;→</span>
+    </a>
+</nav>
+                    </div>
+                    
+                    <nav class="col-12 col-lg-3 pb-4 d-none d-md-block">
+                        <div class="sticky-top toc page-toc" aria-labelledby="page-toc-heading">
+                            <p class="font-weight-bold" id="page-toc-heading">Page contents</p>
+                            <ul>
+<li><a class="reference internal" href="#">Simple FSM</a><ul>
+<li><a class="reference internal" href="#overview">1. Overview</a></li>
+<li><a class="reference internal" href="#fsm-to-implement">2. FSM to implement</a><ul>
+<li><a class="reference internal" href="#high-temperature-alarm">2.1. High-temperature alarm</a></li>
+<li><a class="reference internal" href="#take-a-photograph-in-the-kitchen">2.2. Take a photograph in the kitchen</a></li>
+<li><a class="reference internal" href="#wave-in-the-bedroom">2.3. Wave in the bedroom</a></li>
+<li><a class="reference internal" href="#look-for-some-clothes">2.4. Look for some clothes</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#implementation-of-the-fsm">3. Implementation of the FSM</a><ul>
+<li><a class="reference internal" href="#files-organization">3.1. Files organization</a></li>
+<li><a class="reference internal" href="#states">3.2. States</a></li>
+<li><a class="reference internal" href="#actions">3.3. Actions</a></li>
+<li><a class="reference internal" href="#transitions">3.4. Transitions</a></li>
+<li><a class="reference internal" href="#helpers">3.5. Helpers</a></li>
+<li><a class="reference internal" href="#errors">3.6. Errors</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#fsm-class">4. FSM Class</a><ul>
+<li><a class="reference internal" href="#tick">4.1. Tick</a></li>
+<li><a class="reference internal" href="#execution-fsm">4.2. Execution FSM</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#others">5. Others</a><ul>
+<li><a class="reference internal" href="#sending-arguments-to-the-fsm-execution">5.1. Sending arguments to the FSM execution</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+                        </div>
+                    </nav>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <footer class="container-fluid bg-primary text-light">
+        <div class="container">
+            <div class="row">
+        <div class="col p-4">
+            
+                <nav aria-label="Footer">
+                    <ul class="nav justify-content-center mb-2">
+                        
+                            
+                            
+                            <li class="nav-item"><a class="nav-link text-light"  href="http://example.com/">About Us</a></li>
+                        
+                            
+                            
+                            <li class="nav-item"><a class="nav-link text-light"  href="http://example.com/contact">Contact</a></li>
+                        
+                            
+                            
+                            <li class="nav-item"><a class="nav-link text-light"  href="http://example.com/dev/null">Legal</a></li>
+                        
+                    </ul>
+                </nav>
+            
+            <div class="text-center">
+                <p style="display: none">
+                    <a class="text-light" href="https://github.com/wagtail/sphinx_wagtail_theme" rel="nofollow" target="_blank">
+                        Wagtail Sphinx Theme 6.2.0.dev0
+                    </a>
+                </p>
+            </div>
+            <div class="text-center">
+                    &copy; Copyright 2024, Unlimited Robotics
+            </div>
+        </div>
+    </div>
+        </div>
+    </footer>
+        <script src="../../../_static/documentation_options.js?v=2709fde1"></script>
+        <script src="../../../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../../../_static/copybutton.js?v=f281be69"></script>
+        <script src="../../../_static/custom.js"></script>
+        <script type="text/javascript" src="../../../_static/dist/theme.js"></script>
+        <script type="text/javascript" src="../../../_static/dist/vendor.js"></script>
+        <script type="text/javascript" src="../../../_static/searchtools.js"></script>
+        <script type="text/javascript" src="../../../_static/language_data.js"></script>
+        <script type="text/javascript">
+            document.addEventListener('DOMContentLoaded', function() { Search.loadIndex("../../../searchindex.js"); });
+        </script>
+        <script type="text/javascript" id="searchindexloader"></script>
+    </body>
+</html>

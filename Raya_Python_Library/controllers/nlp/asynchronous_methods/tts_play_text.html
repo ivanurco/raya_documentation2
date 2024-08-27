@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+    <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+        <title>tts_play_text() &mdash; RaYa Documentation 0.1 documentation</title>
+    
+        <link rel="shortcut icon" href="../../../../_static/favicon2.png" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/dist/fontawesome.css" />
+        <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=80d5e7a1" />
+        <link rel="stylesheet" type="text/css" href="../../../../_static/dist/theme.css?v=a61c05c7" />
+        <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css?v=76b2166b" />
+        <link rel="stylesheet" type="text/css" href="../../../../_static/custom.css?v=7a34560d" />
+            <link rel="index" title="Index" href="../../../../genindex.html" />
+            <link rel="search" title="Search" href="../../../../search.html" />
+            <link rel="top" title="RaYa Documentation 0.1 documentation" href="#" />
+            <link rel="up" title="Asynchronous methods" href="index.html" />
+            <link rel="next" title="stt_transcribe_from_mic()" href="stt_transcribe_from_mic.html" />
+            <link rel="prev" title="Asynchronous methods" href="index.html" />
+    </head>
+<body>
+    <script type="text/javascript" src="../../../../_static/dist/blocking.js"></script>
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../../',
+            VERSION:'0.1',
+            LANGUAGE:'en',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+    <div style="min-height: 100vh;">
+    <header class="px-xl-7 px-lg-5 px-md-5 px-3 container-fluid bg-white">
+        <div class="container-fluid">
+            <div class="navbar navbar-expand-lg navbar-dark font-weight-bold justify-content-between">
+                    <a href="https://www.unlimited-robotics.com/"
+                        title="Raya Documentation"
+                        class="logo navbar-brand flex-shrink-0 light-only"
+                    >
+                        <img src="../../../../_static/logo.png" width="153" height="720" alt="Raya Documentation"
+                            class="logo-img"
+                        />
+                    </a>
+                
+                    <a href="https://www.unlimited-robotics.com/"
+                        title="Raya Documentation"
+                        class="logo navbar-brand flex-shrink-0 dark-only"
+                    >
+                        <img src="../../../../_static/logo_white.png" width="153" height="720" alt="Raya Documentation"
+                            class="logo-img"
+                        />
+                    </a>
+                
+                <div class="justify-content-end" id="header1_sidebar">
+                    <ul class="navbar-nav d-flex flex-row"> 
+                    
+                        <li class="nav-item">
+                        <a class="btn btn-sm btn-light text-decoration-none m-1" href="https://discord.com/invite/Db7hrrePhn" rel="nofollow">
+                            <span class="btn-icon"><span class="fab fa-discord"></span></span>
+                            <span class="btn-text">Discord</span>
+                        </a>
+                        </li>
+                    
+                    
+                        <li class="nav-item">
+                        <a class="btn btn-sm btn-light text-decoration-none m-1" href="https://github.com/ivanurco/raya_documentation2" rel="nofollow">
+                            <span class="btn-icon"><span class="fab fa-github"></span></span>
+                            <span class="btn-text">Github</span>
+                        </a>
+                        </li>
+                    
+                    
+                        <li class="nav-item">
+                        <a class="btn btn-sm btn-primary text-decoration-none m-1" href="https://developers.unlimited-robotics.com/" rel="nofollow">
+                            <span class="btn-icon"></span>
+                            <span class="btn-text font-weight-bold">Developers Center</span>
+                        </a>
+                        </li>
+                    
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+    <header class="px-xl-7 px-md-5 px-3 container-fluid bg-primary">
+        <div class="container-fluid text-white">
+            <div class="navbar navbar-expand-lg navbar-dark font-weight-bold py-4">
+                <a href="../../../../index.html" class="text-white homebutton">
+                    <i class="fas fa-home pl-3 pr-3"></i>
+                </a>
+                Raya Documentation
+                <button class="navbar-toggler btn btn-primary d-lg-none" type="button" data-toggle="collapse" data-target="#collapseSidebar" aria-expanded="false" aria-controls="collapseExample">
+                    <span class="navbar-toggler-icon"></span>
+                    <span class="sr-only">menu</span>
+                </button>
+            </div>
+        </div>
+    </header>
+    <div class="px-xl-7 px-md-5 px-3 container-fluid">
+        <div class="row">
+            <aside class="col-12 col-lg-3 sidebar-container">
+                <div id="collapseSidebar" class="collapse sticky-top d-lg-block pt-5 pr-lg-4">
+<div id="searchbox" class="searchbox mb-3 px-1" role="search">
+    <form id="search-form" action="../../../../search.html" autocomplete="off" method="get" role="search">
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <div class="input-group-text border-right-0 bg-white py-3 pl-3 pr-2"><span class="fas fa-search"></span></div>
+            </div>
+            <input class="form-control py-3 pr-3 pl-1 h-100 border-left-0" type="search" name="q" placeholder="Search documentation" aria-label="Search documentation" id="searchinput" />
+        </div>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div><div class="site-toc">
+    <nav class="toc mt-3" aria-label="Main menu">
+        <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../Getting_Started/introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../Getting_Started/install_raya_sdk.html">Install Ra-Ya SDK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../Getting_Started/create_first_app_robot.html">Create your first app (Robot)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../Getting_Started/create_first_app_simulation.html">Create your first app (Simulation)</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">RaYa Python library</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../../index.html">Raya Python Library</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../../index.html">Controllers</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../../sensors/index.html">Sensors</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../sensors/synchronous_methods/index.html">Synchronous methods</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../sensors/synchronous_methods/get_all_sensors_values.html">get_all_sensors_values()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../sensors/synchronous_methods/get_sensors_list.html">get_sensors_list()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../sensors/synchronous_methods/get_sensor_value.html">get_sensor_value()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../sensors/synchronous_methods/check_sensor_in_range.html">check_sensor_in_range()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../sensors/synchronous_methods/create_threshold_listener.html">create_threshold_listener()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../sensors/synchronous_methods/create_boolean_listener.html">create_boolean_listener()</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../sensors/exceptions.html">Exceptions</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../lidar/index.html">LiDAR</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../lidar/synchronous_methods/index.html">Synchronous methods</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../lidar/synchronous_methods/get_laser_info.html">get_laser_info()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../lidar/synchronous_methods/check_obstacle.html">check_obstacle()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../lidar/synchronous_methods/create_obstacle_listener.html">create_obstacle_listener()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../lidar/synchronous_methods/get_raw_data.html">get_raw_data()</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../lidar/exceptions.html">Exceptions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../lidar/enumerations.html">Enumerations</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../cameras/index.html">Cameras</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../cameras/synchronous_methods/index.html">Synchronous methods</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../cameras/synchronous_methods/create_color_frame_listener.html">create_color_frame_listener()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../cameras/synchronous_methods/is_camera_enabled.html">is_camera_enabled()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../cameras/synchronous_methods/available_color_cameras.html">available_color_cameras()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../cameras/synchronous_methods/delete_listener.html">delete_listener()</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../cameras/asynchronous_methods/index.html">Asynchronous methods</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../cameras/asynchronous_methods/enable_color_camera.html">enable_color_camera()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../cameras/asynchronous_methods/disable_color_camera.html">disable_color_camera()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../cameras/asynchronous_methods/get_next_frame.html">get_next_frame()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../cameras/asynchronous_methods/enable_streaming.html">enable_streaming()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../cameras/asynchronous_methods/disable_streaming.html">disable_streaming()</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../cameras/exceptions.html">Exceptions</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../leds/index.html">Leds</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../leds/synchronous_methods/index.html">Synchronous methods</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../leds/synchronous_methods/get_groups.html">get_groups()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../leds/synchronous_methods/get_colors.html">get_colors()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../leds/synchronous_methods/get_animations.html">get_animations()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../leds/synchronous_methods/get_max_speed.html">get_max_speed()</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../leds/asynchronous_methods/index.html">Asynchronous methods</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../leds/asynchronous_methods/animation.html">animation()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../leds/asynchronous_methods/set_color.html">set_color()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../leds/asynchronous_methods/turn_off_group.html">turn_off_group()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../leds/asynchronous_methods/turn_off_all.html">turn_off_all()</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../leds/exceptions.html">Exceptions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../leds/feedbacks.html">Feedbacks</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../leds/enumerations.html">Enumerations</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../motion/index.html">Motion</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../motion/synchronous_methods/index.html">Synchronous methods</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../motion/synchronous_methods/is_moving.html">is_moving()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../motion/synchronous_methods/check_last_exception.html">check_last_exception()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../motion/synchronous_methods/get_last_result.html">get_last_result()</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../motion/asynchronous_methods/index.html">Asynchronous methods</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../motion/asynchronous_methods/move_linear.html">move_linear()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../motion/asynchronous_methods/rotate.html">rotate()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../motion/asynchronous_methods/await_until_stop.html">await_until_stop()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../motion/asynchronous_methods/set_velocity.html">set_velocity()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../motion/asynchronous_methods/cancel_motion.html">cancel_motion()</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../motion/exceptions.html">Exceptions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../motion/feedbacks.html">Feedbacks</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../motion/enumerations.html">Enumerations</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../communication/index.html">Comunication</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../communication/synchronous_methods/index.html">Synchronous methods</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../communication/synchronous_methods/mqtt_remove_subscription.html">mqtt_remove_subscription()</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../communication/asynchronous_methods/index.html">Asynchronous methods</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../communication/asynchronous_methods/mqtt_create_subscription.html">mqtt_create_subscription()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../communication/asynchronous_methods/mqtt_publish_message.html">mqtt_publish_message()</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../communication/exceptions.html">Exceptions</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../sound/index.html">Sounds</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../sound/synchronous_methods/index.html">Synchronous methods</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../sound/synchronous_methods/get_predefined_sounds.html">get_predefined_sounds()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../sound/synchronous_methods/is_playing.html">is_playing()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../sound/synchronous_methods/is_recording.html">is_recording()</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../sound/asynchronous_methods/index.html">Asynchronous methods</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../sound/asynchronous_methods/cancel_sound.html">cancel_sound()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../sound/asynchronous_methods/record_sound.html">record_sound()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../sound/asynchronous_methods/play_sound.html">play_sound()</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../sound/handlers/index.html">Handlers</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../sound/handlers/sound_data_object.html">SoundData Object</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../sound/exceptions.html">Exceptions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../sound/feedbacks.html">Feedbacks</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../status/index.html">Status</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../status/asynchronous_methods/index.html">Asynchronous methods</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../status/asynchronous_methods/get_raya_status.html">get_raya_status()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../status/asynchronous_methods/get_available_arms.html">get_available_arms()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../status/asynchronous_methods/get_localization_status.html">get_localization_status()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../status/asynchronous_methods/get_manipulation_status.html">get_manipulation_status()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../status/asynchronous_methods/get_battery_status.html">get_battery_status()</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../status/exceptions.html">Exceptions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../status/enumerations.html">Enumerations</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../arms/index.html">Arms</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../arms/general_methods/index.html">General Methods</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../arms/general_methods/asynchronous_methods/index.html">Asynchronous Methods</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="../../arms/general_methods/asynchronous_methods/get_last_result.html">get_last_result()</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../arms/general_methods/asynchronous_methods/check_last_exception.html">check_last_exception()</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../arms/get_arm_joint_information/index.html">Get Arm/Joint Information</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../arms/get_arm_joint_information/synchronous_methods/index.html">Synchronous Methods</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="../../arms/get_arm_joint_information/synchronous_methods/get_arms_list.html">get_arms_list()</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../arms/get_arm_joint_information/synchronous_methods/get_groups_list.html">get_groups_list()</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../arms/get_arm_joint_information/synchronous_methods/get_joints_list.html">get_joints_list()</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../arms/get_arm_joint_information/synchronous_methods/get_joints_limits.html">get_joints_limits()</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../arms/get_arm_joint_information/synchronous_methods/get_joint_type.html">get_joint_type()</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../arms/get_arm_joint_information/synchronous_methods/get_arm_state.html">get_arm_state()</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="../../arms/get_arm_joint_information/asynchronous_methods/index.html">Asynchronous Methods</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="../../arms/get_arm_joint_information/asynchronous_methods/get_predefined_poses_list.html">get_predefined_poses_list()</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../arms/get_arm_joint_information/asynchronous_methods/get_predefined_trajectories_list.html">get_predefined_trajectories_list()</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../arms/get_arm_joint_information/asynchronous_methods/get_current_joints_position.html">get_current_joints_position()</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../arms/get_arm_joint_information/asynchronous_methods/get_current_pose.html">get_current_pose()</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../arms/get_arm_joint_information/asynchronous_methods/get_current_joint_position.html">get_current_joint_position()</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../arms/arm_joint_checking_methods/index.html">Arm/Joint Checking Methods</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../arms/arm_joint_checking_methods/synchronous_methods/index.html">Synchronous Methods</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="../../arms/arm_joint_checking_methods/synchronous_methods/is_linear_joint.html">is_linear_joint()</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../arms/arm_joint_checking_methods/synchronous_methods/is_rotational_joint.html">is_rotational_joint()</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="../../arms/arm_joint_checking_methods/asynchronous_methods/index.html">Asynchronous Methods</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="../../arms/arm_joint_checking_methods/asynchronous_methods/is_pose_valid.html">is_pose_valid()</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../arms/arm_joint_checking_methods/asynchronous_methods/is_pose_valid_q.html">is_pose_valid_q()</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../arms/arm_joint_checking_methods/asynchronous_methods/is_joints_position_valid.html">is_joints_position_valid()</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../arms/arm_joint_checking_methods/asynchronous_methods/is_any_arm_in_execution.html">is_any_arm_in_execution()</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../arms/arm_joint_checking_methods/asynchronous_methods/are_checkings_in_progress.html">are_checkings_in_progress()</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../arms/manage_predefined_data/index.html">Manage Predefined Data</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../arms/manage_predefined_data/manage_predefined_trajectory.html">manage_predefined_trajectory()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../arms/manage_predefined_data/manage_predefined_pose.html">manage_predefined_pose()</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../arms/execute_arm_movements/index.html">Execute Arm Movements</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../arms/execute_arm_movements/set_predefined_pose.html">set_predefined_pose()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../arms/execute_arm_movements/set_joints_position.html">set_joints_position()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../arms/execute_arm_movements/set_joint_position.html">set_joint_position()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../arms/execute_arm_movements/set_pose.html">set_pose()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../arms/execute_arm_movements/set_pose_q.html">set_pose_q()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../arms/execute_arm_movements/execute_predefined_trajectory.html">execute_predefined_trajectory()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../arms/execute_arm_movements/execute_predefined_poses_array.html">execute_predefined_poses_array()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../arms/execute_arm_movements/execute_joints_positions_array.html">execute_joints_positions_array()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../arms/execute_arm_movements/execute_poses_array.html">execute_poses_array()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../arms/execute_arm_movements/execute_poses_array_q.html">execute_poses_array_q()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../arms/execute_arm_movements/set_multi_arm_pose.html">set_multi_arm_pose()</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../arms/gripper/index.html">Gripper</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../arms/gripper/gripper_cmd.html">gripper_cmd()</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../arms/cancel_execution/index.html">Cancel Execution</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../arms/cancel_execution/cancel_execution.html">cancel_execution()</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../arms/objects/index.html">Objects</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../arms/objects/add_attached_object.html">add_attached_object()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../arms/objects/remove_attached_object.html">remove_attached_object()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../arms/objects/add_collision_object.html">add_collision_object()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../arms/objects/remove_collision_object.html">remove_collision_object()</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../arms/constraints/index.html">Constraints</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../arms/constraints/add_constraints.html">add_constraints()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../arms/constraints/remove_constraints.html">remove_constraints()</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../arms/tools/index.html">Tools</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../arms/tools/convert_orientation.html">convert_orientation()</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../arms/exceptions.html">Exceptions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../arms/feedbacks.html">Feedbacks</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../arms/enumerations.html">Enumerations</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../ui/index.html">UI</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../ui/asynchronous_methods/index.html">Asynchronous methods</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../ui/asynchronous_methods/display_split_screen.html">display_split_screen()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../ui/asynchronous_methods/display_modal.html">display_modal()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../ui/asynchronous_methods/display_input_modal.html">display_input_modal()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../ui/asynchronous_methods/display_screen.html">display_screen()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../ui/asynchronous_methods/display_interactive_map.html">display_interactive_map()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../ui/asynchronous_methods/display_action_screen.html">display_action_screen()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../ui/asynchronous_methods/display_choice_selector.html">display_choice_selector()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../ui/asynchronous_methods/display_animation.html">display_animation()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../ui/asynchronous_methods/show_animation.html">show_animation()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../ui/asynchronous_methods/open_link.html">open_link()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../ui/asynchronous_methods/open_video.html">open_video()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../ui/asynchronous_methods/open_conference.html">open_conference()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../ui/asynchronous_methods/open_interacty.html">open_interacty()</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../ui/exceptions.html">Exceptions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../ui/enumerations.html">Enumerations</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../interactions/index.html">Interactions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../interactions/synchronous_methods/index.html">Synchronous methods</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../interactions/synchronous_methods/get_interactions.html">get_interactions()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../interactions/synchronous_methods/interaction_running.html">interaction_running()</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../interactions/asynchronous_methods/index.html">Asynchronous methods</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../interactions/asynchronous_methods/wait_interaction_finished.html">wait_interaction_finished()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../interactions/asynchronous_methods/play_interaction.html">play_interaction()</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../interactions/exceptions.html">Exceptions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../interactions/feedbacks.html">Feedbacks</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../manipulation/index.html">Manipulation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../manipulation/synchronous_methods/index.html">Synchronous methods</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../manipulation/synchronous_methods/is_manipulation.html">is_manipulation()</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../manipulation/asynchronous_methods/index.html">Asynchronous methods</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../manipulation/asynchronous_methods/cancel_manipulation.html">cancel_manipulation()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../manipulation/asynchronous_methods/wait_manipulation_finished.html">wait_manipulation_finished()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../manipulation/asynchronous_methods/place_object_with_reference.html">place_object_with_reference()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../manipulation/asynchronous_methods/place_object_with_tag.html">place_object_with_tag()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../manipulation/asynchronous_methods/clean_arms_status.html">clean_arms_status()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../manipulation/asynchronous_methods/pick_object_point.html">pick_object_point()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../manipulation/asynchronous_methods/pick_object.html">pick_object()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../manipulation/asynchronous_methods/place_object_with_point.html">place_object_with_point()</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../manipulation/exceptions.html">Exceptions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../manipulation/feedbacks.html">Feedbacks</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../cv/index.html">CV</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../cv/asynchronous_methods/index.html">Asynchronous methods</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../cv/asynchronous_methods/get_available_models.html">get_available_models()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../cv/asynchronous_methods/enable_model.html">enable_model()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../cv/asynchronous_methods/disable_model.html">disable_model()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../cv/asynchronous_methods/disable_all_models.html">disable_all_models()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../cv/asynchronous_methods/train_model_folder_path.html">train_model_folder_path()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../cv/asynchronous_methods/train_model.html">train_model()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../cv/asynchronous_methods/delete_face.html">delete_face()</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../cv/handlers/index.html">Handlers</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../cv/handlers/find_tags.html">find_tags()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../cv/handlers/get_current_predictions.html">get_current_predictions()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../cv/handlers/get_predictions_once.html">get_predictions_once()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../cv/handlers/set_predictions_callback.html">set_predictions_callback()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../cv/handlers/set_img_predictions_callback.html">set_img_predictions_callback()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../cv/handlers/find_objects.html">find_objects()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../cv/handlers/cancel_find_objects.html">cancel_find_objects()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../cv/handlers/get_objects_names.html">get_objects_names()</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../cv/exceptions.html">Exceptions</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../navigation/index.html">Navigation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../navigation/zones_and_locations/index.html">zones &amp; locations</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../navigation/zones_and_locations/asynchronous_methods/index.html">asynchronous_methods</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="../../navigation/zones_and_locations/asynchronous_methods/save_zone.html">save_zone()</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../navigation/zones_and_locations/asynchronous_methods/order_zone_points.html">order_zone_points()</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../navigation/zones_and_locations/asynchronous_methods/get_sorted_zone_point.html">get_sorted_zone_point()</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../navigation/zones_and_locations/asynchronous_methods/delete_zone.html">delete_zone()</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../navigation/zones_and_locations/asynchronous_methods/get_zone_center.html">get_zone_center()</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../navigation/zones_and_locations/asynchronous_methods/get_zones_list.html">get_zones_list()</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../navigation/zones_and_locations/asynchronous_methods/get_zones.html">get_zones()</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../navigation/zones_and_locations/asynchronous_methods/get_locations.html">get_locations()</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../navigation/zones_and_locations/asynchronous_methods/get_locations_list.html">get_locations_list()</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../navigation/zones_and_locations/asynchronous_methods/save_location.html">save_location()</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../navigation/zones_and_locations/asynchronous_methods/delete_location.html">delete_location()</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../navigation/zones_and_locations/asynchronous_methods/get_location.html">get_location()</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../navigation/navigation/index.html">navigation</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../navigation/navigation/asynchronous_methods/index.html">asynchronous_methods</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="../../navigation/navigation/asynchronous_methods/enable_speed_zones.html">enable_speed_zones()</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../navigation/navigation/asynchronous_methods/disable_speed_zones.html">disable_speed_zones()</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../navigation/navigation/asynchronous_methods/update_robotic_footprint.html">update_robotic_footprint()</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../navigation/navigation/asynchronous_methods/cancel_navigation.html">cancel_navigation()</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../navigation/navigation/asynchronous_methods/navigate_close_to_position.html">navigate_close_to_position()</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../navigation/navigation/asynchronous_methods/go_to_angle.html">go_to_angle()</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../navigation/navigation/asynchronous_methods/navigate_to_zone.html">navigate_to_zone()</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../navigation/navigation/asynchronous_methods/navigate_to_location.html">navigate_to_location()</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../navigation/navigation/asynchronous_methods/navigate_to_position.html">navigate_to_position()</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../navigation/navigation/asynchronous_methods/get_position.html">get_position()</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../navigation/navigation/asynchronous_methods/is_in_zone.html">is_in_zone()</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../navigation/navigation/asynchronous_methods/update_current_nav_goal.html">update_current_nav_goal()</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../navigation/navigation/asynchronous_methods/get_costmap.html">get_costmap()</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../navigation/navigation/asynchronous_methods/check_path_to_goal.html">check_path_to_goal()</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../navigation/navigation/asynchronous_methods/get_status.html">get_status()</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../navigation/navigation/asynchronous_methods/await_until_stop.html">await_until_stop()</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="../../navigation/navigation/synchronous_methods/index.html">synchronous_methods</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="../../navigation/navigation/synchronous_methods/get_last_result.html">get_last_result()</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../navigation/navigation/synchronous_methods/check_last_exception.html">check_last_exception()</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../navigation/maps_and_position/index.html">maps &amp; position</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../navigation/maps_and_position/asynchronous_methods/index.html">asynchronous_methods</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="../../navigation/maps_and_position/asynchronous_methods/update_map.html">update_map()</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../navigation/maps_and_position/asynchronous_methods/download_map.html">download_map()</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../navigation/maps_and_position/asynchronous_methods/set_map.html">set_map()</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../navigation/maps_and_position/asynchronous_methods/is_mapping.html">is_mapping()</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../navigation/maps_and_position/asynchronous_methods/is_localized.html">is_localized()</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../navigation/maps_and_position/asynchronous_methods/get_map.html">get_map()</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../navigation/maps_and_position/asynchronous_methods/get_list_of_maps.html">get_list_of_maps()</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../navigation/maps_and_position/asynchronous_methods/start_mapping.html">start_mapping()</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../navigation/maps_and_position/asynchronous_methods/continue_mapping.html">continue_mapping()</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../navigation/maps_and_position/asynchronous_methods/stop_mapping.html">stop_mapping()</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../navigation/maps_and_position/asynchronous_methods/generate_speed_zones_files.html">generate_speed_zones_files()</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../navigation/maps_and_position/asynchronous_methods/get_current_map.html">get_current_map()</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../navigation/feedbacks.html">Feedbacks</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../navigation/exceptions.html">Exceptions</a></li>
+</ul>
+</li>
+<li class="toctree-l3 current"><a class="reference internal" href="../index.html">NLP</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="index.html">Asynchronous methods</a><ul class="current">
+<li class="toctree-l5 current"><a class="current reference internal" href="#">tts_play_text()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="stt_transcribe_from_mic.html">stt_transcribe_from_mic()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="stt_transcribe_from_file.html">stt_transcribe_from_file()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="tts_set_provider.html">tts_set_provider()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="stt_set_provider.html">stt_set_provider()</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../exceptions.html">Exceptions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../feedbacks.html">Feedbacks</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../fleet/index.html">Fleet</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../fleet/synchronous_methods/index.html">Synchronous methods</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../fleet/synchronous_methods/set_msgs_from_fleet_callback.html">set_msgs_from_fleet_callback()</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../fleet/asynchronous_methods/index.html">Asynchronous methods</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../fleet/asynchronous_methods/request_action.html">request_action()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../fleet/asynchronous_methods/finish_task.html">finish_task()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../fleet/asynchronous_methods/update_app_status.html">update_app_status()</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../fleet/asynchronous_methods/open_camera_stream.html">open_camera_stream()</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../fleet/exceptions.html">Exceptions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../fleet/enumerations.html">Enumerations</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../General_Enumerations.html">General Enumerations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../General_Exceptions.html">General Exceptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../Tools/index.html">Tools</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../Tools/Finite_States_Machine_Module/index.html">Finite States Machine Module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../Tools/Finite_States_Machine_Module/Simple_FSM.html">Simple FSM</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Tools/Finite_States_Machine_Module/Multiple_FSM.html">Multiple FSM</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Robots</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../Robots/index.html">Robots Availables</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../Robots/gary/index.html">Gary</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Robots/gary/leds_colors.html">LEDs colors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Robots/gary/sensors.html">Sensors</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Unlimited Robotics SDK</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../Unlimited_Robotics_SDK/index.html">Unlimited Robotics SDK</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../Unlimited_Robotics_SDK/Commands/index.html">Commands</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Unlimited_Robotics_SDK/Commands/Simulator.html">Simulator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Unlimited_Robotics_SDK/Commands/Init.html">Init</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Unlimited_Robotics_SDK/Commands/Scan.html">Scan</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Unlimited_Robotics_SDK/Commands/Connect.html">Connect</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Unlimited_Robotics_SDK/Commands/Run.html">Run</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Unlimited_Robotics_SDK/Commands/Update.html">Update</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Unlimited_Robotics_SDK/Commands/Kill.html">Kill</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Unlimited_Robotics_SDK/Commands/Command.html">Command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Unlimited_Robotics_SDK/Commands/Tools.html">Tools</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Unlimited_Robotics_SDK/Commands/Skills/index.html">Skills</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Unlimited_Robotics_SDK/Commands/Skills/Install.html">Install</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Unlimited_Robotics_SDK/Commands/Skills/Install_deps.html">Install_deps</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+    </nav>
+    <template data-toggle-item-template>
+        <button class="btn btn-sm btn-link toctree-expand" type="button">
+            <span class="sr-only">Toggle menu contents</span>
+        </button>
+    </template>
+</div>
+                    <div class="d-lg-none border-bottom">
+                        
+                    </div>
+                </div>
+            </aside>
+            <div class="col-12 col-lg-7 col-xl-9 pt-5">
+                <header class="row align-items-baseline">
+                    <div class="col">
+                        <nav aria-label="breadcrumb">
+    <ol class="breadcrumb m-0 p-0 bg-transparent">
+        <li class="breadcrumb-item"><a href="../../../../index.html">Docs</a></li>
+            <li class="breadcrumb-item"><a href="../../../index.html">Raya Python Library</a></li>
+            <li class="breadcrumb-item"><a href="../../index.html">Controllers</a></li>
+            <li class="breadcrumb-item"><a href="../index.html">NLP</a></li>
+            <li class="breadcrumb-item"><a href="index.html">Asynchronous methods</a></li>
+        <li class="breadcrumb-item active" aria-current="page">tts_play_text()</li>
+    </ol>
+</nav>
+                    </div>
+                    <div class="col-sm-12 col-lg-auto mt-3 mt-lg-3">
+                        <noscript>
+                            <p>JavaScript is required to toggle light/dark mode..</p>
+                        </noscript>
+                        <button id="wagtail-theme" class="btn btn-sm btn-light text-decoration-none" type="button">
+                            <span class="dark-only"><i class="fas fa-sun"></i> Light mode</span>
+                            <span class="light-only"><i class="fas fa-moon"></i> Dark mode</span>
+                        </button>
+    <a class="btn btn-sm btn-light text-decoration-none" href="https://github.com/ivanurco/raya_documentation2/tree/main/docs/source/Raya_Python_Library/controllers/nlp/asynchronous_methods/tts_play_text.rst" rel="nofollow">
+        <span class="btn-icon"><span class="fab fa-github"></span></span>
+        <span class="btn-text">Edit on GitHub</span>
+    </a>
+                        
+                    </div>
+                </header>
+                <div class="row" >
+                    <div class="col-12">
+                        <hr class="w-100 my-4">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-lg-9 order-last order-lg-first rst-content">
+                        <main role="main" id="main">
+    <section id="tts-play-text">
+<h1>tts_play_text()<a class="headerlink" href="#tts-play-text" title="Link to this heading">¶</a></h1>
+<hr/><p>This method converts text to sound and play it in the system speakers.</p>
+<section id="reference">
+<h2>Reference<a class="headerlink" href="#reference" title="Link to this heading">¶</a></h2>
+<section id="arguments">
+<h3>Arguments<a class="headerlink" href="#arguments" title="Link to this heading">¶</a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Arguments</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Default value</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>text</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">str</span></code></p></td>
+<td></td>
+<td><p>Text to play.</p></td>
+</tr>
+<tr class="row-odd"><td><p>voice</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">str</span></code></p></td>
+<td></td>
+<td><p>Voice to use as speaker.</p></td>
+</tr>
+<tr class="row-even"><td><p>language</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">str</span></code></p></td>
+<td></td>
+<td><p>Language to use.</p></td>
+</tr>
+<tr class="row-odd"><td><p>callback_feedback</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">callable</span></code></p></td>
+<td></td>
+<td><p>Callback to be executed when a feedback arrives.</p></td>
+</tr>
+<tr class="row-even"><td><p>callback_feedback_async</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">callable</span></code></p></td>
+<td></td>
+<td><p>An asynchronous callback to be executed when a feedback arrives
+(if callback_async is defined, callback is ignored). Allows a
+callback that can use ‘await’, which is useful for non-blocking
+operations and concurrent tasks.</p></td>
+</tr>
+<tr class="row-odd"><td><p>callback_finish</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">callable</span></code></p></td>
+<td></td>
+<td><p>Callback to be executed when the method finish.</p></td>
+</tr>
+<tr class="row-even"><td><p>callback_finish_async</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">callable</span></code></p></td>
+<td></td>
+<td><p>An asynchronous callback to be executed when a method finish
+(if callback_async is defined, callback is ignored). Allows a
+callback that can use ‘await’, which is useful for non-blocking
+operations and concurrent tasks.</p></td>
+</tr>
+<tr class="row-odd"><td><p>wait</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">bool</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">False</span></code></p></td>
+<td><p>If true the method is executed in clocking mode</p></td>
+</tr>
+</tbody>
+</table>
+<div class="warning-box">
+
+    <p class="title warning-box">Important note!</p>
+
+    <p class="text warning-box"> If callback_async is defined, callback is ignored. </p>
+
+</div></section>
+<section id="return">
+<h3>Return<a class="headerlink" href="#return" title="Link to this heading">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+</section>
+<section id="exceptions">
+<h3>Exceptions<a class="headerlink" href="#exceptions" title="Link to this heading">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+<p>See the <a class="reference internal" href="../exceptions.html#nlp-exceptions"><span class="std std-ref">complete list of NLP exceptions.</span></a></p>
+</section>
+</section>
+</section>
+
+</main>
+                        <nav aria-label="Page navigation" class="py-4 my-5 clearfix font-weight-bold border-top">
+    <a class="float-left" href="index.html" title="Previous">
+        <span aria-hidden="true">←&nbsp;</span>Asynchronous methods
+    </a>
+    <a class="float-right" href="stt_transcribe_from_mic.html" title="Next">
+        stt_transcribe_from_mic() <span aria-hidden="true">&nbsp;→</span>
+    </a>
+</nav>
+                    </div>
+                    
+                    <nav class="col-12 col-lg-3 pb-4 d-none d-md-block">
+                        <div class="sticky-top toc page-toc" aria-labelledby="page-toc-heading">
+                            <p class="font-weight-bold" id="page-toc-heading">Page contents</p>
+                            <ul>
+<li><a class="reference internal" href="#">tts_play_text()</a><ul>
+<li><a class="reference internal" href="#reference">Reference</a><ul>
+<li><a class="reference internal" href="#arguments">Arguments</a></li>
+<li><a class="reference internal" href="#return">Return</a></li>
+<li><a class="reference internal" href="#exceptions">Exceptions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+                        </div>
+                    </nav>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <footer class="container-fluid bg-primary text-light">
+        <div class="container">
+            <div class="row">
+        <div class="col p-4">
+            
+                <nav aria-label="Footer">
+                    <ul class="nav justify-content-center mb-2">
+                        
+                            
+                            
+                            <li class="nav-item"><a class="nav-link text-light"  href="http://example.com/">About Us</a></li>
+                        
+                            
+                            
+                            <li class="nav-item"><a class="nav-link text-light"  href="http://example.com/contact">Contact</a></li>
+                        
+                            
+                            
+                            <li class="nav-item"><a class="nav-link text-light"  href="http://example.com/dev/null">Legal</a></li>
+                        
+                    </ul>
+                </nav>
+            
+            <div class="text-center">
+                <p style="display: none">
+                    <a class="text-light" href="https://github.com/wagtail/sphinx_wagtail_theme" rel="nofollow" target="_blank">
+                        Wagtail Sphinx Theme 6.2.0.dev0
+                    </a>
+                </p>
+            </div>
+            <div class="text-center">
+                    &copy; Copyright 2024, Unlimited Robotics
+            </div>
+        </div>
+    </div>
+        </div>
+    </footer>
+        <script src="../../../../_static/documentation_options.js?v=2709fde1"></script>
+        <script src="../../../../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../../../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../../../../_static/copybutton.js?v=f281be69"></script>
+        <script src="../../../../_static/custom.js"></script>
+        <script type="text/javascript" src="../../../../_static/dist/theme.js"></script>
+        <script type="text/javascript" src="../../../../_static/dist/vendor.js"></script>
+        <script type="text/javascript" src="../../../../_static/searchtools.js"></script>
+        <script type="text/javascript" src="../../../../_static/language_data.js"></script>
+        <script type="text/javascript">
+            document.addEventListener('DOMContentLoaded', function() { Search.loadIndex("../../../../searchindex.js"); });
+        </script>
+        <script type="text/javascript" id="searchindexloader"></script>
+    </body>
+</html>
